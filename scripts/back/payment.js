@@ -20,8 +20,8 @@
          * Instead use one of the strategies described in
          * https://stripe.com/docs/payments/checkout/fulfill-orders
          */
-        successUrl: 'http://127.0.0.1:5501/',
-        cancelUrl: 'http://127.0.0.1:5501/payment.html',
+        successUrl: 'https://gifted-nobel-84c209.netlify.app/',
+        cancelUrl: 'https://gifted-nobel-84c209.netlify.app/payment.html',
       })
         .then(function (result) {
           if (result.error) {
