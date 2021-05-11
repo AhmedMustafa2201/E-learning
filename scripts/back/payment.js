@@ -24,6 +24,7 @@
         cancelUrl: 'https://gifted-nobel-84c209.netlify.app/payment.html',
       })
         .then(function (result) {
+          console.log(result)
           if (result.error) {
             /*
              * If `redirectToCheckout` fails due to a browser or network
@@ -31,21 +32,19 @@
              */
             var displayError = document.getElementById('error-message');
             displayError.textContent = result.error.message;
-          }else{
-            auth.onAuthStateChanged(function(user) {
-                userCollection.where("user_email", "==", user.email).get()
-                .then(res=>{
-                    // console.log(res.docs[0].id)
-                    userCollection.doc(res.docs[0].id).set({
-                        name: res.docs[0].data().name,
-                        phone: res.docs[0].data().phone,
-                        user_email: res.docs[0].data().user_email,
-                        subscriped: true
-                    }).then(res=> location.assign("./"))
-
-                }).catch(err=>console.log(err))
-            })
           }
+            
+                // userCollection.where("user_email", "==", auth.currentUser.email).get()
+                // .then(res=>{
+                //   debugger
+                //     console.log(res.docs[0].id)
+                //     userCollection.doc(res.docs[0].id).update({
+                //       "subscriped": true
+                //     }).then(res)
+
+                // }).catch(err=>console.log(err))
+            
+          
         });
     });
    })();
@@ -81,27 +80,48 @@ paypal.Button.render({
     },
     // Execute the payment
     onAuthorize: function (data, actions) {
+      // userCollection.where("user_email", "==", auth.currentUser.email).get()
+      // .then(res=>{
+      //     // console.log(res.docs[0].id)
+      //     userCollection.doc(res.docs[0].id).update({
+      //       "subscriped": true
+      //     })
+      //     location.assign("./")
+      // }).catch(err=>console.log(err))
+  
       return actions.payment.execute().then(function () {
         // Show a confirmation message to the buyer
-        auth.onAuthStateChanged(function(user) {
-            userCollection.where("user_email", "==", user.email).get()
-            .then(res=>{
-                // console.log(res.docs[0].id)
-                userCollection.doc(res.docs[0].id).set({
-                    name: res.docs[0].data().name,
-                    phone: res.docs[0].data().phone,
-                    user_email: res.docs[0].data().user_email,
-                    subscriped: true
-                })
-                location.assign("./")
-            }).catch(err=>console.log(err))
-        })
+        
+
 
         alert('Thank you for your purchase!');
       });
     }
   }, '#paypal-button');
 
+  document.getElementById("paypal-button").onclick = function(){
+    auth.onAuthStateChanged(function (user) {
+    userCollection.where("user_email", "==", user.email).get()
+      .then(res=>{
+          console.log(res.docs[0].id)
+          userCollection.doc(res.docs[0].id).update({
+            "subscriped": true
+          })
+      }).catch(err=>console.log(err))
+    })
+  }
+
+  document.getElementById("checkout-button-price_1IntfiGcjcfOhHWOq9J3i3Fw").onclick = function(){
+    auth.onAuthStateChanged(function (user) {
+      userCollection.where("user_email", "==", user.email).get()
+        .then(res=>{
+            console.log(res.docs[0].id)
+            userCollection.doc(res.docs[0].id).update({
+              "subscriped": true
+            })
+        }).catch(err=>console.log(err))
+      })
+  }
     // Get the modal
 var modal = document.getElementById("myModal");
 
