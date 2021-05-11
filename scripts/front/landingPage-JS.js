@@ -1,6 +1,6 @@
-document.getElementById("signin").onclick = ()=>{location.replace("login.html")};
-document.getElementById("signup").onclick = ()=>{location.replace("register.html")};
-document.getElementById("courses-page").onclick = ()=>{location.replace("search.html")};
+// document.getElementById("signin").onclick = ()=>{location.replace("login.html")};
+// document.getElementById("signup").onclick = ()=>{location.replace("register.html")};
+// document.getElementById("courses-page").onclick = ()=>{location.replace("search.html")};
 
 let myNav = document.querySelector(".header");
 // let signout = document.getElementById("signout")
