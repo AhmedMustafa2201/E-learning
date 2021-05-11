@@ -178,7 +178,7 @@ function formatTime(time) {
 }
 
 function updateTimeDisplay() {
-    vDuration.textContent = formatTime(videoPlayer.getCurrentTime()) + "/" +
+    vDuration.textContent = formatTime(videoPlayer.getCurrentTime()) + "./" +
         formatTime(videoPlayer.getDuration())
 }
 

@@ -69,7 +69,7 @@ regBtn.addEventListener("click", (e) => {
 
         })
         setTimeout(() => {
-            redirectIfAuth("/login.html")
+            redirectIfAuth("./login.html")
         }, 1000);
     }).catch(error => {
         document.getElementById('error').style.color = 'red';

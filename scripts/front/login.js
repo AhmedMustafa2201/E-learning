@@ -79,7 +79,7 @@ facebookBtn.addEventListener("click", () => {
         var accessToken = credential.accessToken;
         console.log("done")
         setTimeout(() => {
-            redirectIfAuth("/")
+            redirectIfAuth("./")
         }, 2000);
     }).catch((error) => {
         // Handle Errors here.
@@ -108,7 +108,7 @@ googleBtn.addEventListener("click", () => {
         // The signed-in user info.
         var user = result.user;
         setTimeout(() => {
-            redirectIfAuth("/")
+            redirectIfAuth("./")
         }, 1000);
     }).catch((error) => {
         // Handle Errors here.

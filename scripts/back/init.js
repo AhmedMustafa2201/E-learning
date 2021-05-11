@@ -44,7 +44,7 @@ const userCollection = db.collection("users");
 (function(){
   auth.onAuthStateChanged(function (user) {
       if(user && (location.href=="https://gifted-nobel-84c209.netlify.app/login.html"||location.href=="https://gifted-nobel-84c209.netlify.app/register.html")){
-          location.assign("/")
+          location.assign("./")
       }
   })
 })()
