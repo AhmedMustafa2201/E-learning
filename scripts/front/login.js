@@ -44,7 +44,7 @@ loginBtn.addEventListener("click", () => {
             if (res.docs[0].data().subscriped == false) {
               redirectIfAuth("./payment.html");
             } else {
-              redirectIfAuth("./");
+              redirectIfAuth("./index.html");
             }
         }).catch(err=>console.log(err))
         // redirectIfAuth("./payment.html")

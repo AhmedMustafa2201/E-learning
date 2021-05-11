@@ -1,3 +1,7 @@
+document.getElementById("signin").onclick = ()=>{location.replace("login.html")};
+document.getElementById("signup").onclick = ()=>{location.replace("register.html")};
+document.getElementById("courses-page").onclick = ()=>{location.replace("search.html")};
+
 let myNav = document.querySelector(".header");
 // let signout = document.getElementById("signout")
 
@@ -21,30 +25,40 @@ window.onscroll = function(){
     }
 }
 
-// // preloader
-// var myVar;
-// window.onload =function myFunction() {
-//     exec()
-//   myVar = setTimeout(showPage, 3000);
+//slide show
+var imges= ['images/public/slider1.png','images/public/slider2.png','images/public/slider5.png','images/public/slider6.png','images/public/slider7.png'];
+var i = 0;
 
-// }
+var slideShow =  function(){
+    document.slideshow.src = imges[i];
+    // document.getElementById("img").style.animation="fadeIn"
+    // document.getElementById("img").style.animationIterationCount="infinite"
+    if( i < imges.length - 1){
+        i++;
+    }else{
+        i=0;
+    }
 
-// function showPage() {
-//   document.getElementById("loader").style.display = "none";
-//   document.querySelector(".afterloader").style.display = "block";
-//   clearTimeout(myVar)
-// }
-
-// // document.getElementById("loader").parentElement.removeChild(document.getElementById("loader"));
-
-
-// window.onscroll = function(){
-//     if(window.pageYOffset >=600){
-//         document.getElementById("goUp").style.display = "block"
-//     }else{
-//         document.getElementById("goUp").style.display = "none"
-
-//     }
-// }
+    setTimeout("slideShow()",3000);
+}
+slideShow();
 
 
+
+/****************************************************************************** */
+// handel the articals 
+var artical_1 = document.getElementById("artical1")
+var artical_2 = document.getElementById("artical2")
+var artical_3 = document.getElementById("artical3")
+artical_1.onclick = function(){
+    localStorage.setItem("artical","one")
+    location.replace("artical.html")
+}
+artical_2.onclick = function(){
+    localStorage.setItem("artical","two")
+    location.replace("artical.html")
+}
+artical_3.onclick = function(){
+    localStorage.setItem("artical","three")
+    location.replace("artical.html")
+}

@@ -9,7 +9,7 @@
 body {
     font-family: 'Tajawal', sans-serif;
     direction: rtl;
-    background-image:url(../images/public/background.jpg);
+    background-image:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url(../images/public/background.jpg);
     position: relative;
     height: 100vh;
 }
@@ -142,7 +142,7 @@ ul.nav li a:hover{
 /**************************************************/
 /**************************************************/
 /* layer*/
-.layer{
+/* .layer{
     position: absolute;
     top:0;
     left: 0;
@@ -152,7 +152,7 @@ ul.nav li a:hover{
     opacity: .7;
     z-index: -1;
 }
-
+ */
 
 /**************************************************/
 

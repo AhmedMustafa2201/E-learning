@@ -24,6 +24,10 @@ body{
     /* height: 5000px; */
 }
 .container{
+    width: 70%;
+    margin: auto;
+}
+.container-header{
     width: 90%;
     margin: auto;
 }
@@ -47,9 +51,9 @@ button , input{
 .header{
     width: 100%;
     height: 85px;
-    position: fixed;
     line-height: 80px;
     z-index: 2;
+    margin-bottom: 5px;
 }
 .header.color{
     background: #eeefff;
@@ -165,20 +169,12 @@ ul.nav li a:hover{
     top: 40%;
     left: 45%;
 }
-@keyframes spinner{
-    0%{
-        transform: rotate(0deg);
-    }
-    100%{
-        transform: rotate(360deg);
-    }
-}
+
 .profile{
     display: flex;
     justify-content: space-between;
     border: 1px solid #ccc;
     height: 810px;
-    padding-top: 5em;
 }
 .profile-bar{
     width: 25%;
@@ -269,7 +265,7 @@ ul.nav li a:hover{
 }
 /*****************************/
 .profile-basic-info{
-    padding: 0px 50px;
+    padding: 10px 50px;
     border-bottom: 1px solid #ccc;
 
 }
@@ -295,7 +291,7 @@ ul.nav li a:hover{
 }
 /*********************************************/
 .profile-basic-links{
-    padding: 0px 50px;
+    padding: 10px 50px;
     /* border-bottom: 1px solid #ccc; */
 }
 .profile-basic-links >span{
@@ -566,4 +562,13 @@ top: -1.5em;
     color: #521822;
     border-color: #521822;
     cursor: pointer;
+}
+/*******************************************/
+@keyframes spinner{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
 }

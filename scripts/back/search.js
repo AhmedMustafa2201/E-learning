@@ -1,4 +1,5 @@
-
+document.getElementById("signin").onclick = ()=>{location.replace("login.html")};
+document.getElementById("signup").onclick = ()=>{location.replace("register.html")};
   function getAllData(collection) {
     return collection.get();
   }
