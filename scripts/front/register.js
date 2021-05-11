@@ -17,10 +17,6 @@
 
 
 
-
-
-
-
 //  My DOM variables
 let txtEmail = document.getElementById("txtEmail");
 let txtPassword = document.getElementById("txtPassword");

@@ -41,6 +41,15 @@ const lessonCollection = db.collection("lessons");
 const commentCollection = db.collection("comment");
 const userCollection = db.collection("users");
 
+(function(){
+  auth.onAuthStateChanged(function (user) {
+      if(user && (location.href=="http://127.0.0.1:5501/login.html"||location.href=="http://127.0.0.1:5501/register.html")){
+          location.assign("/")
+      }
+  })
+})()
+
+
 function redirectIfAuth(url, lesson) {
   auth.onAuthStateChanged(function (user) {
     if (lesson !== undefined) {
@@ -141,4 +150,12 @@ function showPage() {
   document.getElementById("loader").style.display = "none";
   document.querySelector(".afterloader").style.display = "block";
   clearTimeout(myVar);
+}
+
+function getSpecificCourse(id){
+  location.assign("./course_details.html?id="+id)
+}
+
+function getSpecificLesson(id, q){
+  redirectIfAuth(`./lesson.html?id=${id}&q=${q}`)
 }

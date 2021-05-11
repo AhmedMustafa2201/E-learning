@@ -21,7 +21,7 @@
             res.docs.forEach((data, i) => {
                 // console.log(data.data())
                 tmp+=`<div class="lesson-content">
-                <button onclick="getLessonData('${data.id}', '${data.data().videoLink}')" class="accordion">${i+1}- ${data.data().name}</button>
+                <button onclick="getSpecificLesson('${data.id}', '${data.data().videoLink}')" class="accordion">${i+1}- ${data.data().name}</button>
               </div>`
             });
             tmp+=`<div class="lesson-content">
