@@ -24,14 +24,14 @@
        <div class="header color">
         <div class="container display">
                 <div class="logo">
-                    <a href="index.html">
+                    <a href="./index.html">
                         <img src="images/public/logo.png">
                     </a>
                 </div> <!-- ./logo -->
                 <ul class="nav">
-                    <li> <a href="index.html">الصفحة الرئيسية</a></li>
-                    <li> <a href="search.html"> تصفح المواد</a></li>
-                    <li> <a href="search.html">التعلم المدرسى</a></li>
+                    <li> <a href="./index.html">الصفحة الرئيسية</a></li>
+                    <li> <a href="./index.html#lessonsData"> تصفح دروسنا</a></li>
+                    <li> <a href="./index.html#courseData">دوراتنا</a></li>
                 </ul> <!-- ./nav -->
                 <div id="adding" style="width: 45%;"></div>
             </div><!-- ./container -->
@@ -116,7 +116,7 @@ btn.onclick = function(){
             event.preventDefault();
             document.getElementsByClassName("trending-courses")[0].innerHTML=""
             test_me(event.target.value, orderBy);
-            document.getElementById("search-result").innerHTML = document.querySelector(".trending-courses").childElementCount;
+            // document.getElementById("search-result").innerHTML = document.getElementsByClassName("t-course").length;
 
         }
     }

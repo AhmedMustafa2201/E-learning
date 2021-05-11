@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="keywords" content="">
+    <meta name="descrption" content="">
+    <meta charset="utf-8">
+    <title>رحيق النحو | الاختبار</title>
+    <!-- Css Font links -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500&display=swap" rel="stylesheet">
+    <!-- font awesome library -->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <!-- css style link  -->
+    <link rel="stylesheet" href="css/quiz Style.css">
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-app.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-storage.js"></script>
+    <script src="./scripts/back/init.js"></script>
+</head>
+
+<body>
+    <div class="layer"></div>
+
+    <!-- The Header part  -->
+    <div class="header  color ">
+        <div class="container  display">
+            <div class="logo">
+                <img src="images/public/logo.png">
+            </div>
+            <!-- ./logo -->
+            <ul class="nav">
+                <li> <a href="index.html">الصفحة الرئيسية</a></li>
+                <li> <a href="./index.html#lessonsData"> تصفح دروسنا</a></li>
+                <li> <a href="./index.html#courseData">دوراتنا</a></li>
+            </ul>
+            <!-- ./nav -->
+            <div id="adding" style="width: 45%;"></div>
+
+            <!-- ./signin-signup -->
+        </div>
+        <!-- ./container -->
+    </div>
+    <!-- ./header -->
+
+    <!-- *************************************************** -->
+    <!-- quiz part  -->
+    <!-- <div class="quiz-area"> -->
+    <div class="quiz-container">
+        <div class="quiz-info">
+            <h2 class="quiz-title">الامتحان الثاني كورس رحيق النحو</h2>
+            <p class="quiz-length">عدد الأسئلة عشرون سؤالا</p>
+            <h2 id="resultContent" class="hide result">النتيجة <span id="result">۲۰</span> من <span id="fulldegree"> ۲۰</span></h2>
+        </div>
+
+        <div class="question">
+            <div class="question-part">
+                <span class="quistion-number">۱</span>
+                <h3 class="quistion-name">(الحديقة جميلة أزهارها)، ما إعراب أزهارها؟ </h3>
+            </div>
+
+            <div class="answer">
+                <input name="q1" id="q1a1" type="radio">
+                <label for="q1a1">مبتدأ</label>
+            </div>
+            <div class="answer">
+                <input name="q1" id="q1a2" type="radio">
+                <label for="q1a2">بدل</label>
+            </div>
+            <div class="answer">
+                <input data-answer="true" class="right" name="q1" id="q1a3" type="radio">
+                <label for="q1a3">فاعل</label>
+            </div>
+            <div class="answer">
+                <input name="q1" id="q1a4" type="radio">
+                <label for="q1a4">مفعول به</label> f </div>
+
+        </div>
+        <div class="question">
+            <div class="question-part">
+                <span class="quistion-number">۲</span>
+                <h3 class="quistion-name">(البيت غرفه كثيرة) ما إعراب غرفه؟</h3>
+            </div>
+
+            <div class="answer">
+                <input data-answer="true" class="right" name="q2" id="q2a1" type="radio">
+                <label for="q2a1">مبتدأ</label>
+            </div>
+            <div class="answer">
+                <input name="q2" id="q2a2" type="radio">
+                <label for="q2a2">بدل</label>
+            </div>
+            <div class="answer">
+                <input name="q2" id="q2a3" type="radio">
+                <label for="q2a3">فاعل</label>
+            </div>
+            <div class="answer">
+                <input name="q2" id="q2a4" type="radio">
+                <label for="q2a4">مضاف إليه</label>
+            </div>
+        </div>
+        <div class="question">
+            <div class="question-part">
+                <span class="quistion-number">۳</span>
+                <h3 class="quistion-name">(الحياة بها عبر كثيرة)، ما إعراب عبر؟</h3>
+            </div>
+
+            <div class="answer">
+                <input data-answer="true" class="right" name="q3" id="q3a1" type="radio">
+                <label for="q3a1">مبتدأ</label>
+            </div>
+            <div class="answer">
+                <input name="q3" id="q3a2" type="radio">
+                <label for="q3a2">مضاف إليه</label>
+            </div>
+            <div class="answer">
+                <input name="q3" id="q3a3" type="radio">
+                <label for="q3a3">نعت  </label>
+            </div>
+            <div class="answer">
+                <input name="q3" id="q3a4" type="radio">
+                <label for="q3a4">  خبر  </label>
+            </div>
+        </div>
+        <div class="question">
+            <div class="question-part">
+                <span class="quistion-number">٤</span>
+                <h3 class="quistion-name">(أفضل ما في هذا الكون وما يحتويه من أشياء محببة للنفس وغير محببة أصدقاء يعرفون معني أن تكون صديقا)، ما إعراب (أصدقاء)؟</h3>
+            </div>
+            <div class="answer">
+                <input name="q4" id="q4a1" type="radio">
+                <label for="q4a1">مفعول به</label>
+            </div>
+            <div class="answer">
+                <input name="q4" id="q4a2" type="radio">
+                <label for="q4a2">مبتدأ</label>
+            </div>
+            <div class="answer">
+                <input data-answer="true" class="right" name="q4" id="q4a3" type="radio">
+                <label for="q4a3">خبر</label>
+            </div>
+            <div class="answer">
+                <input name="q4" id="q4a4" type="radio">
+                <label for="q4a4">فاعل</label>
+            </div>
+
+        </div>
+        <div class="question">
+            <div class="question-part">
+                <span class="quistion-number">۵</span>
+                <h3 class="quistion-name">(أحب أن أذهب وحدي إلى المدرسة) ما إعراب وحدي؟</h3>
+            </div>
+            <div class="answer">
+                <input name="q5" id="q5a1" type="radio">
+                <label for="q5a1">توكيد </label>
+            </div>
+            <div class="answer">
+                <input name="q5" id="q5a2" type="radio">
+                <label for="q5a2">فاعل</label>
+            </div>
+            <div class="answer">
+                <input data-answer="true" class="right" name="q5" id="q5a3" type="radio">
+                <label for="q5a3">حال</label>
+            </div>
+            <div class="answer">
+                <input name="q5" id="q5a4" type="radio">
+                <label for="q5a4">مفعول به </label>
+            </div>
+        </div>
+        <div class="question">
+            <div class="question-part">
+                <span class="quistion-number">٦</span>
+                <h3 class="quistion-name">( يا صديقي، يجب عليك أن تجتهد الآن فحلمك ينتظرك)، ما محل المصدر المؤؤل؟</h3>
+            </div>
+            <div class="answer">
+                <input name="q6" id="q6a1" type="radio">
+                <label for="q6a1">مضاف إليه</label>
+            </div>
+            <div class="answer">
+                <input data-answer="true" class="right" name="q6" id="q6a2" type="radio">
+                <label for="q6a2">فاعل</label>
+            </div>
+            <div class="answer">
+                <input name="q6" id="q6a3" type="radio">
+                <label for="q6a3">  مبتدأ مؤخر</label>
+            </div>
+            <div class="answer">
+                <input name="q6" id="q6a4" type="radio">
+                <label for="q6a4"> مفعول به</label>
+            </div>
+        </div>
+        <div class="question">
+            <div class="question-part">
+                <span class="quistion-number">۷</span>
+                <h3 class="quistion-name">(ثمة أمل كبير منك)، ما إعراب أمل؟</h3>
+            </div>
+            <div class="answer">
+                <input name="q7" id="q7a1" type="radio">
+                <label for="q7a1">مضاف إليه</label>
+            </div>
+            <div class="answer">
+                <input data-answer="true" class="right" name="q7" id="q7a2" type="radio">
+                <label for="q7a2">مبتدأ مؤخر  </label>
+            </div>
+            <div class="answer">
+                <input name="q7" id="q7a3" type="radio">
+                <label for="q7a3">  خبر</label>
+            </div>
+        </div>
+        <div class="question">
+            <div class="question-part">
+                <span class="quistion-number">۸</span>
+                <h3 class="quistion-name">(لولا الخطأ ما تعلمنا)، ما إعراب الخطأ؟</h3>
+            </div>
+            <div class="answer">
+                <input data-answer="true" class="right" name="q8" id="q8a1" type="radio">
+                <label for="q8a1">مبتدأ</label>
+            </div>
+            <div class="answer">
+                <input name="q8" id="q8a2" type="radio">
+                <label for="q8a2">خبر</label>
+            </div>
+            <div class="answer">
+                <input name="q8" id="q8a3" type="radio">
+                <label for="q8a3">فاعل</label>
+            </div>
+            <div class="answer">
+                <input name="q8" id="q8a4" type="radio">
+                <label for="q8a4">مضاف إليه </label>
+            </div>
+        </div>
+        <div class="question">
+            <div class="question-part">
+                <span class="quistion-number">۹</span>
+                <h3 class="quistion-name"> (لولا المشقة ساد الناس كلهم)، الخبر محذوف وتقديره؟</h3>
+            </div>
+            <div class="answer">
+                <input name="q9" id="q9a1" type="radio">
+                <label for="q9a1">ضرورية</label>
+            </div>
+            <div class="answer">
+                <input name="q9" id="q9a2" type="radio">
+                <label for="q9a2">مهمة </label>
+            </div>
+            <div class="answer">
+                <input data-answer="true" class="right" name="q9" id="q9a3" type="radio">
+                <label for="q9a3">موجودة </label>
+            </div>
+            <div class="answer">
+                <input name="q9" id="q9a4" type="radio">
+                <label for="q9a4">متعبة </label>
+            </div>
+        </div>
+        <div class="question">
+            <div class="question-part">
+                <span class="quistion-number">۱۰</span>
+                <h3 class="quistion-name">(في البيت والدي)، حكم تأخير المبتدأ؟</h3>
+            </div>
+            <div class="answer">
+                <input name="q10" id="q10a1" type="radio">
+                <label for="q10a1"> واجب</label>
+            </div>
+            <div class="answer">
+                <input data-answer="true" class="right" name="q10" id="q10a2" type="radio">
+                <label for="q10a2">جائز</label>
+            </div>
+        </div>
+        <div class="question">
+            <div class="question-part">
+                <span class="quistion-number">۱۱</span>
+                <h3 class="quistion-name">(ما لنا إلا الله)، ما حكم تأخير المبتدأ؟</h3>
+            </div>
+
+            <div class="answer">
+                <input name="q11" id="q11a1" type="radio">
+                <label for="q11a1"> جائز </label>
+            </div>
+            <div class="answer">
+                <input data-answer="true" class="right" name="q11" id="q11a2" type="radio">
+                <label for="q11a2">واجب </label>
+            </div>
+        </div>
+        <div class="question">
+            <div class="question-part">
+                <span class="quistion-number">۱۲</span>
+                <h3 class="quistion-name">أي المصادر الآتية خماسي؟</h3>
+            </div>
+            <div class="answer">
+                <input name="q12" id="q12a1" type="radio">
+                <label for="q12a1">تحقيق</label>
+            </div>
+            <div class="answer">
+                <input data-answer="true" class="right" name="q12" id="q12a2" type="radio">
+                <label for="q12a2">تحقق </label>
+            </div>
+            <div class="answer">
+                <input name="q12" id="q12a3" type="radio">
+                <label for="q12a3">إنجاز </label>
+            </div>
+            <div class="answer">
+                <input name="q12" id="q12a4" type="radio">
+                <label for="q12a4">مشاركة </label>
+            </div>
+        </div>
+        <div class="question">
+            <div class="question-part">
+                <span class="quistion-number">۱۳</span>
+                <h3 class="quistion-name">(الولد محمود خلقه)، ما إعراب خلقه؟</h3>
+            </div>
+            <div class="answer">
+                <input name="q13" id="q13a1" type="radio">
+                <label for="q13a1">فاعل</label>
+            </div>
+            <div class="answer">
+                <input name="q13" id="q13a2" type="radio">
+                <label for="q13a2">مبتدأ ثان مؤخر</label>
+            </div>
+            <div class="answer">
+                <input name="q13" id="q13a3" type="radio">
+                <label for="q13a3">مفعول به</label>
+            </div>
+            <div class="answer">
+                <input data-answer="true" class="right" name="q13" id="q13a4" type="radio">
+                <label for="q13a4">نائب فاعل</label>
+            </div>
+
+        </div>
+        <div class="question">
+            <div class="question-part">
+                <span class="quistion-number">۱٤</span>
+                <h3 class="quistion-name"> (زرت حديقة أزهارها جميلة)، أزهارها تعرب؟</h3>
+            </div>
+
+            <div class="answer">
+                <input name="q14" id="q14a1" type="radio">
+                <label for="q14a1">فاعل</label>
+            </div>
+            <div class="answer">
+                <input name="q14" id="q14a2" type="radio">
+                <label for="q14a2">بدل</label>
+            </div>
+            <div class="answer">
+                <input data-answer="true" class="right" name="q14" id="q14a3" type="radio">
+                <label for="q14a3">مبتدأ</label>
+            </div>
+            <div class="answer">
+                <input name="q14" id="q14a4" type="radio">
+                <label for="q14a4">نعت</label>
+            </div>
+        </div>
+        <div class="question">
+            <div class="question-part">
+                <span class="quistion-number">۱۵</span>
+                <h3 class="quistion-name">(زرت حديقة أزهارها جميلة)، إن "أزهارها جميلة"؟</h3>
+            </div>
+            <div class="answer">
+                <input name="q15" id="q15a1" type="radio">
+                <label for="q15a1">جملة حال</label>
+            </div>
+            <div class="answer">
+                <input name="q15" id="q15a2" type="radio">
+                <label for="q15a2">جملة خبر</label>
+            </div>
+            <div class="answer">
+                <input data-answer="true" class="right" name="q15" id="q15a3" type="radio">
+                <label for="q15a3">جملة نعت</label>
+            </div>
+        </div>
+        <div class="question">
+            <div class="question-part">
+                <span class="quistion-number">۱٦</span>
+                <h3 class="quistion-name">(أن تذاكر أمر جيد), ما إعراب أمر؟</h3>
+            </div>
+            <div class="answer">
+                <input name="q16" id="q16a1" type="radio">
+                <label for="q16a1">مفعول به </label>
+            </div>
+            <div class="answer">
+                <input data-answer="true" class="right" name="q16" id="q16a2" type="radio">
+                <label for="q16a2">خبر </label>
+            </div>
+            <div class="answer">
+                <input name="q16" id="q16a3" type="radio">
+                <label for="q16a3">فاعل </label>
+            </div>
+        </div>
+        <div class="question">
+            <div class="question-part">
+                <span class="quistion-number">۱۷</span>
+                <h3 class="quistion-name">(الحياة بها عبر كثيرة)، ما إعراب كثيرة؟</h3>
+            </div>
+
+            <div class="answer">
+                <input name="q17" id="q17a1" type="radio">
+                <label for="q17a1"> مبتدأ </label>
+            </div>
+            <div class="answer">
+                <input name="q17" id="q17a2" type="radio">
+                <label for="q17a2">خبر </label>
+            </div>
+            <div class="answer">
+                <input data-answer="true" class="right" name="q17" id="q17a3" type="radio">
+                <label for="q17a3">نعت </label>
+            </div>
+            <div class="answer">
+                <input name="q17" id="q17a4" type="radio">
+                <label for="q17a4">مضاف إليه </label>
+            </div>
+        </div>
+        <div class="question">
+            <div class="question-part">
+                <span class="quistion-number">۱۸</span>
+                <h3 class="quistion-name">(تمسك بمبادئ قويمة)، مبادئ مجرورة؟</h3>
+            </div>
+
+            <div class="answer">
+                <input data-answer="true" class="right" name="q18" id="q18a1" type="radio">
+                <label for="q18a1">بالفتحة </label>
+            </div>
+            <div class="answer">
+                <input name="q18" id="q18a2" type="radio">
+                <label for="q18a2"> بالكسرة </label>
+            </div>
+        </div>
+        <div class="question">
+            <div class="question-part">
+                <span class="quistion-number">۱۹</span>
+                <h3 class="quistion-name"> (تمسك بمبادئ المتفوقين)، مبادئ مجرورة؟</h3>
+            </div>
+
+            <div class="answer">
+                <input name="q19" id="q19a1" type="radio">
+                <label for="q19a1">بالفتحة</label>
+            </div>
+            <div class="answer">
+                <input data-answer="true" class="right" name="q19" id="q19a2" type="radio">
+                <label for="q19a2">بالكسرة </label>
+            </div>
+        </div>
+        <div class="question">
+            <div class="question-part">
+                <span class="quistion-number">۲۰</span>
+                <h3 class="quistion-name"> (ذلكم الطريق)، ما إعراب الطريق؟</h3>
+            </div>
+
+            <div class="answer">
+                <input name="q20" id="q20a1" type="radio">
+                <label for="q20a1">بدل</label>
+            </div>
+            <div class="answer">
+                <input data-answer="true" class="right" name="q20" id="q20a2" type="radio">
+                <label for="q20a2">خبر</label>
+            </div>
+        </div>
+
+
+
+        <div class="button">
+            <input id="Answerbtn" type="button" value="إرسال الإجابات">
+        </div>
+    </div>
+    <!-- </div> -->
+
+
+    <script src="./scripts/back/quiz.js"></script>
+
+</body>
+
+</html>

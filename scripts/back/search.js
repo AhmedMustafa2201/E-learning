@@ -27,7 +27,7 @@ function test_me(e, orderBy) {
         }
       });
       // document.getElementsByClassName("trending-courses")[0].innerHTML=`<h1>لا يوجد بيانات لعرضها</h1>`
-      document.getElementById("search-result").innerHTML = s.docs.length
+      document.getElementById("search-result").innerHTML = document.getElementsByClassName("t-course").length;
     });
   } else {
     getAllData(lessonCollection)
@@ -46,7 +46,7 @@ function test_me(e, orderBy) {
             </div>
              </div>`;
           });
-          document.getElementById("search-result").innerHTML = res.docs.length
-    })
+          document.getElementById("search-result").innerHTML = document.getElementsByClassName("t-course").length;
+        })
   }
 }

@@ -115,7 +115,7 @@ function exec() {
           ).innerHTML += `<div style="width: 100%; display: flex;" class="signout">
           <button style="height: 10%; margin: auto 0;" onclick="signOut()" id="signout">سجل الخروج</button>
           <img src=${user.photoURL!==""?user.photoURL:"images/public/profile.png"} 
-          style="width: 8%;height: 30%; margin-left: 10px;margin-top: 1.5em;margin-right: 1em; border-radius: 50% 50%;" alt="">
+          style="width: 8%;height: 33px; margin-left: 10px;margin-top: 1.5em;margin-right: 1em; border-radius: 50% 50%;" alt="">
           <span title="عرض البروفايل" style="cursor: pointer" onclick="goto('./profile.html?id=${res.docs[0].id}')" id="profileEmail">${user.email}</span>
       </div>`;
         });
@@ -159,3 +159,4 @@ function getSpecificCourse(id){
 function getSpecificLesson(id, q){
   redirectIfAuth(`./lesson.html?id=${id}&q=${q}`)
 }
+

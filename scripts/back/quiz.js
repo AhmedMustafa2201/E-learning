@@ -31,7 +31,9 @@ let profileEmail = document.getElementById("profileEmail")
 let signout = document.getElementById("signout")
 
 
-
+document.getElementById("Answerbtn").onclick = function(){
+    this.style.display = "none"
+  }
 
 
 // My variables

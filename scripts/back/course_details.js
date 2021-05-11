@@ -1,5 +1,6 @@
 (function(){
     var courseName = ''
+    var quizCourse
     console.log(decodeURI(location.search.split('=')[1]))
     courseCollection.doc(decodeURI(location.search.split('=')[1])).get()
         .then(res=> {
@@ -13,6 +14,7 @@
             document.getElementById("rate-number").innerHTML = res.data().rating
             document.getElementById("desc-text").innerHTML = res.data().description
             document.getElementsByClassName("rating-stars")[0].innerHTML=repeatedStr.repeat(res.data().rating)
+            quizCourse=res.data().exam
         }).catch(err => console.error(err))
 
     lessonCollection.where("courseID", "==", decodeURI(location.search.split('=')[1])).orderBy('img', 'asc').get()
@@ -25,10 +27,11 @@
               </div>`
             });
             tmp+=`<div class="lesson-content">
-            <button onclick="location.assign('./quiz .html?name=${courseName}')" class="accordion">الاختبار على الدورة</button>
+            <button onclick="location.assign('./${quizCourse}?name=${courseName}')" class="accordion">الاختبار على الدورة</button>
           </div>`
 
             document.getElementsByClassName("lessons")[0].innerHTML=tmp
 
         })
 })()
+
