@@ -81,6 +81,7 @@ button , input{
     font-weight: bold;
     padding: 10px 25px;
     transition: all .6s;
+    cursor: pointer;
 }
 #signin{
     border: 1px solid #555;
@@ -97,6 +98,43 @@ button , input{
     background:#132c33 ;
     color: #fff;
 }
+
+.signout {
+    width: 45%;
+    direction: ltr;
+}
+
+#signout {
+    outline: none;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 10px 25px;
+    transition: all .6s;
+    cursor: pointer;
+}
+
+.signout img {
+    width: 8%;
+    height: 30%;
+    margin-left: 10px;
+}
+
+.signout #profileEmail {
+    color: #00adb5;
+    font-weight: bold;
+}
+
+#signout {
+    border: 1px solid #555;
+    color: #555;
+}
+
+#signout:hover {
+    background: #132c33;
+    color: #fff;
+}
+
 ul.nav li a:hover{
     color:#00adb5 ;
 }

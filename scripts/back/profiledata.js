@@ -1,17 +1,17 @@
 // Firebase configuration
-var firebaseConfig = {
-    apiKey: "AIzaSyB96lcccUfjnSvSaouH4dZwYn7mTAIKZnM",
-    authDomain: "profile-5bd53.firebaseapp.com",
-    projectId: "profile-5bd53",
-    storageBucket: "profile-5bd53.appspot.com",
-    messagingSenderId: "368629863337",
-    appId: "1:368629863337:web:e0cd2aa984e72aca5a6ab8"
-  };
+// var firebaseConfig = {
+//     apiKey: "AIzaSyB96lcccUfjnSvSaouH4dZwYn7mTAIKZnM",
+//     authDomain: "profile-5bd53.firebaseapp.com",
+//     projectId: "profile-5bd53",
+//     storageBucket: "profile-5bd53.appspot.com",
+//     messagingSenderId: "368629863337",
+//     appId: "1:368629863337:web:e0cd2aa984e72aca5a6ab8"
+//   };
 
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-const db = firebase.firestore();
-db.settings({timeStampsInSnapshots:true});
+// // Initialize Firebase
+// firebase.initializeApp(firebaseConfig);
+// const db = firebase.firestore();
+// db.settings({timeStampsInSnapshots:true});
 var user = firebase.auth().currentUser;
 // getting 
 var fname = document.querySelector(".first-name input");
@@ -26,16 +26,17 @@ var profileImg = document.getElementById("profile-img");
 function setData (doc){
     fname.value = doc.data().name.split(" ")[0];
     lname.value = doc.data().name.split(" ")[1];
-    email.value = doc.data().email;
+    email.value = doc.data().user_email;
     fullName.innerHTML = doc.data().name; 
     // img.src = doc.data().photo;
 }
 
 
 
-firebase.auth().onAuthStateChanged((user) => {
+auth.onAuthStateChanged((user) => {
     if (user){
-     db.collection('users').doc(user.uid).get().then(doc =>{
+    document.getElementById("profile-img").src=user.photoURL!=""?user.photoURL:""
+     userCollection.doc(decodeURI(location.search.split('=')[1])).get().then(doc =>{
         // console.log(doc.data())
         setData(doc);
         })
@@ -49,11 +50,12 @@ var profileSaveNewData = document.getElementById("save-profile");
 profileSaveNewData.addEventListener("click",updateData);
 
 function updateData(){
-    firebase.auth().onAuthStateChanged((user) => {
+    auth.onAuthStateChanged((user) => {
         if (user){
-         db.collection('users').doc(user.uid).update({
-            name:`${fname.value} ${lname.value}`,
-         })
+         userCollection.doc(decodeURI(location.search.split('=')[1])).update({
+            "name":`${fname.value} ${lname.value}`,
+         }).then(res => alert("تم"))
+         .catch(e=>console.log(e))
         }
     })
 }
@@ -78,33 +80,34 @@ changeEmailPasswordBtn.addEventListener("click",updateEmail)
 function updateEmail(){
 
     //update email in firestore
-    firebase.auth().onAuthStateChanged((user) => {
+    auth.onAuthStateChanged((user) => {
         if(user){
-         db.collection('users').doc(user.uid).update({
-            email:changeEmail.value
-            })
+         userCollection.doc(decodeURI(location.search.split('=')[1])).update({
+            user_email:changeEmail.value
+        })
         
         //update email in auth
-        firebase.auth().currentUser.updateEmail(changeEmail.value)
+        auth.currentUser.updateEmail(changeEmail.value).then(res => alert("تم"))
+            .catch(e =>console.log(e))
         
         // change the passowrd 
         
-        rNewPassword.onkeyup = function(){
+        
+            debugger
             if(newPassword.value == rNewPassword.value){
-                console.log("hi")
-                var user = firebase.auth().currentUser;
                 console.log("hi")
                 // newPassword.value = getASecureRandomPassword();
                 console.log("hi")
                 
-                user.updatePassword( newPassword.value).then(function() {
+                auth.currentUser.updatePassword(newPassword.value).then(function() {
                         console.log("hi")
-                        alert("passowrd updated")
+                        alert("تم")
+                        location.assign("./login.html")
                     }).catch(function(error) {
-                    console.log("error")
+                        console.log(error)
                     });
             }
-        }
+        
      } });
 }    
 
@@ -119,7 +122,7 @@ var closeAccountBtn = document.getElementById("closeAcount");
 closeAccountBtn.addEventListener("click",()=>{
    var makeSure= confirm("هل تريد تأكيد حذف الحساب؟");
    if(makeSure){
-    deleteAccount()
+    // deleteAccount()
    }
 
 });
@@ -145,27 +148,37 @@ function deleteAccount(){
 
 // Upload Image 
 
-const ref = firebase.storage().ref();
+// const ref = firebase.storage().ref();
 var save_Photo = document.getElementById("save-photo");
 
-save_Photo.addEventListener("click",savePhoto);
+save_Photo.addEventListener("click",uploadPhoto);
 
 function uploadPhoto(){
-    firebase.auth().onAuthStateChanged((user) => {
+    auth.onAuthStateChanged((user) => {
         if(user){
-
+debugger
             var file = document.getElementById("file-upload").files[0];
-            var name = new Date() + '-' + file.name;
+            var name = user.uid;
             var metaData = {
                 contentType:file.type
             }
             const task = ref.child(name).put(file,metaData);
 
-            task.then(snapshot =>{snapshot.ref.getDownloadURL()})
+            task.then(snapshot => snapshot.ref.getDownloadURL())
                 .then(url =>{
+                    console.log(url)
                 // set img in firestore  // 
+                user.updateProfile({
+                    photoURL: url
+                  }).then(function() {
+                    console.log("done")
+                  }).catch(function(error) {
+                    console.log(error) 
+                  });
+                  
+                document.getElementById("profile-img").src=url
                 
-            })
+            }).catch(e => console.log(e))
         }
     })        
 }

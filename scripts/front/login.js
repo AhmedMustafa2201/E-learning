@@ -28,6 +28,7 @@ let googleBtn = document.getElementById("googleBtn")
 
 //login with email
 loginBtn.addEventListener("click", () => {
+    document.getElementById("adding").style.display="none"
 
     //getting email & password
     const email = txtEmail.value;
@@ -37,9 +38,17 @@ loginBtn.addEventListener("click", () => {
     auth.signInWithEmailAndPassword(email, password).then(user => {
         document.getElementById('error').innerHTML = "";
         // location.assign("https://www.facebook.com/")
-        setTimeout(() => {
-            redirectIfAuth("/")
-        }, 1000);
+        console.log(user.user.email)
+        userCollection.where("user_email", "==", user.user.email).get()
+        .then(res=>{
+            if (res.docs[0].data().subscriped == false) {
+              redirectIfAuth("./payment.html");
+            } else {
+              redirectIfAuth("./");
+            }
+        }).catch(err=>console.log(err))
+        // redirectIfAuth("./payment.html")
+        
     }).catch(error => {
         document.getElementById('error').style.color = 'red';
         document.getElementById('error').innerHTML = error.message;

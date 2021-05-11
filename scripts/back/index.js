@@ -12,7 +12,7 @@
                 </div>
                 <div class="t-course-hover">
                     <div></div>
-                    <h4 onclick="getSpecificLesson('${d.id}')">ابدأ الآن</h4>
+                    <h4 onclick="getSpecificLesson('${d.id}', '${d.data().videoLink}')">ابدأ الآن</h4>
                 </div>
                  </div>`;
                 // d.data()
@@ -42,6 +42,6 @@ function getSpecificCourse(id){
     location.assign("./course_details.html?id="+id)
 }
 
-function getSpecificLesson(id){
-    redirectIfAuth(`./lesson.html?id=${id}`)
+function getSpecificLesson(id, q){
+    redirectIfAuth(`./lesson.html?id=${id}&q=${q}`)
 }

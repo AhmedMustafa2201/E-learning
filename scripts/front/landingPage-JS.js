@@ -18,7 +18,6 @@ window.onscroll = function(){
         document.getElementById("goUp").style.display = "block"
     }else{
         document.getElementById("goUp").style.display = "none"
-
     }
 }
 

@@ -7,6 +7,7 @@
 body{
     font-family: 'Tajawal', sans-serif;
     direction: rtl;
+    background-color: #FAFBFC;
     /* height: 5000px; */
 }
 .container{
@@ -25,16 +26,12 @@ body{
 a{
     text-decoration: none;
 }
-button , input{
-    font-family: inherit;
-}
-/********************************************/
+/*****************************************************************************************/
 .header{
     width: 100%;
     height: 85px;
-    position: fixed;
+    /* position: fixed; */
     line-height: 80px;
-    z-index: 2;
 }
 .header.color{
     background: #eeefff;
@@ -75,7 +72,6 @@ button , input{
     font-weight: bold;
     padding: 10px 25px;
     transition: all .6s;
-    cursor: pointer;
 }
 #signin{
     border: 1px solid #555;
@@ -92,6 +88,7 @@ button , input{
     background:#132c33 ;
     color: #fff;
 }
+
 
 .signout {
     width: 45%;
@@ -133,126 +130,64 @@ ul.nav li a:hover{
     color:#00adb5 ;
 }
 /*  THE END OF HEADER STYLING*/
-/**************************************************/
-.course-overview{
-    display: flex;
-    justify-content: space-between;
-    height: 420px;
-    padding: 20px 20px 0;
-    background: #555;
-}
-.detial{
+
+.subscription {
+    flex-grow: 1;
     width: 50%;
-    padding-top: 40px;
-}
-.detial *{
-    color: #fff;
-}
-.course-name{
-    font-weight: 500;
-    font-size: 24px;
-}
-.course-brief{
-    width: 95%;
-    margin: 20px 5px;
-}
-#rate-number{
-    display: inline-block;
-    margin-left: 5px;
-}
-.rating-stars{
-    list-style: none;
-    display: inline-block;
-}
-.rating-stars li  {
-    display: inline-block;
-}
-.rating{
-    margin-bottom: 20px;
-}
-.attend{
-    margin-bottom: 20px;
-}
-.buttons button{
-    outline: 0;
-    border: 2px solid #fff;
-    letter-spacing: 1.7px;
-    font-weight: 500;
-    border-radius: 5px;
-    color: #fff;
-    background-color: #444;
-    padding: 10px 20px;
-    font-size: 16px;
-}
-#share{
-    margin-left: 5px;
-}
-/******************/
-.pic-desc{
-    width:27%;
-    height: 80%;
-    text-align: center;
-    padding: 5px;
-    background: #fff;
-    box-shadow: 1px 1px 2px #ccc;
-    margin: auto 0;
-}
-.course-img{
-    height: 60%;
-    width: 100%;
-    margin-bottom: 20px;
-    border-radius: 10px;
-    box-shadow: 1px 1px 2px #bbb;
-}
-.course-img img{
-    width: 100%;
-    height: 100%;
-}
+    margin: 1em 1em;
+    border: 3px solid;
+    border-radius: 29px;
+    box-shadow: 8px 16px #e1dbdb;
+  }
 
-.price-duration *{
-    margin-bottom: 10px;
+  h1,
+  p {
     text-align: center;
-    padding-right: 10px;
-    direction: ltr;
+  }
+  h1{
+    margin: .5em;
+  }
+  p{
+    margin: .25em;
+  }
 
-    color: #444;
-}
-#addToCart{
-    width: 85%;
-    padding: 12px 0;
-    outline: 0;
-    border-radius: 5px;
-    border: 0;
-    background: #00adb5;
-    color: #fff;
-    font-size: 16px;
-    font-weight: 500;
-    letter-spacing: 1.5px;
-    margin-top: 5px;
-}
-/***********************************************************/
-/* course description*/
-.desc{
-    padding:30px;
-}
-.desc h3{
-    font-size: 22px;
-    font-weight: 500px;
-    color: #444;
-}
-.desc p{
-    width: 60%;
-    margin-top: 20px;
-    color: #666;
-}
-.desc a{
-    margin-top: 15px;
-    color: #00adb5;
+  ul {
+    list-style-type: none;
+  }
+
+  #list>li:before {
+    content: "✔️";
     display: inline-block;
-}
-/********************************************************************/
- /* pre Loader*/
- .afterloader{
+    margin-left: .5em;
+    width: 1.3em;
+  }
+
+  .fit {
+    width: 50%;
+    margin: auto;
+  }
+  .button{
+    width: 25%;
+    margin: 1em auto;
+  }
+  #subButton{
+    width: 130px;
+    height: 40px;
+    border: 2px solid;
+    border-radius: 7px;
+    background-color: #e1e1a5;
+    font-weight: bold;
+    transition: background-color 1s;
+    cursor: pointer;
+
+  }
+  #subButton:hover{
+    background-color: #8f8153;
+  }
+
+
+  /* pre Loader*/
+.afterloader{
     display: none;
 }
 #loader{
@@ -298,53 +233,25 @@ ul.nav li a:hover{
     box-shadow: .5px .5px 9px #555;
     border: none;
 }
-/********************************************************************/
-/*course-lessons*/
-.course-lessons{
-    padding: 20px;
-}
-.course-lessons h2{
-    margin-bottom: 20px;
-    color: #444;
-}
-.lessons{
-    border: 1px solid #bbb;
-    border-radius:5px ;
-    width: 90%;
-    margin-bottom: 20px;
-}
-.accordion{
-    padding: 20px 10px;
-    width: 100%;
-    text-align: right;
-    outline: 0;
-    border: 0;
-    border-bottom: 1px solid #bbb;
-    font-size: 18px;
-    font-weight: 500;
-    color: #555;
-    cursor: pointer;
-}
-.panel{
-    display: none;
-    padding: 20px;
-}
-/*****************************************************************/
-.course-comments{
-    padding: 20px;
+/*END OF TRENDING COURSES*/
+/****************************************************************/
 
-}
-.course-comments h2 {
-    color: #444;
-    margin-bottom: 20px;
-}
 /*footer*/
 .footer{
-    width: 100%;
+    /* width: 100%;
     height: 100px;
     text-align: center;
     background-color: #333333;
-    color: white;
+    color: white; */
+
+    position:absolute;
+   bottom:0;
+   width:100%;
+   height:115px;   
+   background-color: #333333;
+   color: white;
+   text-align: center;
+
 }
 .footer ul{
     list-style: none;
@@ -359,3 +266,45 @@ ul.nav li a:hover{
 .footer p {
     color: white;
 }
+
+/****************************************************************/
+
+ /* The Modal (background) */
+ .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 40%; /* Could be more or less, depending on screen size */
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: relative;
+    top: -15px;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  } 

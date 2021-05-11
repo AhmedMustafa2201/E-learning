@@ -54,6 +54,8 @@ confirmPassword.addEventListener("keyup", check)
 regBtn.addEventListener("click", (e) => {
 
     e.preventDefault()
+  document.getElementById("adding").style.display="none"
+
         //getting email & password
     const email = txtEmail.value;
     const password = txtPassword.value;
@@ -66,7 +68,9 @@ regBtn.addEventListener("click", (e) => {
         db.collection("users").add({
             name: `${fName.value} ${lName.value}`,
             phone: phone.value,
-            user_email: txtEmail.value
+            user_email: txtEmail.value,
+            subscriped: false
+
         })
         setTimeout(() => {
             redirectIfAuth("/login.html")

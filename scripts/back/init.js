@@ -25,9 +25,8 @@ var firebaseConfig = {
   projectId: "elearning-fefd0",
   storageBucket: "elearning-fefd0.appspot.com",
   messagingSenderId: "558840923885",
-  appId: "1:558840923885:web:2ffb4d2296c24b62f9eee4"
+  appId: "1:558840923885:web:2ffb4d2296c24b62f9eee4",
 };
-
 
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
@@ -40,62 +39,105 @@ const { serverTimestamp } = firebase.firestore.FieldValue;
 const courseCollection = db.collection("course");
 const lessonCollection = db.collection("lessons");
 const commentCollection = db.collection("comment");
-const userCollection = db.collection("user");
+const userCollection = db.collection("users");
 
-
-function redirectIfAuth(url){
-  auth.onAuthStateChanged(function(user) {
-    if (user) {
+function redirectIfAuth(url, lesson) {
+  auth.onAuthStateChanged(function (user) {
+    if (lesson !== undefined) {
+      if (user) {
         // User is signed in.
-        location.assign(url)
+        location.assign(url);
         // return user
-    } else {
+      } else {
         // No user is signed in.
-        alert("no active user")
-        location.assign("./login.html")
+        alert("يلزم تسجيل الدخول");
+        location.assign("./login.html");
+      }
+    } else {
+      if (user) {
+        // User is signed in.
+        // location.assign(url)
+        userCollection
+          .where("user_email", "==", user.email)
+          .get()
+          .then((res) => {
+            debugger;
+            console.log(res.docs[0].data().subscriped);
 
+            res.docs[0].data().subscriped == true
+              ? location.assign(url)
+              : location.assign("./payment.html");
+          })
+          .catch((err) => console.log(err));
+        // return user
+      } else {
+        // No user is signed in.
+        alert("يلزم تسجيل الدخول");
+        location.assign("./login.html");
+      }
     }
   });
 }
 
 function signOut() {
-  auth.signOut().then(resp => {
-      location.assign("./login.html")
-  }).catch((error) => {
-      console.log(error.message)
-  })
+  document.getElementById("adding").style.display = "none";
+  auth
+    .signOut()
+    .then((resp) => {
+      location.assign("./login.html");
+    })
+    .catch((error) => {
+      console.log(error.message);
+    });
 }
 
-function exec(){
-  auth.onAuthStateChanged(function(user) {
-      if (user) {
-          document.getElementById("adding").innerHTML+=`<div class="signout">
+function exec() {
+  auth.onAuthStateChanged(function (user) {
+    debugger;
+
+    if (user) {
+      userCollection
+        .where("user_email", "==", user.email)
+        .get()
+        .then((res) => {
+          // console.log(res.docs[0].id)
+          document.getElementById(
+            "adding"
+          ).innerHTML += `<div style="width: 100%" class="signout">
           <button onclick="signOut()" id="signout">سجل الخروج</button>
           <img src="images/public/profile.png" alt="">
-          <span id="profileEmail">${user.email}</span>
-      </div>`
-      } else {
-          document.getElementById("adding").innerHTML+= `
-          <div class="signin-signup">
-          <button style="cursor: pointer;" onclick="location.assign('./login.html')" id="signin">دخول</button>
-          <button style="cursor: pointer;" onclick="location.assign('./register.html')" id="signup">سجل مجاناً</button>
+          <span title="عرض البروفايل" style="cursor: pointer" onclick="goto('./profile.html?id=${res.docs[0].id}')" id="profileEmail">${user.email}</span>
+      </div>`;
+        });
+    } else {
+      document.getElementById("adding").innerHTML += `
+          <div style="width: 100%" class="signin-signup">
+          <button style="cursor: pointer;" onclick="goto('./login.html')" id="signin">دخول</button>
+          <button style="cursor: pointer;" onclick="goto('./register.html')" id="signup">سجل مجاناً</button>
       </div>
-          `
-      }
-    });
+          `;
+    }
+  });
+}
+
+function getLessonData(id, q) {
+  redirectIfAuth(`./lesson.html?id=${id}&q=${q}`, "lesson");
+}
+
+function goto(url) {
+  document.getElementById("adding").style.display = "none";
+  location.assign(url);
 }
 
 // preloader
 var myVar;
-window.onload =function myFunction() {
-  debugger
-  exec()
+window.onload = function myFunction() {
+  exec();
   myVar = setTimeout(showPage, 3000);
-
-}
+};
 
 function showPage() {
   document.getElementById("loader").style.display = "none";
   document.querySelector(".afterloader").style.display = "block";
-  clearTimeout(myVar)
+  clearTimeout(myVar);
 }

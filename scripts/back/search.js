@@ -11,7 +11,7 @@ function test_me(e, orderBy) {
     var text = e.trim();
     lessonCollection.orderBy('createdAt', 'desc').get().then((s) => {
       s.docs.forEach((d) => {
-        if (d.data().name.search(text) != -1) {
+        if (d.data().name.includes(text) ==true) {
           document.getElementsByClassName("trending-courses")[0].innerHTML+=
             `<div class="t-course">
             <div class="t-course-content">
@@ -48,21 +48,4 @@ function test_me(e, orderBy) {
           document.getElementById("search-result").innerHTML = res.docs.length
     })
   }
-    // courseCollection.add({
-    //   name: "التوابع وأنواعها",
-    //   img: "3.jpg",
-    //   price: 40,
-    //   rating: 5,
-    //   description: "ekrhvnre tgrtbb tr grevgjio erhfirugbvr",
-    //   feedback: ['"What a wonderful course!!" user 4', '"Well at go!!" user 6'],
-    //   createdAt: serverTimestamp(),
-    // });
-
-//   lessonCollection.add({
-//     name: "الجمع بأنواعه",
-//     videoLink:"https://www.youtube.com/watch?v=TWuPHGvMRq0",
-//     attachment:"file.pdf",
-//     courseID:"Ike2zeX5rgefv3DxtlPS",
-//     createdAt: serverTimestamp()
-//   })
 }
