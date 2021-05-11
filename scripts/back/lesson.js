@@ -100,6 +100,7 @@
 // })
 (function(){
     var courseName = ''
+    var quizCourse
     var tmp=``
 
     lessonCollection.doc(location.search.split('&')[0].split('=')[1]).get()
@@ -118,6 +119,7 @@
             </div>
         </div>`
         document.getElementsByClassName("lessons-list")[0].innerHTML+=tmp
+        quizCourse=res.data().exam
 
         })
         lessonCollection.where("courseID", "==", res.data().courseID).orderBy('img', 'asc').get()
@@ -134,7 +136,7 @@
                 tmp+=`
                 <div style="cursor: pointer;" class="lessons-content">
                     <div class="show-lessons">
-                        <button onclick="location.assign('./quiz .html?name=${courseName}')" class="show-lessons-Btn">الاختبار على الدورة</button>
+                        <button onclick="location.assign('./${quizCourse}?name=${courseName}')" class="show-lessons-Btn">الاختبار على الدورة</button>
                     </div>
                 </div>`
             document.getElementsByClassName("lessons-list")[0].innerHTML=tmp
