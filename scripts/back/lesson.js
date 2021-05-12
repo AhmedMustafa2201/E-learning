@@ -152,7 +152,7 @@
                 var tmp=``
                 res.docs.forEach(data=>{
                     tmp+=`<div style="display: flex; margin: .5em;" class="comment">
-                    <img src="${data.data().user_image}" style="width: 4%;height: 30%; border-radius: 53% 50%;" alt="">
+                    <img src="${data.data().user_image}" style="width: 30px; height: 30px; border-radius: 53% 50%;" alt="">
                     <h4 style="margin: 0 0.5em;">${data.data().user_name}</h4>
                     <p style="margin: 0 0.5em;">${data.data().content}</p>
                 </div>`
@@ -171,6 +171,7 @@ function getSpecificLesson(id, q){
 }
 
 function sendData(data){
+    var d = new Date()
     userCollection.where("user_email", "==", auth.currentUser.email).get()
     .then(res=>{
         commentCollection.add({
@@ -178,10 +179,10 @@ function sendData(data){
             lessonID: location.search.split('&')[0].split('=')[1],
             user_image: auth.currentUser.photoURL,
             user_name: res.docs[0].data().name,
-            createdAt: serverTimestamp
+            createdAt: `${d.getFullYear()}${d.getMonth()}${d.getDate()}${d.getHours()}${d.getMinutes()}${d.getSeconds()}`,
         }).then(res=>{
             commentCollection.where("lessonID", "==", location.search.split('&')[0].split('=')[1])
-                .orderBy("createdAt", "asc")
+                .orderBy("createdAt")
                 .get()
                 .then(res=>{
                     var tmp=``
