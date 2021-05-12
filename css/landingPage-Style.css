@@ -750,7 +750,7 @@ ul.nav li a:hover{
 }
 .comment-writer{
     align-items: center;
-    width: 50%;
+    width: 80%;
     border-radius: 50px;
 }
 .comment-body .comment-writer img{
