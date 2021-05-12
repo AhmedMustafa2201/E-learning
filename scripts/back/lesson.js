@@ -146,6 +146,7 @@
 
             document.getElementsByClassName("lesson-title")[0].innerHTML=res.data().name
             commentCollection.where("lessonID", "==", location.search.split('&')[0].split('=')[1])
+            .orderBy("createdAt", "asc")
             .get()
             .then(res=>{
                 var tmp=``
