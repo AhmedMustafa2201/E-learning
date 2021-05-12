@@ -148,8 +148,7 @@
         if (event.keyCode === 13) {
             event.preventDefault();
             sendData(event.target.value);
-            // document.getElementById("search-result").innerHTML = document.querySelector(".trending-courses").childElementCount;
-
+            event.target.value = '';
         }
     }
 </script>
