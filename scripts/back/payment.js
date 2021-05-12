@@ -20,8 +20,8 @@
          * Instead use one of the strategies described in
          * https://stripe.com/docs/payments/checkout/fulfill-orders
          */
-        successUrl: 'https://gifted-nobel-84c209.netlify.app/',
-        cancelUrl: 'https://gifted-nobel-84c209.netlify.app/payment.html',
+        successUrl: 'https://ahmedmustafa2201.github.io/E-learning/',
+        cancelUrl: 'https://ahmedmustafa2201.github.io/E-learning/payment.html',
       })
         .then(function (result) {
           console.log(result)
