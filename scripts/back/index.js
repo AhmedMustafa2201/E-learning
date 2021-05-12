@@ -40,7 +40,7 @@
         console.log(res.docs[0].data())
         document.getElementById("imgComment").src = res.docs[0].data().user_image
         document.getElementById("nameComment").innerHTML = res.docs[0].data().user_name
-        document.getElementById("contentComment").innerHTML = res.docs[0].data().content
+        // document.getElementById("contentComment").innerHTML = res.docs[0].data().content
     })
 })()
 
