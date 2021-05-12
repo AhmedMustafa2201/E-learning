@@ -177,8 +177,10 @@ function sendData(data){
             lessonID: location.search.split('&')[0].split('=')[1],
             user_image: auth.currentUser.photoURL,
             user_name: res.docs[0].data().name,
+            createdAt: serverTimestamp
         }).then(res=>{
             commentCollection.where("lessonID", "==", location.search.split('&')[0].split('=')[1])
+                .orderBy("createdAt", "asc")
                 .get()
                 .then(res=>{
                     var tmp=``
