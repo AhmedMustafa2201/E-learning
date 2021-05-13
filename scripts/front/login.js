@@ -62,7 +62,7 @@ facebookBtn.addEventListener("click", () => {
     // provider.addScope('user_birthday');
 
     auth.signInWithPopup(provider).then((result) => {
-        auth.languageCode = 'it';
+        auth.languageCode = 'ar';
 
         provider.setCustomParameters({
             'display': 'popup'
@@ -77,6 +77,19 @@ facebookBtn.addEventListener("click", () => {
 
         // This gives you a Facebook Access Token. You can use it to access the Facebook API.
         var accessToken = credential.accessToken;
+
+        userCollection.where("user_email", "==", user.email).get().then((snap) => {
+            if (snap.docs[0] == undefined) {
+                db.collection("users").add({
+                    name: `${user.displayName}`,
+                    phone: user.phoneNumber,
+                    email: user.email,
+                    photo: user.photoURL,
+                    subscriped: false
+                }).then().catch(error => { console.log(error.message) })
+            }
+        })
+        
         console.log("done")
         setTimeout(() => {
             redirectIfAuth("./")
@@ -98,7 +111,7 @@ facebookBtn.addEventListener("click", () => {
 //login with google
 googleBtn.addEventListener("click", () => {
     var provider = new firebase.auth.GoogleAuthProvider();
-    auth.languageCode = 'it';
+    auth.languageCode = 'ar';
 
     auth.signInWithPopup(provider).then((result) => {
         /** @type {firebase.auth.OAuthCredential} */
@@ -107,6 +120,17 @@ googleBtn.addEventListener("click", () => {
         var token = credential.accessToken;
         // The signed-in user info.
         var user = result.user;
+        userCollection.where("user_email", "==", user.email).get().then((snap) => {
+            if (snap.docs[0] == undefined) {
+                db.collection("users").add({
+                    name: `${user.displayName}`,
+                    phone: user.phoneNumber,
+                    email: user.email,
+                    photo: user.photoURL,
+                    subscriped: false
+                }).then().catch(error => { console.log(error.message) })
+            }
+        })
         setTimeout(() => {
             redirectIfAuth("./")
         }, 1000);
