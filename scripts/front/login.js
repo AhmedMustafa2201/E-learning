@@ -85,19 +85,14 @@ facebookBtn.addEventListener("click", () => {
                     user_email: user.email,
                     photo: user.photoURL,
                     subscriped: false
-                }).then(res=>{
-                    console.log("done")
-                    setTimeout(() => {
-                        redirectIfAuth("./")
-                    }, 2000);
-                }).catch(error => { console.log(error.message) })
+                }).then(res).catch(error => { console.log(error.message) })
             }
         })
         
-        // console.log("done")
-        // setTimeout(() => {
-        //     redirectIfAuth("./")
-        // }, 2000);
+        console.log("done")
+        setTimeout(() => {
+            redirectIfAuth("./")
+        }, 2000);
     }).catch((error) => {
         // Handle Errors here.
         var errorCode = error.code;
@@ -135,17 +130,13 @@ googleBtn.addEventListener("click", () => {
                     user_email: user.email,
                     photo: user.photoURL,
                     subscriped: false
-                }).then(res=>{
-                    console.log("done")
-                    setTimeout(() => {
-                        redirectIfAuth("./")
-                    }, 2000);
-                }).catch(error => { console.log(error.message) })
+                }).then(res).catch(error => { console.log(error.message) })
             }
         })
-        // setTimeout(() => {
-        //     redirectIfAuth("./")
-        // }, 1000);
+        console.log("done")
+        setTimeout(() => {
+            redirectIfAuth("./")
+        }, 2000);
     }).catch((error) => {
         // Handle Errors here.
         var errorCode = error.code;
