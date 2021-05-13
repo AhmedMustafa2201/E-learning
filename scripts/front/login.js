@@ -71,29 +71,33 @@ facebookBtn.addEventListener("click", () => {
         /** @type {firebase.auth.OAuthCredential} */
         var credential = result.credential;
 
-
+        
         // The signed-in user info.
         var user = result.user;
-
         // This gives you a Facebook Access Token. You can use it to access the Facebook API.
         var accessToken = credential.accessToken;
 
         userCollection.where("user_email", "==", user.email).get().then((snap) => {
             if (snap.docs[0] == undefined) {
-                db.collection("users").add({
+                userCollection.add({
                     name: `${user.displayName}`,
                     phone: user.phoneNumber,
-                    email: user.email,
+                    user_email: user.email,
                     photo: user.photoURL,
                     subscriped: false
-                }).then().catch(error => { console.log(error.message) })
+                }).then(res=>{
+                    console.log("done")
+                    setTimeout(() => {
+                        redirectIfAuth("./")
+                    }, 2000);
+                }).catch(error => { console.log(error.message) })
             }
         })
         
-        console.log("done")
-        setTimeout(() => {
-            redirectIfAuth("./")
-        }, 2000);
+        // console.log("done")
+        // setTimeout(() => {
+        //     redirectIfAuth("./")
+        // }, 2000);
     }).catch((error) => {
         // Handle Errors here.
         var errorCode = error.code;
@@ -119,21 +123,29 @@ googleBtn.addEventListener("click", () => {
         // This gives you a Google Access Token. You can use it to access the Google API.
         var token = credential.accessToken;
         // The signed-in user info.
+        debugger
         var user = result.user;
+        console.log(user)
+
         userCollection.where("user_email", "==", user.email).get().then((snap) => {
             if (snap.docs[0] == undefined) {
-                db.collection("users").add({
+                userCollection.add({
                     name: `${user.displayName}`,
                     phone: user.phoneNumber,
-                    email: user.email,
+                    user_email: user.email,
                     photo: user.photoURL,
                     subscriped: false
-                }).then().catch(error => { console.log(error.message) })
+                }).then(res=>{
+                    console.log("done")
+                    setTimeout(() => {
+                        redirectIfAuth("./")
+                    }, 2000);
+                }).catch(error => { console.log(error.message) })
             }
         })
-        setTimeout(() => {
-            redirectIfAuth("./")
-        }, 1000);
+        // setTimeout(() => {
+        //     redirectIfAuth("./")
+        // }, 1000);
     }).catch((error) => {
         // Handle Errors here.
         var errorCode = error.code;

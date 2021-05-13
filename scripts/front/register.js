@@ -61,7 +61,7 @@ regBtn.addEventListener("click", (e) => {
 
         document.getElementById('error').innerHTML = "";
         //adding data to fire store
-        db.collection("users").add({
+        userCollection.add({
             name: `${fName.value} ${lName.value}`,
             phone: phone.value,
             user_email: txtEmail.value,

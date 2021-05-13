@@ -112,7 +112,7 @@ function exec() {
           // console.log(res.docs[0].id)
           document.getElementById(
             "adding"
-          ).innerHTML += `<div style="width: 100%; display: flex;" class="signout">
+          ).innerHTML = `<div style="width: 100%; display: flex;" class="signout">
           <button style="height: 10%; margin: auto 0;" onclick="signOut()" id="signout">سجل الخروج</button>
           <img src=${user.photoURL!==""?user.photoURL:"images/public/profile.png"} 
           style="width: 8%;height: 33px; margin-left: 10px;margin-top: 1.5em;margin-right: 1em; border-radius: 50% 50%;" alt="">
@@ -120,7 +120,7 @@ function exec() {
       </div>`;
         });
     } else {
-      document.getElementById("adding").innerHTML += `
+      document.getElementById("adding").innerHTML = `
           <div style="width: 100%" class="signin-signup">
           <button style="cursor: pointer;" onclick="goto('./login.html')" id="signin">دخول</button>
           <button style="cursor: pointer;" onclick="goto('./register.html')" id="signup">سجل مجاناً</button>
