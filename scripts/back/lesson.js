@@ -102,12 +102,45 @@
     var courseName = ''
     var quizCourse
     var tmp=``
+    var userRes=[]
+    auth.onAuthStateChanged(function (user) {
+    userCollection
+      .where("user_email", "==", user.email)
+      .get()
+      .then((res) => {
+        if (res.docs[0].data().watchedLessons === undefined) {
+          userCollection.doc(res.docs[0].id).set({
+            name: res.docs[0].data().name,
+            phone: res.docs[0].data().phone,
+            user_email: res.docs[0].data().user_email,
+            subscriped: res.docs[0].data().subscriped,
+            watchedLessons: [],
+          });
+        }
+      });
+    })
 
     lessonCollection.doc(location.search.split('&')[0].split('=')[1]).get()
     .then(res=> {
-        console.log(res.data())
-        lessonCollection.doc(location.search.split('&')[0].split('=')[1])
-            .update({watched: true})
+        // console.log(res.data())
+        // lessonCollection.doc(location.search.split('&')[0].split('=')[1])
+        //     .update({watched: true})
+        auth.onAuthStateChanged(function (user) {
+        userCollection
+          .where("user_email", "==", user.email)
+          .get()
+          .then((res) => {
+            // console.log(res.docs[0].id);
+            if (!res.docs[0].data().watchedLessons.includes(location.search.split('&')[0].split('=')[1])) {
+                userCollection.doc(res.docs[0].id).update({
+                    watchedLessons: [...res.docs[0].data().watchedLessons, location.search.split('&')[0].split('=')[1]],
+                });
+            } 
+            // console.log(res.docs[0].data().watchedLessons)
+            userRes=res.docs[0].data().watchedLessons
+          })
+          .catch((err) => console.log(err));
+        })
         debugger
         courseCollection.doc(res.data().courseID).get()
         .then(res=> {
@@ -129,7 +162,7 @@
                     tmp+=`<div onclick="getSpecificLesson('${data.id}', '${data.data().videoLink}')" style="cursor: pointer;" class="lessons-content">
                     <div class="show-lessons">
                         <button class="show-lessons-Btn">${i+1}- ${data.data().name}</button>
-                        <input style="margin-left: 1em;" ${data.data().watched==true?"checked":""} disabled id="chekbox" type="checkbox">
+                        <input style="margin-left: 1em;" ${userRes.includes(data.id)?"checked":""} disabled id="chekbox" type="checkbox">
                     </div>
                 </div>`
                 });

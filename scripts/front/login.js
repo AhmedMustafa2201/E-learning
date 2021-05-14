@@ -38,7 +38,7 @@ loginBtn.addEventListener("click", () => {
     auth.signInWithEmailAndPassword(email, password).then(user => {
         document.getElementById('error').innerHTML = "";
         // location.assign("https://www.facebook.com/")
-        console.log(user.user.email)
+       // console.log(user.user.email)
         userCollection.where("user_email", "==", user.user.email).get()
         .then(res=>{
             if (res.docs[0].data().subscriped == false) {
@@ -84,12 +84,13 @@ facebookBtn.addEventListener("click", () => {
                     phone: user.phoneNumber,
                     user_email: user.email,
                     photo: user.photoURL,
-                    subscriped: false
+                    subscriped: false,
+                    watchedLessons:[],
                 }).then(res).catch(error => { console.log(error.message) })
             }
         })
         
-        console.log("done")
+       // console.log("done")
         setTimeout(() => {
             redirectIfAuth("./")
         }, 2000);
@@ -101,8 +102,8 @@ facebookBtn.addEventListener("click", () => {
         var email = error.email;
         // The firebase.auth.AuthCredential type that was used.
         var credential = error.credential;
-        console.log(errorMessage)
-        console.log("failed")
+       // console.log(errorMessage)
+       // console.log("failed")
     });
 
 })
@@ -120,7 +121,7 @@ googleBtn.addEventListener("click", () => {
         // The signed-in user info.
         debugger
         var user = result.user;
-        console.log(user)
+       // console.log(user)
 
         userCollection.where("user_email", "==", user.email).get().then((snap) => {
             if (snap.docs[0] == undefined) {
@@ -129,11 +130,12 @@ googleBtn.addEventListener("click", () => {
                     phone: user.phoneNumber,
                     user_email: user.email,
                     photo: user.photoURL,
-                    subscriped: false
+                    subscriped: false,
+                    watchedLessons:[],
                 }).then(res).catch(error => { console.log(error.message) })
             }
         })
-        console.log("done")
+       // console.log("done")
         setTimeout(() => {
             redirectIfAuth("./")
         }, 2000);
@@ -146,8 +148,8 @@ googleBtn.addEventListener("click", () => {
         // The firebase.auth.AuthCredential type that was used.
         var credential = error.credential;
 
-        console.log(errorMessage)
-        console.log("failed")
+       // console.log(errorMessage)
+       // console.log("failed")
     });
 
 })

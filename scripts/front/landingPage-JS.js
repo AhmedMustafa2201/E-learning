@@ -7,7 +7,7 @@ let myNav = document.querySelector(".header");
 
 window.onscroll = function () { 
     if (window.scrollY > 10 ) {
-        console.log(window.scrollY)
+       // console.log(window.scrollY)
         myNav.classList.add("background");
         myNav.classList.remove("color");
     } 

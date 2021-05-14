@@ -65,8 +65,8 @@ regBtn.addEventListener("click", (e) => {
             name: `${fName.value} ${lName.value}`,
             phone: phone.value,
             user_email: txtEmail.value,
-            subscriped: false
-
+            subscriped: false,
+            watchedLessons:[],
         })
         setTimeout(() => {
             redirectIfAuth("./login.html")
