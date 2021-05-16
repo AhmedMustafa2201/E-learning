@@ -43,7 +43,7 @@ const userCollection = db.collection("users");
 
 (function(){
   auth.onAuthStateChanged(function (user) {
-      if(user && (location.href=="https://gifted-nobel-84c209.netlify.app/login.html"||location.href=="https://gifted-nobel-84c209.netlify.app/register.html")){
+      if(user && (location.href=="https://ahmedmustafa2201.github.io/E-learning/login.html"||location.href=="https://ahmedmustafa2201.github.io/E-learning/register.html")){
           location.assign("./")
       }
   })

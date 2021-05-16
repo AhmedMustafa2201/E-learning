@@ -58,7 +58,7 @@ function onYouTubeIframeAPIReady() {
 // 4. The API will call this function when the video player is ready.
 function onPlayerReady(event) {
     event.target.playVideo();
-    let time = parseInt(getCookie("lastPoint"))
+    let time = parseInt(getCookie(decodeURI(location.search.split('&')[1].split('=')[1])))
     videoPlayer.seekTo(time)
 
     // update progress bar
@@ -241,5 +241,5 @@ function setCookie(cname, cvalue, exdays = 10) {
 
 //make video continuous
 window.onbeforeunload = function() {
-    setCookie("lastPoint", Math.floor(videoPlayer.getCurrentTime()))
+    setCookie(decodeURI(location.search.split('&')[1].split('=')[1]), Math.floor(videoPlayer.getCurrentTime()))
 }

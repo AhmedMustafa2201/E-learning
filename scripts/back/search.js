@@ -10,6 +10,7 @@ function test_me(e, orderBy) {
 
   if (e != ""||orderBy!=undefined) {
     var text = e.trim();
+    // firebase doesn't support full text search
     lessonCollection.orderBy('createdAt', 'desc').get().then((s) => {
       s.docs.forEach((d) => {
         if (d.data().name.includes(text) ==true) {
