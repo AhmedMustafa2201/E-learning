@@ -178,7 +178,7 @@ function formatTime(time) {
 }
 
 function updateTimeDisplay() {
-    vDuration.textContent = formatTime(videoPlayer.getCurrentTime()) + "./" +
+    vDuration.textContent = formatTime(videoPlayer.getCurrentTime()) + "/" +
         formatTime(videoPlayer.getDuration())
 }
 
@@ -241,5 +241,5 @@ function setCookie(cname, cvalue, exdays = 10) {
 
 //make video continuous
 window.onbeforeunload = function() {
-    setCookie(getCookie("lastPoint"))
+    setCookie("lastPoint", Math.floor(videoPlayer.getCurrentTime()))
 }

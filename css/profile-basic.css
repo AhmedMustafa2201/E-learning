@@ -312,7 +312,7 @@ ul.nav li a:hover{
     background-color: #f2f3f5;
     padding:  12px;
     border-left: 1px solid #ccc;
-    width: 30%;
+    width: 35%;
     color: #29303b;
     text-align: left;
     direction: ltr;
@@ -320,7 +320,7 @@ ul.nav li a:hover{
 .profile-basic-links div input{
     padding:  10px;
     border: none;
-    width: 69%;
+    width: 63%;
     display: inline-block;
     outline: 0;
 

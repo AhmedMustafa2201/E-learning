@@ -41,13 +41,13 @@ const lessonCollection = db.collection("lessons");
 const commentCollection = db.collection("comment");
 const userCollection = db.collection("users");
 
-// (function(){
-//   auth.onAuthStateChanged(function (user) {
-//       if(user && (location.href == "https://ahmedmustafa2201.github.io/E-learning/login.html" || location.href == "https://ahmedmustafa2201.github.io/E-learning/register.html")){
-//           location.assign("./")
-//       }
-//   })
-// })()
+(function(){
+  auth.onAuthStateChanged(function (user) {
+      if(user && (location.href == "https://amused-police.surge.sh/login.html" || location.href == "https://amused-police.surge.sh/register.html")){
+          location.assign("./")
+      }
+  })
+})()
 
 
 function redirectIfAuth(url, lesson) {
