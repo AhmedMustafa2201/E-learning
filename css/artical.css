@@ -12,6 +12,7 @@ body{
 .container{
     width: 90%;
     margin: auto;
+    margin-top: 20%;
 }
 .display{
     display: flex;
@@ -54,6 +55,9 @@ button , input{
     height: 60%;
     margin-top: 10px;
 }
+nav{
+    background-color:  #eeefff;
+}
 .nav{
     display: flex;
     list-style: none;
@@ -65,7 +69,7 @@ button , input{
     padding: 5px;
     transition: all .6s;
 }
-.signin-signup{
+/* .signin-signup{
     width: 45%;
     direction: ltr;
 }
@@ -132,7 +136,7 @@ button , input{
 
 ul.nav li a:hover{
     color:#00adb5 ;
-}
+} */
 /*  THE END OF HEADER STYLING*/
 /**************************************************/
 
@@ -142,14 +146,14 @@ ul.nav li a:hover{
     border: 1px solid #ccc;
     box-shadow: .5px .5px  5px #aaa;
     text-align: center;
-    margin-top: 40px;
+    margin-top: 115px;
     padding: 20px;
     background-color: #fafafa;
 }
 
 h1{
     margin: auto;
-    margin-bottom: 15px;
+    margin-bottom:4%;
 }
 .artical-container p {
     width: 70%;

@@ -6,33 +6,67 @@
         <meta charset="utf-8">
         <title>رحيق النحو | كل ما تريد تعلمه عن النحو</title>
         <!-- Css Font links -->
+        <link rel="icon" href="images/public/logo.svg">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500&display=swap" rel="stylesheet">
         <!-- font awesome library -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
         <!-- css style link  -->
         <link rel="stylesheet" href="css/landingPage-Style.css">
+        <!-- bootstrap link -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     </head>
     <body>
         <div id="loader"></div>
         <div id="go"></div>
         <div class="afterloader">
-
+           
         <!-- The Header part  -->
-        <div class="header   color " id="up">
-            <div class=" container display">
-                <div class="logo">
+        <nav class="navbar navbar-expand-lg fixed-top navbar-light" style="direction:rtl;">
+            
+            <a class="navbar-brand" href="./index.html"><img src="./images/public/logo.svg"  width="100px"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav ml-auto mr-1">
+                <li class="nav-item active">
+                  <a class="nav-link"href="./index.html">الصفحة الرئيسية<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./index.html#lessonsData">تصفح دروسنا</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./index.html#courseData">دوراتنا</a>
+                </li>
+              </ul>
+               <ul class="navbar-nav mr-4">
+                <li class="nav-item active ml-2">
+              <button class="btn btn-outline-success my-2 my-sm-0 mb-sm-3" id="signin">دخول</button>
+                </li>
+                <li class="nav-item mr-2">
+              <button class="btn btn-outline-success my-2 my-sm-0" id="signup">سجل مجاناً</button>
+                </li>
+              </ul>
+            </div>
+           
+          </nav>
+
+
+        <!-- <div class="header   color " id="up">
+            <div class=" container display"> -->
+                <!-- <div class="logo">
                     <a href="./index.html">
                         <img src="./images/public/logo.png">
                     </a>
-                </div>
+                </div> -->
                 <!-- ./logo -->
-                <ul class="nav">
+                <!-- <ul class="nav">
                     <li> <a href="./index.html">الصفحة الرئيسية</a></li>
-                    <li> <a href="./index.html#lessonsData">تصفح دروسنا</a></li>
-                    <li> <a href="./index.html#courseData">دوراتنا</a></li>
-                </ul>
-                <div id="adding" style="width: 45%;"></div>
+                    <li> <a href="./index.html#lessonsData">تصفح دروسنا</a></li> -->
+                    <!-- <li> <a href="./index.html#courseData">دوراتنا</a></li> -->
+                <!-- </ul> -->
+                <!-- <div id="adding" style="width: 45%;"></div> -->
 
                 <!-- ./nav -->
                 <!-- <div class="signin-signup">
@@ -40,80 +74,340 @@
                     <button id="signup">سجل مجاناً</button>
                 </div> -->
                 <!-- ./signin-signup -->
-            </div>
+            <!-- </div> -->
             <!-- ./container -->
-        </div>
+        <!-- </div> -->
         <!-- ./header -->
 
+        <!-- section1 -->
+        <section id="sec1">
+            <div class="container">
+                <div class="row p-4">
+                    <div class="col-lg-6 col-md-6 col-sm-12 text-right mb-3">
+                        <h1>
+                            <a href="register.html" class="mb-3">
+                            انضم الينا الآن...  
+                            </a>
+                        </h1>
+                      <p>
+                          اشترك الآن وتعلم كل ما تريد عن النحو
+                      </p>
+                      <form action="search.html" class="search-box" class="mt-6">
+                        <input name="q" type="text" placeholder="ماذا تريد أن تتعلم اليوم ؟">
+                        <a>
+                            <!-- <i class="fa fa-search"></i> -->
+                        </a>
+                    </form><!-- ./search-box -->
+                  </div>
+                  <div class="col-lg-6 col-md-6 col-sm-12 mb-3"><div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="https://images.unsplash.com/photo-1494599948593-3dafe8338d71?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="https://images.unsplash.com/photo-1608600712992-03e5325d94c8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80" class="d-block w-100" alt="...">
+                  </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
+                </div>
+            </div>
+            </div>
+        </section>
+        <!-- end section1 -->
 
         <!-- Slider part -->
-        <div class="slider-content  container display ">
+        <!-- <div class="slider-content  container display ">
             <div class="slider-content-right">
             <div class="slogan-text">
                 <h2><a href="register.html">انضم الينا الآن...</a></h2>
                 <p>اشترك الآن وتعلم كل ما تريد عن النحو</p>
-            </div><!-- ./sogan-text -->
+            </div>./sogan-text -->
 
-            <form action="search.html" class="search-box">
+            <!-- <form action="search.html" class="search-box">
                 <input name="q" type="text" placeholder="ماذا تريد أن تتعلم اليوم ؟">
                 <a>
                     <i class="fa fa-search"></i>
                 </a>
-            </form><!-- ./search-box -->
+            </form>./search-box -->
 
-            <img class="twigs" src="images/public/g-removebg-preview.png">
+            <!-- <img class="twigs" src="images/public/g-removebg-preview.png"> -->
 
-        </div><!-- ./slider-content-right -->
-            <div class="slider-content-left">
+        <!-- </div>./slider-content-right -->
+            <!-- <div class="slider-content-left">
                 <img src="" id="img" name="slideshow">
 
-            </div><!-- ./slider-content-left -->
-        </div><!-- ./slider-content -->
+            </div>./slider-content-left
+        </div>./slider-content -->
+
+
+        <section id="sec2 mt-5">
+            <div class="container">
+                <div class="row trending-header display p-4">
+                    <div class="col-sm-6 text-right">
+                        <h2>الدروس الأكثر شيوعاً</h2>
+                    </div>
+                    <div class="col-sm-6">
+                        <span><a href="./search.html">تصفح الكل</a></span>
+                    </div>
+                </div>
+                    <div class="row p-4 text-right">
+                        <div class="col-lg-4 col-md-12 col-sm-12">
+                            <div class="t-course ">
+                                <div class="t-course-content">
+                                    <img class="img" src="images/server_content/lessons/c2l1.jpg">
+                                    <h3 class="mt-3 mb-3"> حل وشرح القطعة الثالثة من كتاب رحيق النحو</h3>
+                                </div>
+                                <div class="t-course-hover">
+                                    <div></div>
+                                    <h4 onclick="getSpecificLesson('bMkN1cOvCP0rfB27fOJB', 'im1FGS7GIt8')">ابدأ الآن</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-12 col-sm-12">
+                            <div class="t-course ">
+                                <div class="t-course-content">
+                                    <img class="img" src="images/server_content/lessons/c3l4.jpg">
+                                    <h3 class="mt-3 mb-3"> كاد وأخواتها</h3>
+                                </div>
+                                <div class="t-course-hover">
+                                    <div></div>
+                                    <h4 onclick="getSpecificLesson('P2wZBXHX8OXqia5LQNUx', 'MGJ0E2UwXU8')">ابدأ الآن</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-12 col-sm-12">
+                            <div class="t-course ">
+                                <div class="t-course-content">
+                                    <img class="img" src="images/server_content/lessons/c3l2.jpg">
+                                    <h3 class="mt-3 mb-3"> كان وأخواتها</h3>
+                                </div>
+                                <div class="t-course-hover">
+                                    <div></div>
+                                    <h4 onclick="getSpecificLesson('pLz6LxKYOfO4pdU9OEoI', 'z0oF2Xbu8VQ')">ابدأ الآن</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row p-4 text-right">
+                        <div class="col-lg-4 col-md-12 col-sm-12">
+                            <div class="t-course ">
+                                <div class="t-course-content">
+                                    <img class="img" src="images/server_content/lessons/c2l5.jpg">
+                                    <h3 class="mt-3 mb-3">أحكام حذف المبتدأ والخبر</h3>
+                                </div>
+                                <div class="t-course-hover">
+                                    <div></div>
+                                    <h4 onclick="getSpecificLesson('irJCirndM9J5qfLvTK3W', 'JEpX2-fhB-M')">ابدأ الآن</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-12 col-sm-12">
+                            <div class="t-course ">
+                                <div class="t-course-content">
+                                    <img class="img" src="images/server_content/lessons/c5l2.jpg">
+                                    <h3 class="mt-3 mb-3">إعراب الفعل الماضي</h3>
+                                </div>
+                                <div class="t-course-hover">
+                                    <div></div>
+                                    <h4 onclick="getSpecificLesson('CLlATPuTam8TnO1TLgZD', 'H2hMA5UhMI4')">ابدأ الآن</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-12 col-sm-12">
+                            <div class="t-course ">
+                                <div class="t-course-content">
+                                    <img class="img" src="images/server_content/lessons/c5l3.jpg">
+                                    <h3 class="mt-3 mb-3">إعراب الفعل المضارع</h3>
+                                </div>
+                                <div class="t-course-hover">
+                                    <div></div>
+                                    <h4 onclick="getSpecificLesson('1CXzEPCFZay0TH7cO7KM', 'MiZ7huRhYjk')">ابدأ الآن</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row p-4 text-right">
+                        <div class="col-lg-4 col-md-12 col-sm-12">
+                            <div class="t-course ">
+                                <div class="t-course-content">
+                                    <img class="img" src="images/server_content/lessons/c1l4.jpg">
+                                    <h3 class="mt-3 mb-3">إعمال اسم الفاعل</h3>
+                                </div>
+                                <div class="t-course-hover">
+                                    <div></div>
+                                    <h4 onclick="getSpecificLesson('w8dzLA1YuU6EZjKcZYWN', '8QZ-TNuGNg8')">ابدأ الآن</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-12 col-sm-12">
+                            <div class="t-course ">
+                                <div class="t-course-content">
+                                    <img class="img" src="images/server_content/lessons/c1l6.jpg">
+                                    <h3 class="mt-3 mb-3">إعمال اسم المفعول</h3>
+                                </div>
+                                <div class="t-course-hover">
+                                    <div></div>
+                                    <h4 onclick="getSpecificLesson('1T9Fph1jlffRLaA12ZF4', '-LZWWMSu2SM')">ابدأ الآن</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-12 col-sm-12">
+                            <div class="t-course ">
+                                <div class="t-course-content">
+                                    <img class="img" src="images/server_content/lessons/c1l5.jpg">
+                                    <h3 class="mt-3 mb-3">إعمال صيغة المبالغة وبعض التعليقات</h3>
+                                </div>
+                                <div class="t-course-hover">
+                                    <div></div>
+                                    <h4 onclick="getSpecificLesson('6iPMr9fpHgj9ZljMFlZZ', 'ilX7zBAWpeM')">ابدأ الآن</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </section>
 
 
 
          <!-- trending courses part -->
-        <div class="trending container margin">
+        <!-- <div class="trending container margin"> -->
     <!-- header of section -->
-    <div id="lessonsData" class="trending-header display">
-    <h2>الدروس الأكثر شيوعاً</h2>
-    <span><a href="./search.html">تصفح الكل</a></span>
-    </div><!-- ./trending-header -->
+    <!-- <div id="lessonsData" class="trending-header display">
+    <h2>الدروس الأكثر شيوعاً</h2> -->
+    <!-- <span><a href="./search.html">تصفح الكل</a></span> -->
+    <!-- </div>./trending-header -->
     <!-- courses -->
-    <div class="trending-courses">
+    <!-- <div class="trending-courses"> -->
 
-    </div><!-- ./trending-courses -->
-        </div><!-- ./trending -->
+    <!-- </div>./trending-courses -->
+        <!-- </div>./trending -->
 
+
+        <section id="sec3">
+            <div class="container-fluid text-center p-5 text-light">
+                <h2>رحيق النحو </h2>
+            <p class="mt-3">توفر مواد تعليمية فى اللغة لكى تحاكى المناهج الدراسة للطلاب</p>
+            <button id="courses-page" class="mt-3">تصفح دروسنا</button>
+            </div>
+        </section>
         <!-- brief part -->
-        <div class="brief margin">
+        <!-- <div class="brief margin">
             <div class="layer"></div>
             <div class="above-layer">
             <h2>رحيق النحو </h2>
             <p>توفر مواد تعليمية فى اللغة لكى تحاكى المناهج الدراسة للطلاب</p>
             <button id="courses-page" >تصفح دروسنا</button>
         </div>
-        </div><!-- ./brief -->
+        </div>./brief -->
 
 
-       <div class="space-between-sections"></div>
+        <section id="sec4">
+            <div class="container articals">
+                <div class="tracks-header">
+                    <h2>دوراتنا</h2>
+                </div>
+                <div class="row text-right">
+                    <div class="col-lg-3 col-sm-12  mb-5 mt-5">
+                        <div class="track">
+                            <div class="track-content">
+                                <div class="img"><img src="images/server_content/courses/c2.jpg"></div>
+                                <h3>المحاضرة الثانية كورس رحيق النحو</h3>
+                            </div>
+                            <div class="track-hover">
+                                <div></div>
+                                <h4 onclick="getSpecificCourse('Ke52jAt7wBYHFSfIp1uB')">التفاصيل</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-12 mb-5 mt-5">
+                        <div class="track">
+                            <div class="track-content">
+                                <div class="img"><img src="images/server_content/courses/c4.jpg"></div>
+                                <h3>المحاضرة الرابعة كورس رحيق النحو</h3>
+                            </div>
+                            <div class="track-hover">
+                                <div></div>
+                                <h4 onclick="getSpecificCourse('TVyhkNXMowmy1hwM9p2z')">التفاصيل</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-12 mb-5 mt-5">
+                        <div class="track">
+                            <div class="track-content">
+                                <div class="img"><img src="images/server_content/courses/c1.jpg"></div>
+                                <h3>المحاضرة الأولى كورس رحيق النحو</h3>
+                            </div>
+                            <div class="track-hover">
+                                <div></div>
+                                <h4 onclick="getSpecificCourse('X2RN63yQzbhCjjRdZpwe')">التفاصيل</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-12 mb-5 mt-5">
+                        <div class="track">
+                            <div class="track-content">
+                                <div class="img"><img src="images/server_content/courses/c5.jpg"></div>
+                                <h3>المحاضرة الخامسة كورس رحيق النحو</h3>
+                            </div>
+                            <div class="track-hover">
+                                <div></div>
+                                <h4 onclick="getSpecificCourse('mQkK3rHv0SpY5quaMO1H')">التفاصيل</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+       <!-- <div class="space-between-sections"></div> -->
         <!-- tracks  -->
-        <div id="courseData" class="tracks container">
+        <!-- <div id="courseData" class="tracks container">
             <div class="tracks-header">
-            <h2>دوراتنا</h2>
-            </div><!-- ./tracks-header -->
-            <div class="track-slider-container display margin">
+            <h2>دوراتنا</h2> -->
+            <!-- </div>./tracks-header -->
+            <!-- <div class="track-slider-container display margin">
                <i id="next-slider" class="fa fa-caret-right"></i>
-                <div class="tracks-slider ">
-                </div><!-- ./tracks-slider -->
-               <i id="prev-slider" class="fa fa-caret-left"></i>
-            </div><!-- ./track-slider-container -->
-        </div><!-- ./tracks -->
-       <div class="space-between-sections"></div>
-       <div class="space-between-sections"></div>
+                <div class="tracks-slider "> -->
+                <!-- </div>./tracks-slider -->
+               <!-- <i id="prev-slider" class="fa fa-caret-left"></i> -->
+            <!-- </div>./track-slider-container -->
+        <!-- </div>./tracks -->
+       <!-- <div class="space-between-sections"></div>
+       <div class="space-between-sections"></div> -->
 
+
+        <section id="sec5 mt-3" style="background-color: #eeefff;">
+            <div class="container-fluid">
+                <hr>
+                <div class="book row">
+                    <img src="images/public/tiny-female-character-climbing-rope-on-vector-30009373i-removebg-preview.png" alt="">
+                    <p style="text-align: center;">هل انتم على اتم استعداد للإتقان المزيد من المهارات؟
+                        <br>
+                        <a href="payment.html"> أبدأو اللآن </a>
+                          واجعلوا هذا اول يوم فى مسيرتكم .
+                    </p>
+                    <div class="space-between-sections"></div>
+                </div>
+                <hr>
+            </div>
+        </section>
+        
        <!-- book -->
-        <hr>
+        <!-- <hr>
         <div class="book container">
             <img src="images/public/tiny-female-character-climbing-rope-on-vector-30009373i-removebg-preview.png" alt="">
             <p style="text-align: center;">هل انتم على اتم استعداد للإتقان المزيد من المهارات؟
@@ -123,77 +417,122 @@
             </p>
             <div class="space-between-sections"></div>
         </div>
-        <hr>
+        <hr> -->
         <!-- ./book -->
-        <div class="space-between-sections"></div>
-           <!-- articals -->
-           <div class="articals container ">
-            <h2>مقالات تهمك</h2>
-            <div class="cards display margin">
-                <div class="card">
-                    <div class="card-img">
-                        <img src="images/public/artiacal1.png">
-                    </div>
-                    <!-- ./card-img -->
-                    <div class="card-content">
-                        <h3>المفعول معه</h3>
-                        <p>
-                            <span>
-                                لو بصينا في الأمثلة دي:
-                                 1- استيقظ النائم وأذان الفجر.
-                                 2- مشيت وشاطئ النيل.
-                                 3- سار القطار وخط السكة الحديد.
-                                 4- ذهبت إلى المدرسة وطلوع الشمس.......
+        <!-- <div class="space-between-sections"></div> -->
 
-                            </span>
-                            <a href="artical.html" id="artical1">اقرأ المزيد</a>
-                        </p>
-                    </div>
-                    <!-- ./card-content -->
-                </div>
-                <!-- ./card -->
-                <div class="card">
-                    <div class="card-img">
-                        <img src="images/public/artical2.jpg">
-                    </div>
-                    <!-- ./card-img -->
-                    <div class="card-content">
-                        <h3>اسم الإشارة والبدل  </h3>
-                        <p>
-                            <span>(اسم إشارة + كلمة معرفة بال) = بدل ... بس مش دايما ... لازم اسم الإشارة يكون قصدي بيه اللي بعديه عشان يبقى بدل.
-                                فمثلا لو قلت ... (اجتهد لحل هذه المشكلة) .... قصدك ايه بهذه؟ المشكلة ... عشان كدة المشكلة بدل. ...
-                            </span>
-                            <a href="artical.html" id="artical2">اقرأ المزيد</a>
-                        </p>
-                    </div>
-                    <!-- ./card-content -->
-                </div>
-                <!-- ./card -->
-                <div class="card">
-                    <div class="card-img">
-                        <img src="./images/public/artical3.jpg">
-                    </div>
-                    <!-- ./card-img -->
-                    <div class="card-content">
-                        <h3>الأفعال التي تنصب مفعولين ليس أصلهما المبتدأ والخبر</h3>
-                        <p>
-                            <span>
-                                - أفعال الشحاتة (كسا – منح – أعطى – وهب – آتى – ألبس – سأل ]بمعنى طلب [– منع) ... ودول مش أفعال ناسخة لأنها مش بتدخل على جملة اسمية أساسا ^_^.
-                                زي (وهب الله الانسان العقل) ...
-                            </span>
-                            <a href="artical.html" id="artical3">اقرأ المزيد</a>
-                        </p>
-                    </div>
-                    <!-- ./card-content -->
-                </div>
-                <!-- ./card -->
+        <section id="sec6">
+            <div class="articals container">
+                <h2>مقالات تهمك</h2>
             </div>
-            <!-- ./cadrs -->
-        </div>
-        <!-- ./articals -->
-        <div class="space-between-sections"></div>
+            <div class="container">
+                <div class="row p-3 text-right">
+                    <div class="col-lg-4 col-sm-12 mb-3">
+                        <div class="card h-100">
+                            <img src="images/public/artiacal1.png" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">المفعول معه</h5>
+                                <p class="card-text">
+                                    <span>
+                                        لو بصينا في الأمثلة دي:
+                                         1- استيقظ النائم وأذان الفجر.
+                                         2- مشيت وشاطئ النيل.
+                                         3- سار القطار وخط السكة الحديد.
+                                         4- ذهبت إلى المدرسة وطلوع الشمس.......
+            
+                                    </span>
+                                    <a href="artical.html" id="artical1">اقرأ المزيد</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-12 mb-3">
+                        <div class="card h-100">
+                            <img src="images/public/artical2.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">اسم الإشارة والبدل</h5>
+                                <p class="card-text">
+                                <span>
+                                    - أفعال الشحاتة (كسا – منح – أعطى – وهب – آتى – ألبس – سأل ]بمعنى طلب [– منع) ... ودول مش أفعال ناسخة لأنها مش بتدخل على جملة اسمية أساسا ^_^.
+                                    زي (وهب الله الانسان العقل) ...
+                                </span>
+                                <a href="artical.html" id="artical2">اقرأ المزيد</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-12 mb-3">
+                        <div class="card h-100">
+                            <img src="./images/public/artical3.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">الأفعال التي تنصب مفعولين ليس أصلهما المبتدأ والخبر</h5>
+                                    <p class="card-text">
+                                        <span>
+                                            - أفعال الشحاتة (كسا – منح – أعطى – وهب – آتى – ألبس – سأل ]بمعنى طلب [– منع) ... ودول مش أفعال ناسخة لأنها مش بتدخل على جملة اسمية أساسا ^_^.
+                                            زي (وهب الله الانسان العقل) ...
+                                        </span>
+                                        <a href="artical.html" id="artical3">اقرأ المزيد</a>
+                                    </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <div class="comments container display ">
+
+
+   
+
+        <section>
+        <div class="container p-4 mb-4" style="background-color: #eeefff;">
+            <div class="articals">
+                <h2 class="text-center">ما يقوله متعلمونا</h2>
+            </div>
+            <div class="row p-5">
+                <div class="col-lg-6 col-sm-12 text-right mb-sm-4">
+                    <div class="comment-body">
+                        <p>هو موقع حر لنشر المقالات
+                            والتدوينات، مستقل وغير مؤدلج، يهتم موقع مقال بنشر رأيك
+                            وحمايته وتوضيحه، وايصاله إلى مختلف شرائح
+                            لمجتمع بتحويله إلى فيديو وتصاميم.</p>
+                        <div class="comment-writer display">
+                            <img style="width: 33px; height: 33px;" id="imgComment" src="images/public/person-icon.png">
+                            <p style="margin: auto .5em;"><strong id="nameComment"></strong></p>
+                        </div> 
+                    </div>
+                </div>
+                <div class="col-lg-6 col-sm-12">
+                    <img src="images/public/5443569.jpg" width="100%">
+                </div>
+
+            </div>
+        </div>
+        </section>
+
+
+        <!-- <section id="sec7">
+            <div class="container comments">
+                <div class="row p-4">
+                    <div class="comments-content col-lg-6 col-sm-12 text-right">
+                            <h2>ما يقوله متعلمونا</h2>
+                            <div class="comment-body">
+                                <p>هو موقع حر لنشر المقالات
+                                    والتدوينات، مستقل وغير مؤدلج، يهتم موقع مقال بنشر رأيك
+                                    وحمايته وتوضيحه، وايصاله إلى مختلف شرائح
+                                    لمجتمع بتحويله إلى فيديو وتصاميم.</p>
+                                <div class="comment-writer display">
+                                    <img style="width: 33px; height: 33px;" id="imgComment" src="images/public/person-icon.png">
+                                    <p style="margin: auto .5em;"><strong id="nameComment"></strong></p>
+                                </div> 
+                            </div>
+                    </div>
+                </div>
+            </div>
+
+        </section> -->
+
+        <!-- <div class="comments container display ">
             <div class="comments-content">
                 <h2>ما يقوله متعلمونا</h2>
                 <div class="comment-body">
@@ -203,10 +542,10 @@
                         لمجتمع بتحويله إلى فيديو وتصاميم.</p>
                     <div class="comment-writer display">
                         <img style="width: 33px; height: 33px;" id="imgComment" src="images/public/person-icon.png">
-                        <p style="margin: auto .5em;"><strong id="nameComment"></strong></p>
+                        <p style="margin: auto .5em;"><strong id="nameComment"></strong></p> -->
                         <!-- <p style="margin: auto .5em;" id="contentComment"></p> -->
 
-                    </div> <!-- ./comment-writer -->
+                    <!-- </div> ./comment-writer -->
                         <!-- <ul class="slick-dots display">
                             <li>fvreg th</li>
                             <li></li>
@@ -216,14 +555,43 @@
                             <li></li>
                             <li></li>
                         </ul> -->
-                </div><!-- ./comment-body -->
-            </div> <!-- ./comment-content -->
-            <div class="comments-img" >
-                <img src="images/public/write.jpg">
-            </div><!-- ./comments-img -->
-        </div><!-- ./comments -->
+                <!-- </div>./comment-body -->
+            <!-- </div> ./comment-content -->
+            <!-- <div class="comments-img" >
+                <img src="images/public/write.jpg"> -->
+            <!-- </div>./comments-img -->
+        <!-- </div>./comments -->
 
-        <div class="footer margin">
+
+        
+        <footer class="text-center text-white" style="background:url('https://images.unsplash.com/photo-1592278423578-4b83c89859ac?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80'),
+        linear-gradient(to right bottom,#eeefff,black);background-size: cover; background-position-y: center;background-blend-mode: overlay;">
+            <div class="container p-4 pb-0">
+                <h3 class="text-dark">تواصل معنا</h3>
+              <section class="mb-4">
+                <a class="btn btn-outline-dark btn-floating m-1" href="#!" role="button">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a class="btn btn-outline-dark btn-floating m-1" href="#!" role="button">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a class="btn btn-outline-dark btn-floating m-1" href="#!" role="button">
+                    <i class="fab fa-google"></i>
+                </a>
+                <a class="btn btn-outline-dark btn-floating m-1" href="#!" role="button">
+                    <i class="fab fa-instagram"></i>
+                </a>
+              </section>
+            </div>
+            <!-- Copyright -->
+            <div class="text-center p-3" style="background-color: #eeefff;">
+                <p class="text-dark">جميع الحقوق محفوظة &copy; رحيق النحو
+                </p>
+            </div>
+          </footer>
+          <a href="#go" id="goUp"><i class="fas fa-arrow-alt-circle-up"></i>
+          </a>
+        <!-- <div class="footer margin">
             <hr>
             <div>
                 <ul >
@@ -238,7 +606,7 @@
             <p>جميع الحقوق محفوظة &copy; رحيق النحو</p>
         </div>
         <a href="#go" id="goUp"><img src="images/public/goUp.png"></a>
-    </div>
+    </div> -->
         <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-app.js"></script>
     <!-- TODO: Add SDKs for Firebase products that you want to -->
     <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-auth.js"></script>
@@ -246,8 +614,10 @@
     <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-storage.js"></script>
     <script src="./scripts/back/init.js"></script>
     <script src="./scripts/back/index.js"></script>
-
     <script src="./scripts/front/landingPage-JS.js"></script>
-
+    <!-- bootstrap -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     </body>
 </html>

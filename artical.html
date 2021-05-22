@@ -5,57 +5,80 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>رحيق النحو | كل ما تريد تعلمه عن النحو</title>
+    <link rel="icon" href="images/public/logo.svg">
         <!-- Css Font links -->
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500&display=swap" rel="stylesheet">
         <!-- font awesome library -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
     <link rel="stylesheet" href="css/artical.css">
+    <!-- bootstrap link -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
      <!-- The Header part  -->
-     <div class="header   color " id="up">
-        <div class=" container display">
-            <div class="logo">
-                <a href="#">
-                    <img src="images/public/logo.png">
-                </a>
-            </div>
-            <!-- ./logo -->
-            <ul class="nav">
-                <li> <a href="#">الصفحة الرئيسية</a></li>
-                <li> <a href="./index.html#lessonsData"> تصفح دروسنا</a></li>
-                <li> <a href="./index.html#courseData">دوراتنا</a></li>
-            </ul>
-            <!-- ./nav -->
-            <div class="signin-signup">
-                <button id="signin">دخول</button>
-                <button id="signup">سجل مجاناً</button>
-            </div>
-            <!-- ./signin-signup -->
+     <nav class="navbar navbar-expand-lg fixed-top navbar-light p-2" style="direction:rtl;">
+        <a class="navbar-brand mr-4" href="./index.html"><img src="./images/public/logo.svg"  width="100px"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto mr-4">
+            <li class="nav-item active">
+              <a class="nav-link"href="./index.html">الصفحة الرئيسية<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item mr-1">
+              <a class="nav-link" href="./index.html#lessonsData">تصفح دروسنا</a>
+            </li>
+            <li class="nav-item mr-1">
+              <a class="nav-link" href="./index.html#courseData">دوراتنا</a>
+            </li>
+          </ul>
+           <ul class="navbar-nav ml-4">
+            <li class="nav-item active ml-2">
+          <button class="btn btn-outline-info my-2 my-sm-0 mb-sm-3" id="signin">دخول</button>
+            </li>
+            <li class="nav-item mr-2">
+          <button class="btn btn-info my-2 my-sm-0" id="signup">سجل مجاناً</button>
+            </li>
+          </ul>
         </div>
-        <!-- ./container -->
-    </div>
+      </nav>
     <!-- ./header -->
     <!-- -------------------------------------------------------------------------- -->
-    <div class="artical-container">
+    <div class="container artical-container">
     
     </div><!-- ./artical-container -->
     <!-- -------------------------------------------------------------------------- -->
-    <div class="footer margin">
-        <hr>
-        <div>
-            <ul>
-                <h3>تواصل معنا</h3>
-                <li><i class="fab fa-facebook-square"></i></li>
-                <li><i class="fab fa-twitter-square"></i></li>
-                <li><i class="fab fa-instagram-square"></i></li>
-                <li><i class="fab fa-google-plus-square"></i></li>
-            </ul>
-
+    <footer class="text-center text-white" style="background:url('https://images.unsplash.com/photo-1592278423578-4b83c89859ac?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80'),
+    linear-gradient(to right bottom,#eeefff,black);background-size: cover; background-position-y: center;background-blend-mode: overlay;">
+        <div class="container p-4 pb-0">
+            <h3 class="text-dark">تواصل معنا</h3>
+          <section class="mb-4">
+            <a class="btn btn-outline-dark btn-floating m-1" href="#!" role="button">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a class="btn btn-outline-dark btn-floating m-1" href="#!" role="button">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a class="btn btn-outline-dark btn-floating m-1" href="#!" role="button">
+                <i class="fab fa-google"></i>
+            </a>
+            <a class="btn btn-outline-dark btn-floating m-1" href="#!" role="button">
+                <i class="fab fa-instagram"></i>
+            </a>
+          </section>
         </div>
-        <p>جميع الحقوق محفوظة &copy; رحيق النحو</p>
-    </div>
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: #eeefff;">
+            <p class="text-dark">جميع الحقوق محفوظة &copy; رحيق النحو
+            </p>
+        </div>
+      </footer>
     <script src="./scripts/front/artical.js"></script>
+    <!-- bootstrap -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

@@ -26,22 +26,22 @@ window.onscroll = function(){
 }
 
 //slide show
-var imges= ['images/public/slider1.png','images/public/slider2.png','images/public/slider5.png','images/public/slider6.png','images/public/slider7.png'];
-var i = 0;
+// var imges= ['images/public/slider1.png','images/public/slider2.png','images/public/slider5.png','images/public/slider6.png','images/public/slider7.png'];
+// var i = 0;
 
-var slideShow =  function(){
-    document.slideshow.src = imges[i];
-    // document.getElementById("img").style.animation="fadeIn"
-    // document.getElementById("img").style.animationIterationCount="infinite"
-    if( i < imges.length - 1){
-        i++;
-    }else{
-        i=0;
-    }
+// var slideShow =  function(){
+//     document.slideshow.src = imges[i];
+//     // document.getElementById("img").style.animation="fadeIn"
+//     // document.getElementById("img").style.animationIterationCount="infinite"
+//     if( i < imges.length - 1){
+//         i++;
+//     }else{
+//         i=0;
+//     }
 
-    setTimeout("slideShow()",3000);
-}
-slideShow();
+//     setTimeout("slideShow()",3000);
+// }
+// slideShow();
 
 
 
