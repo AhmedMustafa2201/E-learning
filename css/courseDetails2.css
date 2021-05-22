@@ -1,0 +1,24 @@
+
+@media only screen and (max-width: 440px){
+
+    #slider{
+        display: none;
+    }
+}
+
+
+.btn:hover{
+    background-color: #17A2B8;
+    
+    transition: all 1s;
+}
+.text1:hover{
+    color: white;
+}
+
+
+
+
+
+
+
