@@ -1,0 +1,91 @@
+body{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+    direction: rtl;
+}
+
+
+.containerStyle {
+    height: 50vh;
+    background: linear-gradient(-107deg ,#0F80B5 , #02B5B5);
+}
+
+
+.containerStyle h1{
+    color: white;   
+    padding-top: 75px; 
+}
+
+.text-search{
+    height: 40px;
+    width: 70%;
+    border-radius: 5px;
+    font-size: 15px;
+    border: none;
+    padding-right: 20px;
+    outline: none;
+}
+
+.searchBtn{
+    position: absolute;
+    left: 13%;
+    width: 50px;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+}
+
+
+/* ----------- */
+
+.courses{
+    padding: 50px 0;
+}
+
+.courses img{
+    width: 100%;
+}
+
+.courses a{
+    background: #40aee0;
+    color: white;
+    width: 50%;
+    height: 15%;
+}
+
+.courses a:hover{
+    color: white;
+    background: #07e7e7;
+}
+
+
+.layer{
+    background: transparent;
+    height: 100%;
+    width: 100%;
+    position:absolute;
+    top: 0;
+    left: 0;
+    transition: 0.5s;
+}
+.layer:hover{
+    background-color: rgba(169, 169, 169, 0.603);
+}
+
+.layer a{
+    top: 50%;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    position: absolute;
+    transition: 0.5s;
+    opacity: 0;
+}
+
+.layer:hover a{
+    bottom: 50%;
+    opacity: 1;
+}
