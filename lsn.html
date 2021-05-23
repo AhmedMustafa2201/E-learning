@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/video style.css">
+    <link rel="stylesheet" href="css/lsn.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown
+              </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#">Disabled</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+
+    <div class="row">
+        <div class="col-lg-3 col-sm-12 lesson-list-container">
+            <div class="lesson-list" onclick="toggleLessons()">
+                <div class="course-link p-3 text-right ">المحاضرة الأولى
+                    <i class=" list-toggle px-3 fa fa-align-justify"></i>
+                </div>
+                <div class="lesson-collection hide-lessons">
+                    <div class=" lesson-link p-3 text-right "> حل وشرح القطعة الثالثة من كتاب رحيق النحو </div>
+                    <div class="lesson-link p-3 text-right "> حل وشرح القطعة الثالثة من كتاب رحيق النحو </div>
+                    <div class="lesson-link p-3 text-right "> حل وشرح القطعة الثالثة من كتاب رحيق النحو </div>
+                    <div class="lesson-link p-3 text-right "> حل وشرح القطعة الثالثة من كتاب رحيق النحو </div>
+                    <div class="lesson-link p-3 text-right "> حل وشرح القطعة الثالثة من كتاب رحيق النحو </div>
+                    <div class="lesson-link p-3 text-right "> حل وشرح القطعة الثالثة من كتاب رحيق النحو </div>
+                    <div class="lesson-link p-3 text-right "> حل وشرح القطعة الثالثة من كتاب رحيق النحو </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-9">
+            <div class="lesson-area row justify-content-center">
+                <div class="video-container pt-5 col-8 ">
+                    <h2 class="text-center">شرح إعمال اسم الفاعل</h2>
+                    <p class="text-center h3 pb-3">هذا الفيديو جزء من <a class="course" href="#">المحاضرة الرابعة</a></p>
+                    <div id="myvideos" class="videos flex-column h-50">
+                        <div id="videoBody" class="video-body"></div>
+                        <div id="contolBox" class="video-control ">
+                            <input id="progressBar" type="range" min="1" max="100">
+                            <div class="row justify-content-between px-2">
+                                <div class="control-left ">
+                                    <span id="vPlay"><i class="fa fa-play" ></i></span>
+                                    <span id="vPause"><i class="fa fa-pause" ></i></span>
+                                    <span id="vMute"><i class="fa fa-volume-mute" ></i></span>
+                                    <span id="vUnmute"><i class="fa fa-volume-up" ></i></span>
+                                    <span class='ml-2' id="vDuration">00:00:00</span>
+                                </div>
+                                <div class="control-right ">
+                                    <span class="settings-box"><i id="settingsBox" class=" fa fa-cog" >      </i>
+                                        <div id="settings" class="settings hide" >        
+                                    <select name="speed" id="speed">
+                                                <option value="1" selected >1</option>
+                                                <option value="1.25" selected >1.25</option>
+                                                <option value="1.5" >1.5</option>
+                                                <option value="1.75" >1.75</option>
+                                                <option value="2" >2</option>
+                                            </select>
+                                            <span>سرعة التشغيل</span>
+                                </div>
+                                </span>
+                                <span id="vNormalScreen"><i class="fa fa-compress" ></i></span>
+                                <span id="vFullScreen"><i class="fa fa-expand " ></i></span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js "></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js "></script>
+    <script src="scripts/back/video.js"></script>
+    <script src="scripts/back/lesson.js"></script>
+</body>
+
+</html>

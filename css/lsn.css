@@ -1,0 +1,66 @@
+    body {
+        direction: rtl;
+    }
+    
+    .lesson-list-container {
+        background-color: #f8f9fa;
+        overflow: auto;
+        display: flex;
+        flex-direction: column;
+        padding: 0px;
+        padding-top: 10px;
+        color: white;
+        font-weight: bold;
+        padding-right: 20px;
+        transition: all 1s;
+    }
+    
+    .course-link {
+        background-color: #00adb5;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+    
+    .lesson-link {
+        border: solid 1px #eee;
+        border-radius: 10px;
+        color: black;
+        cursor: pointer;
+    }
+    
+    .lesson-area {
+        height: 100vh;
+    }
+    
+    .course,
+    .course:hover {
+        text-decoration: none;
+        color: #00adb5;
+        cursor: pointer;
+    }
+    
+    @media screen and (max-width: 990px) {
+        .hide-lessons {
+            height: 0vh;
+            visibility: hidden;
+        }
+        .lesson-collection {
+            transition: all .5s;
+        }
+        .course-link {
+            cursor: pointer;
+        }
+        .list-toggle {
+            cursor: pointer;
+        }
+    }
+    
+    @media screen and (min-width: 991px) {
+        .lesson-list-container {
+            height: 100vh;
+            transition: all .5s;
+        }
+        .list-toggle {
+            display: none;
+        }
+    }
