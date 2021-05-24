@@ -25,6 +25,15 @@ window.onscroll = function(){
     }
 }
 
+$(document).ready(function() {
+ 
+    setTimeout(function(){
+        $('body').addClass('loaded');
+        $('h1').css('color','#222222');
+    }, 3000);
+ 
+});
+
 //slide show
 // var imges= ['images/public/slider1.png','images/public/slider2.png','images/public/slider5.png','images/public/slider6.png','images/public/slider7.png'];
 // var i = 0;
