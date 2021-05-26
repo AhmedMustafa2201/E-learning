@@ -16,6 +16,7 @@ var user = firebase.auth().currentUser;
 // getting 
 var fname = document.querySelector(".first-name input");
 var lname = document.querySelector(".last-name input");
+var phone = document.querySelector(".phone-number input");
 var email = document.getElementById("email");
 var fullName = document.querySelector("#profile-name h3");
 var profileImg = document.getElementById("profile-img");
@@ -24,8 +25,10 @@ var profileImg = document.getElementById("profile-img");
 
 // getting and setting data
 function setData (doc){
+    // console.log(doc.data())
     fname.value = doc.data().name.split(" ")[0];
     lname.value = doc.data().name.split(" ")[1];
+    phone.value = doc.data().phone;
     email.value = doc.data().user_email;
     fullName.innerHTML = doc.data().name; 
     // img.src = doc.data().photo;
@@ -54,6 +57,7 @@ function updateData(){
         if (user){
          userCollection.doc(decodeURI(location.search.split('=')[1])).update({
             "name":`${fname.value} ${lname.value}`,
+            "phone": `${phone.value}`
          }).then(res => alert("تم"))
          .catch(e=>console.log(e))
         }
@@ -175,7 +179,10 @@ debugger
                   }).catch(function(error) {
                     console.log(error) 
                   });
-                  
+                userCollection.doc(decodeURI(location.search.split('=')[1])).update({
+                    "photo": user.photoURL,
+                }).then(res =>console.log(res))
+                .catch(err=>console.log(err))
                 document.getElementById("profile-img").src=url
                 
             }).catch(e => console.log(e))

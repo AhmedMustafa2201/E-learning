@@ -1,69 +1,29 @@
-/* General */
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 body{
     font-family: 'Tajawal', sans-serif;
-    direction: rtl;
-    /* height: 5000px; */
-}
-.container{
-    width: 90%;
-    margin: auto;
-}
-.display{
-    display: flex;
-}
-.margin{
-    margin-top: 90px;
-}
-.space-between-sections{
-    height: 150px;
-}
-a{
-    text-decoration: none;
-}
-button , input{
-    font-family: inherit;
-}
-/********************************************/
-.header{
-    width: 100%;
-    height: 85px;
-    position: fixed;
-    line-height: 80px;
-    z-index: 2;
-}
-.header.color{
-    background: #eeefff;
-    box-shadow: 1px 1px 1px #eeee;
+    scroll-behavior: smooth;
 
 }
-.background{
-    background:#fff;
-    box-shadow: 1px 2px 3px #eeee;
+
+@media only screen and (max-width: 440px){
+
+    #slider{
+        display: none;
+    }
 }
-.logo{
-    width: 20%;
+
+
+
+
+.btn:hover{
+    background-color: #17A2B8;
+    
+    transition: all 1s;
 }
-.logo img{
-    width: 60%;
-    height: 60%;
-    margin-top: 10px;
+.text1:hover{
+    color: white;
 }
-.nav{
-    display: flex;
-    list-style: none;
-    justify-content: space-between;
-    width: 50%;
-}
-.nav a {
-    color: #555;
-    padding: 5px;
-    transition: all .6s;
-}
+
+/* ****************************************************** */
 .signin-signup{
     width: 45%;
     direction: ltr;
@@ -129,233 +89,89 @@ button , input{
     color: #fff;
 }
 
-ul.nav li a:hover{
-    color:#00adb5 ;
+/* section1 */
+#section1 img{
+    background:linear-gradient(to bottom right ,#eeefff,#4365c0 );
+    background-blend-mode: overlay;
 }
-/*  THE END OF HEADER STYLING*/
-/**************************************************/
-.course-overview{
-    display: flex;
-    justify-content: space-between;
-    height: 420px;
-    padding: 20px 20px 0;
-    background: #555;
+.carousel-caption p{
+    font-size: 30px;
 }
-.detial{
-    width: 50%;
-    padding-top: 40px;
+.carousel-caption h1 a{
+    color: white;
+    font-size: 48px;
+    transition: all .3s ease;
 }
-.detial *{
-    color: #fff;
+.carousel-caption h1 a:hover{
+    color:#eeefff;
+    text-decoration: none;
+    text-shadow: .5rem .5rem 1rem rgba(0, 0, 0, 0.3);
 }
-.course-name{
-    font-weight: 500;
-    font-size: 24px;
-}
-.course-brief{
-    width: 95%;
-    margin: 20px 5px;
-}
-#rate-number{
-    display: inline-block;
-    margin-left: 5px;
-}
-.rating-stars{
-    list-style: none;
-    display: inline-block;
-}
-.rating-stars li  {
-    display: inline-block;
-}
-.rating{
-    margin-bottom: 20px;
-}
-.attend{
-    margin-bottom: 20px;
-}
-.buttons button{
-    outline: 0;
-    border: 2px solid #fff;
-    letter-spacing: 1.7px;
-    font-weight: 500;
-    border-radius: 5px;
-    color: #fff;
-    background-color: #444;
-    padding: 10px 20px;
-    font-size: 16px;
-}
-#share{
-    margin-left: 5px;
-}
-/******************/
-.pic-desc{
-    width:27%;
-    height: 80%;
-    text-align: center;
-    padding: 5px;
-    background: #fff;
-    box-shadow: 1px 1px 2px #ccc;
-    margin: auto 0;
-}
-.course-img{
-    height: 60%;
-    width: 100%;
-    margin-bottom: 20px;
-    border-radius: 10px;
-    box-shadow: 1px 1px 2px #bbb;
-}
-.course-img img{
-    width: 100%;
-    height: 100%;
+#section1 .carousel-item img{
+    filter: blur(6px);
 }
 
-.price-duration *{
-    margin-bottom: 10px;
-    text-align: center;
-    padding-right: 10px;
-    direction: ltr;
 
-    color: #444;
-}
-#addToCart{
-    width: 85%;
-    padding: 12px 0;
-    outline: 0;
-    border-radius: 5px;
-    border: 0;
-    background: #00adb5;
-    color: #fff;
-    font-size: 16px;
-    font-weight: 500;
-    letter-spacing: 1.5px;
-    margin-top: 5px;
-}
-/***********************************************************/
-/* course description*/
-.desc{
-    padding:30px;
-}
-.desc h3{
-    font-size: 22px;
-    font-weight: 500px;
-    color: #444;
-}
-.desc p{
-    width: 60%;
-    margin-top: 20px;
-    color: #666;
-}
-.desc a{
-    margin-top: 15px;
-    color: #00adb5;
-    display: inline-block;
-}
-/********************************************************************/
- /* pre Loader*/
- .afterloader{
+/* loader */
+.afterloader{
     display: none;
 }
-#loader{
-    width: 60px;
-    height: 60px;
+#loader {
+    border: 16px solid transparent;
     border-radius: 50%;
-    margin: 30px;
-    border: 5px solid transparent;
-    border-left:5px solid #00adb5;
-    animation: spinner 1.5s linear infinite;
+    border-top: 16px solid #5bc0de;
+    border-bottom: 16px solid #5bc0de;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
     position: absolute;
     top: 40%;
     left: 45%;
-}
-@keyframes spinner{
-    0%{
-        transform: rotate(0deg);
-    }
-    100%{
-        transform: rotate(360deg);
-    }
-}
-/* scroll to up */
+  }
+  
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+/* arrow up */
 #goUp {
-    font-size: 30px;
+    font-size: 60px;
     position: fixed;
     bottom: 2%;
     right: 2%;
     display: block;
-    width: 40px;
-    height: 40px;
-    display: block;
-    border-radius: 50%;
-    border: 2px solid #ccc;
-    display: none;
-}
-#goUp img{
-    width: 100%;
-    height: 100%;
+    color: #00adb5;
+    transition: all .3s ease;
 }
 #goUp:hover{
-    background-color: #fff;
-    box-shadow: .5px .5px 9px #555;
-    border: none;
+    color: black;
+    text-shadow: .5px .5px 9px #555;
+    transform: scale(1.1);
 }
-/********************************************************************/
-/*course-lessons*/
-.course-lessons{
-    padding: 20px;
-}
-.course-lessons h2{
-    margin-bottom: 20px;
-    color: #444;
-}
-.lessons{
-    border: 1px solid #bbb;
-    border-radius:5px ;
-    width: 90%;
-    margin-bottom: 20px;
-}
-.accordion{
-    padding: 20px 10px;
-    width: 100%;
-    text-align: right;
-    outline: 0;
-    border: 0;
-    border-bottom: 1px solid #bbb;
-    font-size: 18px;
-    font-weight: 500;
-    color: #555;
-    cursor: pointer;
-}
-.panel{
-    display: none;
-    padding: 20px;
-}
-/*****************************************************************/
-.course-comments{
-    padding: 20px;
 
-}
-.course-comments h2 {
-    color: #444;
-    margin-bottom: 20px;
-}
-/*footer*/
-.footer{
-    width: 100%;
-    height: 100px;
-    text-align: center;
-    background-color: #333333;
-    color: white;
-}
-.footer ul{
-    list-style: none;
-}
-.footer ul li{
-    display: inline-block;
-    color: white;
-}
-.footer ul h3{
-    margin-top: 20px;
-}
-.footer p {
-    color: white;
+html {
+    scroll-behavior: smooth;
+  }
+
+@media screen and (max-width: 769px) {
+    #adding{
+        margin-left: 1.5em;
+        float: right;
+    }
+
+    #navbarNavDropdown>ul{
+        text-align: right;
+    }
+
+    .carousel-caption p{
+        font-size: 20px;
+    }
+    
 }

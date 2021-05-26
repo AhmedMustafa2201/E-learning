@@ -16,11 +16,10 @@
 // db.settings({ timestampsInSnapshots: true });
 
 
-window.onload=function(){
-  exec()
 
+    exec()
     document.getElementsByClassName("quiz-title")[0].innerHTML = `امتحان ${decodeURI(location.search.split('=')[1])}`
-}
+
 
 // DOM variables
 let allAnswers = document.getElementsByClassName("answer")
@@ -64,6 +63,37 @@ let finalResult = 0;
 
 
 
+let myNav = document.querySelector(".header");
+// let signout = document.getElementById("signout")
+
+window.onscroll = function () { 
+    if (window.scrollY > 10 ) {
+       // console.log(window.scrollY)
+        myNav.classList.add("background");
+        myNav.classList.remove("color");
+    } 
+    else {
+        myNav.classList.remove("background");
+        myNav.classList.add("color");
+    }
+};
+
+window.onscroll = function(){
+    if(window.pageYOffset >=600){
+        document.getElementById("goUp").style.display = "block"
+    }else{
+        document.getElementById("goUp").style.display = "none"
+    }
+}
+
+$(document).ready(function() {
+ 
+    setTimeout(function(){
+        $('body').addClass('loaded');
+        $('h1').css('color','#222222');
+    }, 3000);
+ 
+});
 
 
 //event to enhance user experience
@@ -86,17 +116,17 @@ String.prototype.toIndiaDigits = function() {
 // send answers
 Answerbtn.addEventListener("click", () => {
     for (let i = 0; i < allAnswers.length; i++) {
-        if (allAnswers[i].firstElementChild.checked) {
+        if (allAnswers[i].lastElementChild.checked) {
             allAnswers[i].classList.add("selected")
         }
-        if (allAnswers[i].firstElementChild.dataset.answer == "true") {
+        if (allAnswers[i].lastElementChild.dataset.answer == "true") {
             // allAnswers[i].style.backgroundColor = "#72e672"
             // allAnswers[i].style.color = "white"
             allAnswers[i].classList.add("right")
 
         }
 
-        if ((allAnswers[i].firstElementChild.checked) && (allAnswers[i].firstElementChild.dataset.answer == "true")) {
+        if ((allAnswers[i].lastElementChild.checked) && (allAnswers[i].lastElementChild.dataset.answer == "true")) {
 
             finalResult++
 

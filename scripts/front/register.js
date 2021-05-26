@@ -50,7 +50,7 @@ confirmPassword.addEventListener("keyup", check)
 regBtn.addEventListener("click", (e) => {
 
     e.preventDefault()
-  document.getElementById("adding").style.display="none"
+//   document.getElementById("adding").style.display="none"
 
         //getting email & password
     const email = txtEmail.value;
@@ -66,6 +66,7 @@ regBtn.addEventListener("click", (e) => {
             phone: phone.value,
             user_email: txtEmail.value,
             subscriped: false,
+            photo: "",
             watchedLessons:[],
         })
         setTimeout(() => {

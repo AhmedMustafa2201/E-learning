@@ -5,12 +5,20 @@
     <meta name="keywords" content="">
     <meta name="descrption" content="">
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>رحيق النحو | تسجيل الدخول</title>
      <!-- Css Font links -->
      <link rel="preconnect" href="https://fonts.gstatic.com">
      <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500&display=swap" rel="stylesheet">
      <!-- font awesome library -->
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+ 
     <!-- css style link  -->
     <link rel="stylesheet" href="css/login Style.css">
 
@@ -23,56 +31,101 @@
 </head>
 
 <body>
-    <div class="layer"></div>
-    <!-- The Header part  -->
-    <div class="header   color ">
-        <div class=" container display">
-                <div class="logo">
-                    <a href="./index.html">
-                        <img src="images/public/logo.png">
+    <div id="loader"></div>
+        <div id="go"></div>
+        <div class="afterloader">
+            
+    <div class="container">
+        <div class="row px-3">
+            <div class="card flex-row mx-auto px-0">
+                <div class="card-body">
+                    <a style="display: block;width: 30%;margin: auto;" href="./">
+                        <img style="width: 105px;" id="personal" src="./images/public/logo.png">
                     </a>
-                </div> <!-- ./logo -->
-                <ul class="nav">
-                    <li> <a href="./index.html">الصفحة الرئيسية</a></li>
-                    <li> <a href="./index.html#lessonsData"> تصفح دروسنا</a></li>
-                    <li> <a href="./index.html#courseData">دوراتنا</a></li>
-                </ul> <!-- ./nav -->
-                <div id="adding" style="width: 45%;"></div>
+                    <h4 class="title text-center mt-4">
+                        تسجيل الدخول
+                    </h4>
+                    <div class="form-box px-3">
+                        <div class="form-input">
+                            <span><i class="fas fa-envelope"></i></span>
+                            <input id="txtEmail" type="email" name="email" placeholder="البريد الالكترونى" tabindex="10" required>
 
-            </div><!-- ./container -->
-    </div><!-- ./header -->
+                        </div>
+                        <div class="form-input">
+                            <span><i class="fa fa-key"></i></span>
+                            <input id="txtPassword" type="password" name="password" placeholder="كلمه السر" required>
 
-    <!-- Theform part  -->
+                        </div>
 
-    <div class="form-container">
-        <h3 class="title">مرحبا بك </h3>
-        <div class="content">
-            <div class="user-details">
-                <div class="input-box">
-                    <span class="details">البريد الألكتروني</span>
-                    <input id="txtEmail" type="email" placeholder="أدخل بريدك الإلكتروني" required>
+                        <div class="mb-3">
+                            <div class="custom-control custom-checkbox pr-3 pb-3">
+                                <input type="checkbox" name="" class="custom-control-input" id="remember">
+                                <label class="custom-control-label" for="remember">تذكرنى</label>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <button id="loginBtn" type="submit" class="btn btn-block text-uppercase">
+                                تسجيل الدخول
+                            </button>
+                            <p id="error" class="text-center"></p>
+                        </div>
+                        <!-- <div class="text-right">
+                            <a href="#" class="forget-link">
+                                نسيت كلمه السر؟
+                            </a>
+                        </div> -->
+
+                        <div class="text-center mb-3">
+                            او التسجيل من خلال
+                        </div>
+
+                        <div class="row mb-3 text-center">
+                            <div class="col-6">
+                            <div style="cursor: pointer;" id="facebookBtn" class="btn-facebook">
+                                <a>
+                                    <i class="fab fa-facebook-square"></i>
+                                </a>
+                            </div>
+                                <!-- <a href="#" class="btn btn-block btn-social btn-facebook">
+                                        
+                                    </a> -->
+                            </div>
+                            <div class="col-6">
+                                <div style="cursor: pointer;" id="googleBtn" class="btn-google">
+                                <a>
+                                    <i class="fab fa-google"></i>
+                                </a>
+                            </div>
+                                <!-- <a href="#" class="btn btn-block btn-social btn-google">
+                                        
+                                    </a> -->
+                            </div>
+                            <!-- <div class="col-4">
+                                <div class="btn-twitter">
+                                <a href="#" >
+                                    <i class="fa fa-twitter-square"></i>
+                                </a>
+                            </div> -->
+                                <!-- <a href="#" class="btn btn-block btn-social btn-twitter">
+                                        Twitter
+                                    </a> -->
+                            </div>
+                            <div class="text-center mb-2">
+                                ليس لديك اى حساب؟
+                                <a href="register.html" class="register-link">
+                                    قم بالتسجيل من هنا
+                                </a>
+                            </div>
+                        </div>
+                        <hr class="my-4">
+                    </div>
                 </div>
-                <div class="input-box">
-                    <span class="details">كلمة المرور</span>
-                    <input id="txtPassword" type="password" placeholder="أدخل كلمة المرور الخاصة بك" required>
-                </div>
-            </div><!-- ./user-details -->
-            <div style="margin-bottom: 20px;" class="button">
-                <input id="loginBtn" type="submit" value="تسجيل الدخول">
-                <p id="error" style="text-align: center;"></p>
             </div>
         </div>
-        <!-- <div class="or">
-            <h2>أو</h2>
-        </div> -->
-        <div class="button-container">
-        <button id="facebookBtn" class="btn facebook"> يمكنك التسجيل من خلال فيسبوك <i class="fab fa-facebook-f"></i> </button>
-        <button id="googleBtn" class="btn gmail"> يمكنك التسجيل من خلال جوجل <i class="fab fa-google"></i> </button>
-        </div>
-        <div class="join">
-            <a href="register.html">لست مشتركا معنا؟ قم بالانضمام لنا</a>
-        </div>
     </div>
+        </div>
+        <!-- The Header part  -->
     <script src="./scripts/back/init.js"></script>
  
     <script src="./scripts/front/login.js"></script>

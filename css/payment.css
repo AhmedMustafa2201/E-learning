@@ -5,62 +5,16 @@
     box-sizing: border-box;
 }
 body{
-    font-family: 'Tajawal', sans-serif;
+    margin-top: 5%;
     direction: rtl;
-    background-color: #FAFBFC;
-    /* height: 5000px; */
+    font-family: 'Tajawal', sans-serif;
+    /* scroll-behavior: smooth; */
 }
-.container{
-    width: 90%;
-    margin: auto;
+nav{
+    background-color: #eeefff;
 }
-.display{
-    display: flex;
-}
-.margin{
-    margin-top: 90px;
-}
-.space-between-sections{
-    height: 150px;
-}
-a{
-    text-decoration: none;
-}
-/*****************************************************************************************/
-.header{
-    width: 100%;
-    height: 85px;
-    /* position: fixed; */
-    line-height: 80px;
-}
-.header.color{
-    background: #eeefff;
-    box-shadow: 1px 1px 1px #eeee;
 
-}
-.background{
-    background:#fff;
-    box-shadow: 1px 2px 3px #eeee;
-}
-.logo{
-    width: 20%;
-}
-.logo img{
-    width: 60%;
-    height: 60%;
-    margin-top: 10px;
-}
-.nav{
-    display: flex;
-    list-style: none;
-    justify-content: space-between;
-    width: 50%;
-}
-.nav a {
-    color: #555;
-    padding: 5px;
-    transition: all .6s;
-}
+/* ****************************************************** */
 .signin-signup{
     width: 45%;
     direction: ltr;
@@ -72,6 +26,7 @@ a{
     font-weight: bold;
     padding: 10px 25px;
     transition: all .6s;
+    cursor: pointer;
 }
 #signin{
     border: 1px solid #555;
@@ -88,7 +43,6 @@ a{
     background:#132c33 ;
     color: #fff;
 }
-
 
 .signout {
     width: 45%;
@@ -125,65 +79,82 @@ a{
     background: #132c33;
     color: #fff;
 }
-
-ul.nav li a:hover{
-    color:#00adb5 ;
-}
 /*  THE END OF HEADER STYLING*/
 
 .subscription {
-    flex-grow: 1;
-    width: 50%;
     margin: 1em 1em;
     border: 3px solid;
     border-radius: 29px;
-    box-shadow: 8px 16px #e1dbdb;
-  }
+}
 
-  h1,
-  p {
+.subscription-types {
     text-align: center;
-  }
-  h1{
-    margin: .5em;
-  }
-  p{
-    margin: .25em;
-  }
+}
 
-  ul {
+.list {
     list-style-type: none;
-  }
+    font-size: 1em;
+    font-weight: bold;
+}
 
-  #list>li:before {
+.list>li:before {
     content: "✔️";
     display: inline-block;
     margin-left: .5em;
     width: 1.3em;
-  }
+}
 
-  .fit {
-    width: 50%;
-    margin: auto;
-  }
-  .button{
-    width: 25%;
+.button {
     margin: 1em auto;
-  }
-  #subButton{
-    width: 130px;
-    height: 40px;
+    text-align: center;
+}
+
+#subButton {
+    width: 50%;
     border: 2px solid;
     border-radius: 7px;
     background-color: #e1e1a5;
     font-weight: bold;
     transition: background-color 1s;
     cursor: pointer;
+    padding: 7px;
+}
 
-  }
-  #subButton:hover{
+#subButton:hover {
     background-color: #8f8153;
-  }
+    color: white;
+}
+
+.not-now {
+    margin-top: 20px;
+    text-align: center;
+    margin: auto;
+}
+
+.not-now button {
+    width: 30%;
+    border: 2px solid;
+    border-radius: 7px;
+    background-color: #e1e1a5;
+    font-weight: bold;
+    transition: background-color 1s;
+    cursor: pointer;
+    padding: 7px;
+    margin-bottom: 2em;
+}
+
+.not-now button a {
+    text-decoration: none;
+    color: black;
+}
+
+.not-now button:hover a {
+    color: white;
+}
+
+.not-now button:hover {
+    background-color: #8f8153;
+}
 
 
   /* pre Loader*/
@@ -307,3 +278,55 @@ ul.nav li a:hover{
     text-decoration: none;
     cursor: pointer;
   } 
+
+
+
+  
+/* loader */
+.afterloader{
+    display: none;
+}
+#loader {
+    border: 16px solid transparent;
+    border-radius: 50%;
+    border-top: 16px solid #5bc0de;
+    border-bottom: 16px solid #5bc0de;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+    position: absolute;
+    top: 40%;
+    left: 45%;
+  }
+  
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+
+
+
+
+
+@media screen and (max-width: 769px) {
+    #adding{
+        margin-left: 1.5em;
+    }
+    .carousel-caption p{
+        font-size: 20px;
+    }
+
+    #navbarNavDropdown>ul{
+        text-align: right;
+    }
+    #adding{
+        float: right;
+    }
+}

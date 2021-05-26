@@ -13,20 +13,22 @@ body{
 } */
 
 /* General */
-*{
+/* *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+} */
+*{
+    direction: rtl;
 }
 body{
     font-family: 'Tajawal', sans-serif;
-    direction: rtl;
     /* height: 5000px; */
 }
-.container{
-    width: 70%;
+/* .container{
+    width: 90%;
     margin: auto;
-}
+} */
 .container-header{
     width: 90%;
     margin: auto;
@@ -48,12 +50,12 @@ button , input{
 }
 
 /* ////////////////////////////////////////////////////// */
-.header{
+/* .header{
     width: 100%;
     height: 85px;
+    position: fixed;
     line-height: 80px;
     z-index: 2;
-    margin-bottom: 5px;
 }
 .header.color{
     background: #eeefff;
@@ -83,6 +85,7 @@ button , input{
     padding: 5px;
     transition: all .6s;
 }
+*/
 .signin-signup{
     width: 45%;
     direction: ltr;
@@ -147,9 +150,17 @@ button , input{
     background: #132c33;
     color: #fff;
 }
-
+/*
 ul.nav li a:hover{
     color:#00adb5 ;
+} */
+.logo{
+    width: 20%;
+}
+.logo img{
+    width: 60%;
+    height: 60%;
+    margin-top: 10px;
 }
 /*  THE END OF HEADER STYLING*/
 /**************************************************/
@@ -174,7 +185,9 @@ ul.nav li a:hover{
     display: flex;
     justify-content: space-between;
     border: 1px solid #ccc;
-    height: 810px;
+    height: 860px;
+    position: relative;
+    top: 6em;
 }
 .profile-bar{
     width: 25%;
@@ -183,8 +196,8 @@ ul.nav li a:hover{
     border-left: 1px solid #ccc;
 }
 .profile-bar #img{
-    width: 70%;
-    height: 22%;
+    width: 50%;
+    height: 20%;
     margin: auto;
     margin-bottom: 20px;
     border-radius: 50%;
@@ -211,17 +224,21 @@ ul.nav li a:hover{
     color: #555;
     width: 100%;
     display: block;
-    padding: 5px;
+    padding: 5px 0px;
+    border-radius: 7px;
+    transition: all .5s;
+    margin: .2em auto;
+    text-align: center;
 }
 /***************/
 .profile-bar ul li:hover{
-    background-color: #8a92a3;
+    background-color: #c8ccd5;
     color: #fff;
     cursor: pointer;
 }
-.active {
+.activeLI {
     color: #fff;
-    background-color: #8a92a3;
+    background-color: #c8ccd5;
 }
 
 /* END OF BAR*/
@@ -275,6 +292,7 @@ ul.nav li a:hover{
     letter-spacing: 1.7;
     font-size: 18px;
     color: #333;
+    text-align: right;
 }
 .profile-basic-info div{
     width: 90%;
@@ -295,11 +313,12 @@ ul.nav li a:hover{
     /* border-bottom: 1px solid #ccc; */
 }
 .profile-basic-links >span{
-    /* margin-bottom: 10px; */
+    margin-bottom: 10px;
     display: block;
-    letter-spacing: 1.2px;
+    letter-spacing: 0.2px;
     font-size: 18px;
     color: #333;
+    text-align: right;
 }
 .profile-basic-links div{
     width: 90%;
@@ -320,7 +339,7 @@ ul.nav li a:hover{
 .profile-basic-links div input{
     padding:  10px;
     border: none;
-    width: 63%;
+    width: 100%;
     display: inline-block;
     outline: 0;
 
@@ -358,7 +377,7 @@ top: -1.5em;
 /************************************/
 .image-preview{
     padding: 20px 50px;
-    margin-top: 50px;
+    /* margin-top: 50px; */
 }
 .image-preview span,
 .chose-image span{
@@ -391,7 +410,7 @@ top: -1.5em;
 {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    /* object-fit: cover; */
 }
 .img-anonymous img{
     width: 50%;
@@ -462,10 +481,12 @@ top: -1.5em;
     margin-bottom: 5px;
 }
 /*****************************/
+.email{
+    border-bottom: 1px solid #ccc;
+}
 .email,
 .password-edit{
     width: 100%;
-    border-bottom: 1px solid #ccc;
     padding: 40px;
 }
 .email-edit{
@@ -476,8 +497,9 @@ top: -1.5em;
 .password-edit>span{
     margin-bottom: 20px;
     color: #29303b;
-    display: inline-block;
-    padding-right: 10px;
+    display: block;
+    /* padding-right: 10px; */
+    text-align: right;
 }
 .email-edit input{
     height: 100%;
@@ -506,6 +528,7 @@ top: -1.5em;
     padding:5px ;
     margin-bottom: 30px;
     outline: 0;
+    display: block;
 }
 .password-edit input:focus{
     border-color: #51c4d3;
@@ -534,15 +557,17 @@ top: -1.5em;
 .close-account-body{
     padding: 50px ;
     width: 100%;
-    border-bottom: 1px solid #ccc;
+    /* border-bottom: 1px solid #ccc; */
 }
 .close-account-body > span{
-    margin-bottom: 20px;
-    display: inline-block;
+    margin-bottom: 10px;
+    display: block;
     font-size: 18px;
+    text-align: right;
 }
 .close-account-body p{
     margin-bottom: 20px;
+    text-align: right;
 }
 .close-account-body p span{
     color:#992337 ;
@@ -572,3 +597,40 @@ top: -1.5em;
         transform: rotate(360deg);
     }
 }
+
+@media screen and (max-width: 769px) {
+    .profile-bar, .profile {
+      border: none;
+    }
+    .profile-info-edit{
+        top: -20em;
+    }
+    .email-edit input{
+        width: 83%;
+    }
+    .email-edit i{
+        width: 15.222%;
+    }
+    .image-preview, .chose-image{
+        padding: 0;
+    }
+    .chose-image-btn input{
+        width: 60%;
+    }
+    .chose-image-btn button{
+        width: 35.2%;
+    }
+    .profile > div{
+        margin: 0;
+    }
+
+
+    #navbarNavDropdown>ul{
+        text-align: right;
+    }
+    #adding{
+        float: right;
+        margin-left: 1.5em;
+
+    }
+  }

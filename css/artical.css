@@ -8,17 +8,20 @@ body{
     direction: rtl;
     background-color: #fafafa;
     /* height: 5000px; */
+    /* scroll-behavior: smooth; */
+
 }
-.container{
+/* .container{
     width: 90%;
     margin: auto;
+    margin-top: 20%;
 }
 .display{
     display: flex;
 }
 .margin{
     margin-top: 90px;
-}
+} */
 .space-between-sections{
     height: 150px;
 }
@@ -54,6 +57,9 @@ button , input{
     height: 60%;
     margin-top: 10px;
 }
+nav{
+    background-color:  #eeefff;
+}
 .nav{
     display: flex;
     list-style: none;
@@ -65,7 +71,7 @@ button , input{
     padding: 5px;
     transition: all .6s;
 }
-.signin-signup{
+ .signin-signup{
     width: 45%;
     direction: ltr;
 }
@@ -129,10 +135,10 @@ button , input{
     background: #132c33;
     color: #fff;
 }
-
+/*
 ul.nav li a:hover{
     color:#00adb5 ;
-}
+} */
 /*  THE END OF HEADER STYLING*/
 /**************************************************/
 
@@ -142,14 +148,14 @@ ul.nav li a:hover{
     border: 1px solid #ccc;
     box-shadow: .5px .5px  5px #aaa;
     text-align: center;
-    margin-top: 40px;
+    margin-top: 115px;
     padding: 20px;
     background-color: #fafafa;
 }
 
 h1{
     margin: auto;
-    margin-bottom: 15px;
+    margin-bottom:4%;
 }
 .artical-container p {
     width: 70%;
@@ -205,4 +211,69 @@ h1{
 .footer p {
     color: white;
 }
+
+
 /******************************************************************/
+
+/* loader */
+.afterloader{
+    display: none;
+}
+#loader {
+    border: 16px solid transparent;
+    border-radius: 50%;
+    border-top: 16px solid #5bc0de;
+    border-bottom: 16px solid #5bc0de;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+    position: absolute;
+    top: 40%;
+    left: 45%;
+  }
+  
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+
+/******************************************************************/
+
+
+#goUp {
+    font-size: 60px;
+    position: fixed;
+    bottom: 2%;
+    right: 2%;
+    display: block;
+    color: #00adb5;
+    transition: all .3s ease;
+}
+#goUp:hover{
+    color: black;
+    text-shadow: .5px .5px 9px #555;
+    transform: scale(1.1);
+}
+
+html {
+    scroll-behavior: smooth;
+  }
+/* ***************************************************** */
+
+@media screen and (max-width: 769px) {
+    #adding{
+        margin-left: 1.5em;
+        float: right;
+    }
+
+    #navbarNavDropdown>ul{
+        text-align: right;
+    }
+}

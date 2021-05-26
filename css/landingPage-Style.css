@@ -3,19 +3,66 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Tajawal', sans-serif;
 }
 body{
-    font-family: 'Tajawal', sans-serif;
     direction: rtl;
     /* height: 5000px; */
 }
-.container{
+nav{
+    background-color:  #eeefff;
+}
+#sec1{
+    margin-top: 7%;
+    background-color: #eeefff;
+    margin-bottom: 3%;
+}
+#sec2{
+    margin-bottom: 3%;
+
+}
+#sec3{
+    margin-top: 3%;
+    margin-bottom: 3%;
+    background: url('https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80'),
+    linear-gradient(to right ,#eeefff , black );
+    background-size: cover;
+    background-position-x: center;
+    background-position-y: center;
+    background-blend-mode:multiply;
+}
+#sec4{
+    height: 100vh;
+    margin-bottom: 3%;
+}
+@media (min-width:768px) and (max-width:1024px) {
+    #sec4{
+        height: 100vh;
+    }
+}
+#sec5{
+    background-color: #eeefff;
+}
+
+#sec7{
+    margin-bottom: 50px;
+}
+
+.card{
+    transition: all .3s ease;
+}
+.card:hover{
+    box-shadow: .5rem .5rem 1rem rgba(0, 0, 0, .2);
+    transform: translateY(-3px);
+}
+
+/* .container{
     width: 90%;
     margin: auto;
-}
-.display{
+} */
+/* .display{
     display: flex;
-}
+} */
 .margin{
     margin-top: 90px;
 }
@@ -30,26 +77,18 @@ button , input{
 }
 /* scroll to up */
 #goUp {
-    font-size: 30px;
+    font-size: 60px;
     position: fixed;
     bottom: 2%;
     right: 2%;
     display: block;
-    width: 40px;
-    height: 40px;
-    display: block;
-    border-radius: 50%;
-    border: 2px solid #ccc;
-    display: none;
-}
-#goUp img{
-    width: 100%;
-    height: 100%;
+    color: #00adb5;
+    transition: all .3s ease;
 }
 #goUp:hover{
-    background-color: #fff;
-    box-shadow: .5px .5px 9px #555;
-    border: none;
+    color: red;
+    text-shadow: .5px .5px 9px #555;
+    transform: scale(1.2);
 }
 /* Ending of the General */
 /*  Style of the header Part */
@@ -70,15 +109,14 @@ button , input{
     background:#fff;
     box-shadow: 1px 2px 3px #eeee;
 }
-.logo{
+/* .logo{
     width: 20%;
 }
 .logo img{
     width: 60%;
     height: 60%;
-    margin-top: 10px;
-}
-.nav{
+} */
+/* .nav{
     display: flex;
     list-style: none;
     justify-content: space-between;
@@ -156,7 +194,7 @@ button , input{
 
 ul.nav li a:hover{
     color:#00adb5 ;
-}
+} */
 /*  THE END OF HEADER STYLING*/
 /**************************************************/
 /* pre Loader*/
@@ -213,13 +251,11 @@ ul.nav li a:hover{
     margin-top: 10px;
 }
 .search-box{
-    position: absolute;
     width: 80%;
     height: 50px;
     /* border: 1px solid #ccc;
     box-shadow: 2px 2px 2px #ccc;
     border-radius: 50px ; */
-    top: 50%;
 }
 .search-box input{
     font-size: 20px;
@@ -233,11 +269,11 @@ ul.nav li a:hover{
     background: #fff;
 
 }
-.search-box a {
+/* .search-box a {
     position: absolute;
     left: 25px;
-    top: 35%;
-} 
+    top: 35%
+}  */
 .search-box a i {
     font-size:large;
     color: #393e46;
@@ -315,11 +351,6 @@ ul.nav li a:hover{
 /**********************************************************/
 /* trending */
 /* header*/
-.trending-header{
-    width: 70%;
-    margin: auto;
-    justify-content: space-between;
-}
 .trending-header h2{
     font-size: 28px;
     font-weight: 500;
@@ -536,7 +567,7 @@ ul.nav li a:hover{
 .track-content{
     width: 100%;
     height: 100%;
-    position: absolute;
+    
 }
 .track-hover{
     opacity: 0;
@@ -660,10 +691,14 @@ ul.nav li a:hover{
 .articals  h2::after{
     content: "";
     display: block;
+    display: flex;
     width: 100px;
     height: 2px;
     background-color: #132c33;
-    margin: 20px auto;
+    margin: 20px;
+    left: 50%;
+    position: absolute;
+    transform: translateX(-70%);
 }
 .articals  h2:hover{
     cursor: pointer;
@@ -671,7 +706,7 @@ ul.nav li a:hover{
 }
 
 /* content*/
-.cards{
+/*.cards{
     width: 100%;
     justify-content: space-between;
 
@@ -679,7 +714,7 @@ ul.nav li a:hover{
 .card{
     width: 30%;
     /* border: 1px solid #ccc; */
-    box-shadow: .5px .5px 10px #ccc;
+  /*  box-shadow: .5px .5px 10px #ccc;
     border-radius: 10px;
     transition: box-shadow .4s;
 }
@@ -719,7 +754,7 @@ ul.nav li a:hover{
 .card-content p a:hover{
     color: #126e82;
 }
-
+*/
 /*END OF ARTICALS*/
 /***********************************************************************/
 /* comments */
@@ -784,8 +819,6 @@ ul.nav li a:hover{
 /*****************************************************************/
 /*footer*/
 .footer{
-    width: 100%;
-    height: 100px;
     text-align: center;
     background-color: #333333;
     color: white;

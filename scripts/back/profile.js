@@ -51,17 +51,17 @@ for( var i = 0 ; i< list.length ; i++ ){
 }
 profile.onclick = ()=>{
   if(profile_basic.style.display !="block"){
-    profile.classList.add("active");
+    profile.classList.add("activeLI");
     profile_basic.style.display = "block";
 
     edit_photo.style.display = "none";
-    photo.classList.remove("active");
+    photo.classList.remove("activeLI");
 
     edit_account.style.display = "none";
-    account.classList.remove("active");
+    account.classList.remove("activeLI");
 
     close_account.style.display = "none";
-    close_.classList.remove("active");
+    close_.classList.remove("activeLI");
 
 }
 }
@@ -69,48 +69,48 @@ profile.onclick = ()=>{
 photo.onclick = ()=>{
   if(photo.style.display !="block"){
   
-    photo.classList.add("active");
+    photo.classList.add("activeLI");
     edit_photo.style.display = "block";
 
     profile_basic.style.display = "none";
-    profile.classList.remove("active");
+    profile.classList.remove("activeLI");
 
     edit_account.style.display = "none";
-    account.classList.remove("active");
+    account.classList.remove("activeLI");
 
     close_account.style.display = "none";
-    close_.classList.remove("active");
+    close_.classList.remove("activeLI");
 
   }}
   
   account.onclick = ()=>{
     if(edit_account.style.display !="block"){
-      account.classList.add("active");
+      account.classList.add("activeLI");
       edit_account.style.display = "block";
 
       edit_photo.style.display = "none";
-      photo.classList.remove("active");
+      photo.classList.remove("activeLI");
 
       profile_basic.style.display = "none";
-      profile.classList.remove("active");
+      profile.classList.remove("activeLI");
 
       close_account.style.display = "none";
-      close_.classList.remove("active");
+      close_.classList.remove("activeLI");
 
 }}
 
 close_.onclick = ()=>{
   if(close_account.style.display !="block"){
-    close_.classList.add("active");
+    close_.classList.add("activeLI");
     close_account.style.display = "block";
 
     edit_account.style.display = "none";
-   account.classList.remove("active");
+   account.classList.remove("activeLI");
 
     edit_photo.style.display = "none";
-    photo.classList.remove("active");
+    photo.classList.remove("activeLI");
 
     profile_basic.style.display = "none";
-    profile.classList.remove("active");
+    profile.classList.remove("activeLI");
 
 }}

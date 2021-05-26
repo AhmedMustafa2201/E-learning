@@ -83,3 +83,12 @@ if(artical =="three"){
    </div><!--./artical-body-->`
     
 }
+
+
+window.onscroll = function(){
+    if(window.pageYOffset >=600){
+        document.getElementById("goUp").style.display = "block"
+    }else{
+        document.getElementById("goUp").style.display = "none"
+    }
+}

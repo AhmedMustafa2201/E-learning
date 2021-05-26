@@ -1,89 +1,19 @@
-
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 body{
+    margin-top: 5%;
+    /* direction: rtl; */
     font-family: 'Tajawal', sans-serif;
-    direction: rtl;
-    background-image:url(../images/public/background.jpg);
-    direction: rtl;
-    position: relative;
+    /* scroll-behavior: smooth; */
 }
-.container{
-    width: 90%;
-    margin: auto;
-}
-.display{
-    display: flex;
-}
-.margin{
-    margin-top: 90px;
-}
-.space-between-sections{
-    height: 150px;
-}
-a{
-    text-decoration: none;
-}
-button , input{
-    font-family: inherit;
+nav{
+    background-color: #eeefff;
 }
 
-.layer{
-    position: absolute;
-    top:0;
-    left: 0;
-    right: 0;
-    bottom:0;
-    background-color: #000;
-    opacity: .7;
-    z-index: -1;
-} 
-
-/* Ending of the General */
-
-
-/*  Style of the header Part */
-
-
-/*   393e46   , 00adb5 ,   aad8d3 , eeeeee , ffb4b4 ,  ff9292 ,   ffdcdc*/
-
-.header{
-    width: 100%;
-    height: 85px;
-    line-height: 80px;
-    z-index: 2;
-}
-.header.color{
-    background: #eeefff;
-    box-shadow: 1px 1px 1px #eeee;
-
-}
-.background{
-    background:#fff;
-    box-shadow: 1px 2px 3px #eeee;
-}
-.logo{
-    width: 20%;
-}
-.logo img{
-    width: 60%;
-    height: 60%;
-    margin-top: 10px;
-}
-.nav{
-    display: flex;
-    list-style: none;
-    justify-content: space-between;
-    width: 50%;
-}
-.nav a {
-    color: #555;
-    padding: 5px;
-    transition: all .6s;
-}
+/* ****************************************************** */
 .signin-signup{
     width: 45%;
     direction: ltr;
@@ -148,63 +78,73 @@ button , input{
     background: #132c33;
     color: #fff;
 }
-
-ul.nav li a:hover{
-    color:#00adb5 ;
-}
 /*  THE END OF HEADER STYLING*/
 
 
 /**************************************************/
-
-
-/* Form Style */
-
-/* .quiz-area {
-    width: 100%;
-    height: 1600px;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url(../images/النحو.jpg);
-} */
-
-.quiz-container {
-    /* position: absolute;
-    top: 1%;
-    left: 50%;
-    transform: translate(-50%, 0%);
-    width: 450px; */
-    /* margin-top: 70px; */
-    margin: auto;
-    width: 70%;
-    height: 100%;
-    background-color: rgba(238, 238, 238);
-    padding: 0px 30px;
-    border-radius: 25px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
-    margin-top: 5px;
+#goUp {
+    font-size: 60px;
+    position: fixed;
+    bottom: 2%;
+    right: 2%;
+    display: block;
+    color: #00adb5;
+    transition: all .3s ease;
+}
+#goUp:hover{
+    color: black;
+    text-shadow: .5px .5px 9px #555;
+    transform: scale(1.1);
 }
 
-.quiz-info {
-    margin-bottom: 20px;
+/* goup smooth */
+html {
+    scroll-behavior: smooth;
+  }
+
+
+
+/* loader */
+.afterloader{
+    display: none;
+}
+#loader {
+    border: 16px solid transparent;
+    border-radius: 50%;
+    border-top: 16px solid #5bc0de;
+    border-bottom: 16px solid #5bc0de;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+    position: absolute;
+    top: 40%;
+    left: 45%;
+  }
+  
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+@media screen and (max-width: 769px) {
+    #adding{
+        margin-left: 1.5em;
+        float: right;
+    }
+    
+    #navbarNavDropdown>ul{
+        text-align: right;
+    }
 }
 
-.quiz-title,
-.quiz-length,
-.result {
-    text-align: center;
-    padding: 5px;
-}
-
-.result {
-    background-color: #00adb5;
-    max-width: 30%;
-    /* width: 20%; */
-    margin:10px auto;
-    color: white;
-    border-radius: 20px;
-    padding: 5px;
-    font-size: x-large;
-}
-
+/* ********************************************************* */
+/* extras */
 .hide {
     opacity: 0;
 }
@@ -214,136 +154,12 @@ ul.nav li a:hover{
     font-size: xx-large;
 }
 
-#fulldegree {
-    font-size: xx-large;
-    color: white;
-}
-.question-part{
-    display: flex;
-    width: 100%;
-    margin: auto;
-}
-
-.question {
-    background-color: #393e46;
-    height: auto;
-    width: 70%;
-    margin: 20px auto;
-    padding: 20px;
-    border-radius: 20px;
-}
-
-.quistion-name {
-    display: inline-block;
-    width: 90%;
-    background-color: #7d8080;
-    padding: 10px 20px ;
-    /* padding-right: 20px; */
-    border-radius: 20px;
-    margin: 0 30px;
-    color: white;
-}
-.quistion-number {
-    /* position: absolute; */
-    width: 50px;
-    height: 40px;
-    background-color: #00adb5;
-    color: white;
-    border-radius: 50%;
-    padding: 5px;
-    font-weight: bold;
-    text-align: center;
-    font-size: x-large;
-    display: inline-block;
-}
-
-/*   393e46   , 00adb5 ,   aad8d3 , eeeeee , ffb4b4 ,  ff9292 ,   ffdcdc*/
-
-.answer {
-    width: 70%;
-    background-color: white;
-    /* margin: 10px 20px; */
-    padding: 10px;
-    border-radius: 20px;
-    margin: 10px auto;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.answer input {
-    cursor: pointer;
-}
-
-.answer label {
-    padding-right: 5px;
-    cursor: pointer;
-}
-
-
-/* 
-input:checked~label {
-    color: #1877f2;
-} */
-
-.button {
-    /* margin: auto; */
-    text-align: center;
-}
-
-.button input {
-    /* height: 70px; */
-    /* width: 20%; */
-    border: none;
-    color: #fff;
-    letter-spacing: 1px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-family: inherit;
-    background: #00adb5;
-    border-radius: 30px;
-    font-size: 20px;
-    font-weight: bold;
-    padding: 10px 25px;
-    /* transition: all .6s ease; */
-}
-
-.button input:hover {
-    background: #132c33;
-}
-
-
-
 .selected {
-    background-color: #ec5454;
+    background-color: #ec5454 !important;
     color: white !important;
 }
 
 .right {
     background-color: #72e672 !important;
     color: white !important;
-}
-
-/* pre Loader*/
-.afterloader{
-    display: none;
-}
-#loader{
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    margin: 30px;
-    border: 5px solid transparent;
-    border-left:5px solid #00adb5;
-    animation: spinner 1.5s linear infinite;
-    position: absolute;
-    top: 40%;
-    left: 45%;
-}
-@keyframes spinner{
-    0%{
-        transform: rotate(0deg);
-    }
-    100%{
-        transform: rotate(360deg);
-    }
 }

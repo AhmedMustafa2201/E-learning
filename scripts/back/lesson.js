@@ -98,20 +98,24 @@
 //     window.scrollTo(0, 0)
 //     resultContent.classList.remove("hide")
 // })
+var username
 (function(){
     var courseName = ''
     var quizCourse
     var tmp=``
     var userRes=[]
+
     auth.onAuthStateChanged(function (user) {
     userCollection
       .where("user_email", "==", user.email)
       .get()
       .then((res) => {
+        username=res.docs[0]
         if (res.docs[0].data().watchedLessons === undefined) {
           userCollection.doc(res.docs[0].id).set({
             name: res.docs[0].data().name,
             phone: res.docs[0].data().phone,
+            photo: res.docs[0].data().photo,
             user_email: res.docs[0].data().user_email,
             subscriped: res.docs[0].data().subscriped,
             watchedLessons: [],
@@ -122,7 +126,12 @@
 
     lessonCollection.doc(location.search.split('&')[0].split('=')[1]).get()
     .then(res=> {
-        // console.log(res.data())
+        // momentjs usage
+        // const m = moment(res.data().createdAt.toDate())
+
+        // console.log(res.data().createdAt.toDate())
+        // console.log(m.lang("ar").fromNow())
+        // console.log(m.locale())
         // lessonCollection.doc(location.search.split('&')[0].split('=')[1])
         //     .update({watched: true})
         auth.onAuthStateChanged(function (user) {
@@ -146,11 +155,11 @@
         .then(res=> {
             courseName = res.data().name
             document.getElementById("courseName").innerHTML=res.data().name
-            tmp=`<div style="cursor: pointer;" class="lessons-content">
+            tmp=`<li><div style="cursor: pointer;" class="lessons-content">
             <div class="show-lessons">
                 <button onclick="location.assign('./resources/${res.data().attached}')" class="show-lessons-Btn">الملحقات</button>
             </div>
-        </div>`
+        </div></li>`
         document.getElementsByClassName("lessons-list")[0].innerHTML+=tmp
         quizCourse=res.data().exam
 
@@ -159,19 +168,19 @@
             .then(res=> {
                 res.docs.forEach((data, i) => {
                     // console.log(data.data())
-                    tmp+=`<div onclick="getSpecificLesson('${data.id}', '${data.data().videoLink}')" style="cursor: pointer;" class="lessons-content">
+                    tmp+=`<li><div onclick="getSpecificLesson('${data.id}', '${data.data().videoLink}')" style="cursor: pointer;" class="lessons-content">
                     <div class="show-lessons">
                         <button class="show-lessons-Btn">${i+1}- ${data.data().name}</button>
                         <input style="margin-left: 1em;" ${userRes.includes(data.id)?"checked":""} disabled id="chekbox" type="checkbox">
                     </div>
-                </div>`
+                </div></li>`
                 });
                 tmp+=`
-                <div style="cursor: pointer;" class="lessons-content">
+                <li><div style="cursor: pointer;" class="lessons-content">
                     <div class="show-lessons">
                         <button onclick="location.assign('./${quizCourse}?name=${courseName}')" class="show-lessons-Btn">الاختبار على الدورة</button>
                     </div>
-                </div>`
+                </div></li>`
             document.getElementsByClassName("lessons-list")[0].innerHTML=tmp
 
             })
@@ -184,16 +193,19 @@
             .then(res=>{
                 var tmp=``
                 res.docs.forEach(data=>{
+                    // console.log(data.data())
                     tmp+=`<div style="display: flex; margin: .5em;" class="comment">
                     <img src="${data.data().user_image}" style="width: 30px; height: 30px; border-radius: 53% 50%;" alt="">
                     <h4 style="margin: 0 0.5em;">${data.data().user_name}</h4>
-                    <p style="margin: 0 0.5em;">${data.data().content}</p>
-                </div>`
+                    <p style="margin: 4px 0.5em;">${data.data().content}</p>`
+                    if (username.data().name!=data.data().user_name) {
+                        tmp+=`<i onclick="generate_chat('${username.id}')" title="اجراء محادثة" style="cursor: pointer; margin: 0.2em;" class="fab fa-facebook-messenger"></i>`
+                    }
+                    tmp+=`</div>`
                 })
                 document.getElementById("comments").innerHTML=tmp
             })
     }).catch(err => console.error(err))
-    
     
 })()
 
@@ -212,7 +224,8 @@ function sendData(data){
             lessonID: location.search.split('&')[0].split('=')[1],
             user_image: auth.currentUser.photoURL,
             user_name: res.docs[0].data().name,
-            createdAt: `${d.getFullYear()}${d.getMonth()}${d.getDate()}${d.getHours()}${d.getMinutes()}${d.getSeconds()}`,
+            // createdAt: `${d.getFullYear()}${d.getMonth()}${d.getDate()}${d.getHours()}${d.getMinutes()}${d.getSeconds()}`,
+            createdAt: serverTimestamp(),
         }).then(res=>{
             commentCollection.where("lessonID", "==", location.search.split('&')[0].split('=')[1])
                 .orderBy("createdAt")
@@ -223,12 +236,17 @@ function sendData(data){
                         tmp+=`<div style="display: flex; margin: .5em;" class="comment">
                         <img src="${data.data().user_image}" style="width: 30px; height: 30px; border-radius: 53% 50%;" alt="">
                         <h4 style="margin: 0 0.5em;">${data.data().user_name}</h4>
-                        <p style="margin: 0 0.5em;">${data.data().content}</p>
-                    </div>`
+                        <p style="margin: 4px 0.5em;">${data.data().content}</p>
+                        `
+                        if (username.data().name!=data.data().user_name) {
+                            tmp+=`<i title="اجراء محادثة" style="cursor: pointer; margin: 0.2em;" class="fab fa-facebook-messenger"></i>`
+                        }
+                        tmp+= `</div>`
                     })
                     document.getElementById("comments").innerHTML=tmp
                 })
         })
+
 
     }).catch(err=>console.log(err))
 }
