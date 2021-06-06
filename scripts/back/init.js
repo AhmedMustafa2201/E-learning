@@ -44,7 +44,7 @@ const userCollection = db.collection("users");
 (function(){
   auth.onAuthStateChanged(function (user) {
       if(user && (location.href == "https://amused-police.surge.sh/login.html" || location.href == "https://amused-police.surge.sh/register.html")){
-          location.assign("./")
+          location.assign("./index.html")
       }
   })
 })()

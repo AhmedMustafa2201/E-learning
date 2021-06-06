@@ -86,7 +86,7 @@ paypal.Button.render({
       //     userCollection.doc(res.docs[0].id).update({
       //       "subscriped": true
       //     })
-      //     location.assign("./")
+      //     location.assign("./index.html")
       // }).catch(err=>console.log(err))
   
       return actions.payment.execute().then(function () {

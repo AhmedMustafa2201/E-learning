@@ -92,7 +92,7 @@ facebookBtn.addEventListener("click", () => {
         
        // console.log("done")
         setTimeout(() => {
-            redirectIfAuth("./")
+            redirectIfAuth("./index.html")
         }, 2000);
     }).catch((error) => {
         // Handle Errors here.
@@ -137,7 +137,7 @@ googleBtn.addEventListener("click", () => {
         })
        // console.log("done")
         setTimeout(() => {
-            redirectIfAuth("./")
+            redirectIfAuth("./index.html")
         }, 2000);
     }).catch((error) => {
         // Handle Errors here.
