@@ -199,7 +199,7 @@ var username
                     <h4 style="margin: 0 0.5em;">${data.data().user_name}</h4>
                     <p style="margin: 4px 0.5em;">${data.data().content}</p>`
                     if (username.data().name!=data.data().user_name) {
-                        tmp+=`<i onclick="generate_chat('${username.id}')" title="اجراء محادثة" style="cursor: pointer; margin: 0.2em;" class="fab fa-facebook-messenger"></i>`
+                        tmp+=`<i onclick="location.assign('./chat.html?chatId=${username.id}')" title="اجراء محادثة" style="cursor: pointer; margin: 0.2em;" class="fab fa-facebook-messenger"></i>`
                     }
                     tmp+=`</div>`
                 })
