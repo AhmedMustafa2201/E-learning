@@ -119,6 +119,7 @@ function exec() {
           <span title="عرض البروفايل" style="cursor: pointer; margin-top: .5em; transform: translateY(5%);" onclick="goto('./profile.html?id=${res.docs[0].id}')" id="profileEmail">${user.email}</span>
       </div>`;
         });
+        $("#ifAuthenticated").html(`<a class="nav-link" href="./QA.html">الأسئلة</a>`)
     } else {
       document.getElementById("adding").innerHTML = `
           <div style="width: 100%" class="signin-signup">

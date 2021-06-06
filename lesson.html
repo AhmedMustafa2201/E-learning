@@ -44,25 +44,23 @@
         <nav style="background-color: #eeefff;" dir="rtl" class="navbar fixed-top navbar-expand-lg navbar-light">
             <div class="container-fluid">
                 <a class="navbar-brand" href="./">
-                    <img style="width: 105px;cursor: pointer;" id="personal" src="./images/public/logo.png">
+                    <img style="width: 105px;" id="personal" src="./images/public/logo.png">
                 </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-                    aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse mr-4" id="navbarNavDropdown">
-                    <ul class="navbar-nav ml-4 ml-auto">
-                        <li class="nav-item active ml-4"> <a class="nav-link" href="./index.html">الصفحة الرئيسية <span
-                                    class="sr-only">(current)</span></a></li>
-                        <li class="nav-item ml-4"> <a class="nav-link" href="./index.html#lessonsData"> تصفح دروسنا</a>
-                        </li>
-                        <li class="nav-item ml-4"> <a class="nav-link" href="./index.html#courseData">دوراتنا</a></li>
-                    </ul>
-                    <div id="adding"></div>
+                  <ul class="navbar-nav ml-4 ml-auto">
+                    <li class="nav-item active ml-4"> <a class="nav-link" href="./index.html">الصفحة الرئيسية <span class="sr-only">(current)</span></a></li>
+                    <li class="nav-item ml-4"> <a class="nav-link" href="./index.html#lessonsData"> تصفح دروسنا</a></li>
+                    <li class="nav-item ml-4"> <a class="nav-link" href="./index.html#courseData">دوراتنا</a></li>
+                    <li id="ifAuthenticated" class="nav-item ml-4"></li>
+                  </ul>
+                  <div id="adding"></div>
                 </div>
             </div>
-
-        </nav>
+    
+          </nav>
 
         <div class="container-fluid">
             <div class="row">
