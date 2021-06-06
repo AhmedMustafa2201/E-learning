@@ -6,7 +6,7 @@
             res.docs.forEach((d) => {
                 document.getElementsByClassName("trending-courses")[0].innerHTML+=
                 `
-                <div class="col-lg-4 col-sm-12 mb-5">
+                <div data-aos="zoom-out" class="col-lg-4 col-sm-12 mb-5">
                 <div class="card p-3 m-auto" style="width: 18rem;">
                     <img  src="images/server_content/lessons/${d.data().img}" class="card-img-top shadow bg-white rounded" alt="..." >
                     <div class="card-body">
@@ -21,7 +21,6 @@
                 // d.data()
               });
         })
-
     //////////////////////////////////////////////
     courseCollection.limit(4).get()
     .then(res =>{
@@ -43,12 +42,13 @@
             </div>`;
           });
     })
-    commentCollection.orderBy("user_name", "asc").limit(1).get().then(res=>{
-       // console.log(res.docs[0].data())
-        // document.getElementById("imgComment").src = res.docs[0].data().user_image
-        document.getElementById("nameComment").innerHTML = res.docs[0].data().user_name
-        // document.getElementById("contentComment").innerHTML = res.docs[0].data().content
-    })
+    // commentCollection.orderBy("user_name", "asc").limit(1).get().then(res=>{
+    //    // console.log(res.docs[0].data())
+    //     // document.getElementById("imgComment").src = res.docs[0].data().user_image
+    //     document.getElementById("nameComment").innerHTML = res.docs[0].data().user_name
+    //     // document.getElementById("contentComment").innerHTML = res.docs[0].data().content
+    // })
+    
 })()
 
 function getSpecificCourse(id){
