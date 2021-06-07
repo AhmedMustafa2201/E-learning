@@ -192,7 +192,8 @@ askBtn.addEventListener("click", () => {
             title: questionContentValue,
             views: 0,
             createdAt: qustTimestamp,
-            user: db.doc(`users/${id}`)
+            user: db.doc(`users/${id}`),
+            answersCount: 0
         }).then(() => {
             location.reload()
         })
