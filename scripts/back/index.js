@@ -1,6 +1,5 @@
 (function () {
     // <h4>${d.data().name}</h4>
-    
     lessonCollection.orderBy("name", "asc").limit(9).get()
         .then(res =>{
             res.docs.forEach((d) => {

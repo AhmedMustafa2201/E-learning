@@ -1,92 +1,79 @@
-/* *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-body{
-    direction: rtl;
-    height: 2000px;
-}
-.container{
-    width: 70%;
-    margin: auto;
-} */
-
-/* General */
-/* *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-} */
 *{
-    direction: rtl;
+    box-sizing: border-box;
 }
 body{
     font-family: 'Tajawal', sans-serif;
     /* height: 5000px; */
 }
-/* .container{
-    width: 90%;
-    margin: auto;
-} */
-.container-header{
-    width: 90%;
-    margin: auto;
-}
-.display{
-    display: flex;
-}
-.margin{
-    margin-top: 90px;
-}
-.space-between-sections{
-    height: 150px;
-}
-a{
-    text-decoration: none;
-}
-button , input{
-    font-family: inherit;
+
+.bg-cusGray{
+    background-color: #F7FAFC;
 }
 
-/* ////////////////////////////////////////////////////// */
-/* .header{
+.mask {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 85px;
-    position: fixed;
-    line-height: 80px;
-    z-index: 2;
+    height: 100%;
+    transition: all .15s ease;
 }
-.header.color{
-    background: #eeefff;
-    box-shadow: 1px 1px 1px #eeee;
 
+.header {
+    position: relative;
 }
-.background{
-    background:#fff;
-    box-shadow: 1px 2px 3px #eeee;
+
+.opacity-8 {
+    opacity: .8 !important;
 }
-.logo{
-    width: 20%;
+  
+.opacity-8 {
+    opacity: .9 !important;
 }
-.logo img{
-    width: 60%;
-    height: 60%;
-    margin-top: 10px;
+
+
+.bg-gradient-default {
+    background: linear-gradient(87deg, #172b4d 0, #1a174d 100%) !important;
 }
-.nav{
-    display: flex;
-    list-style: none;
-    justify-content: space-between;
-    width: 50%;
+  
+.bg-gradient-default {
+    background: linear-gradient(87deg, #172b4d 0, #1a174d 100%) !important;
 }
-.nav a {
-    color: #555;
-    padding: 5px;
-    transition: all .6s;
+  
+  @media screen and (prefers-reduced-motion: reduce) {
+    .mask {
+      transition: none;
+    }
 }
-*/
-.signin-signup{
+.body_position{
+    top: 69%;
+}
+.index{
+    z-index: 1000;
+}
+.btnn {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    color: white;
+    background-color: #007BFF;
+    font-size: 16px;
+    /* background-color: transparent; */
+    padding: 6px 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+}
+/* .btnn:hover {
+    background-color: #007BFF;
+    transition: all 1s;
+    
+  } */
+
+  .signin-signup{
     width: 45%;
     direction: ltr;
 }
@@ -150,481 +137,38 @@ button , input{
     background: #132c33;
     color: #fff;
 }
-/*
-ul.nav li a:hover{
-    color:#00adb5 ;
-} */
-.logo{
-    width: 20%;
-}
-.logo img{
-    width: 60%;
-    height: 60%;
-    margin-top: 10px;
-}
-/*  THE END OF HEADER STYLING*/
-/**************************************************/
-/* pre Loader*/
+
+/* loader */
 .afterloader{
     display: none;
 }
-#loader{
-    width: 60px;
-    height: 60px;
+#loader {
+    border: 16px solid transparent;
     border-radius: 50%;
-    margin: 30px;
-    border: 5px solid transparent;
-    border-left:5px solid #00adb5;
-    animation: spinner 1.5s linear infinite;
+    border-top: 16px solid #5bc0de;
+    border-bottom: 16px solid #5bc0de;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
     position: absolute;
     top: 40%;
     left: 45%;
-}
+    transition: all 2s;
+  }
+  
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
 
-.profile{
-    display: flex;
-    justify-content: space-between;
-    border: 1px solid #ccc;
-    height: 860px;
-    position: relative;
-    top: 6em;
-}
-.profile-bar{
-    width: 25%;
-    padding: 10px;
-    height: 100%;
-    border-left: 1px solid #ccc;
-}
-.profile-bar #img{
-    width: 50%;
-    height: 20%;
-    margin: auto;
-    margin-bottom: 20px;
-    border-radius: 50%;
-    overflow: hidden;
-}
-.profile-bar #img #profile-img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-.profile-bar #profile-name h3{
-    text-align: center;
-    color: #333;
-    margin-bottom: 20px;
-}
-.profile-bar ul {
-    list-style: none;
-    line-height: 2.2;
-    width: 100%;
-}
-.profile-bar ul li {
-    font-size: 18px;
-    text-decoration: none;
-    color: #555;
-    width: 100%;
-    display: block;
-    padding: 5px 0px;
-    border-radius: 7px;
-    transition: all .5s;
-    margin: .2em auto;
-    text-align: center;
-}
-/***************/
-.profile-bar ul li:hover{
-    background-color: #c8ccd5;
-    color: #fff;
-    cursor: pointer;
-}
-.activeLI {
-    color: #fff;
-    background-color: #c8ccd5;
-}
-
-/* END OF BAR*/
-/***************************************************************************/
-
-/* save button style*/
-
-.save{
-    margin: auto;
-    background-color: #51c4d3;
-    border: none;
-    outline: none;
-    border-radius: 5px;
-    padding: 15px;
-    color: #fff;
-    font-weight: 500;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-/***************************************************************************/
-/* profile Style*/
-/* الملف الشخصى */
-.profile-info-edit{
-    width: 75%;
-    height: 100%;
-}
-.profile-basic{
-    width: 100%;
-    /* display: none; */
-}
-.profile-basic-header{
-    width: 100%;
-    text-align: center;
-    padding: 20px;
-    border-bottom: 1px solid #ccc;
-}
-.profile-basic-header h2{
-    color: #555;
-    margin-bottom: 5px;
-}
-/*****************************/
-.profile-basic-info{
-    padding: 10px 50px;
-    border-bottom: 1px solid #ccc;
-
-}
-.profile-basic-info span{
-    margin-bottom: 10px;
-    display: block;
-    letter-spacing: 1.7;
-    font-size: 18px;
-    color: #333;
-    text-align: right;
-}
-.profile-basic-info div{
-    width: 90%;
-    border: 1px solid #ccc;
-    margin-bottom: 20px;
-}
-.profile-basic-info div input,
-.profile-basic-info div textarea{
-    width: 100%;
-    padding: 15px 10px;
-    border: none;
-    outline: 0;
-    color: #29303b;
-}
-/*********************************************/
-.profile-basic-links{
-    padding: 10px 50px;
-    /* border-bottom: 1px solid #ccc; */
-}
-.profile-basic-links >span{
-    margin-bottom: 10px;
-    display: block;
-    letter-spacing: 0.2px;
-    font-size: 18px;
-    color: #333;
-    text-align: right;
-}
-.profile-basic-links div{
-    width: 90%;
-    border: 1px solid #ccc;
-    margin-bottom: 30px;
-    
-}
-.profile-basic-links div span{
-    display: inline-block;
-    background-color: #f2f3f5;
-    padding:  12px;
-    border-left: 1px solid #ccc;
-    width: 35%;
-    color: #29303b;
-    text-align: left;
-    direction: ltr;
-}
-.profile-basic-links div input{
-    padding:  10px;
-    border: none;
-    width: 100%;
-    display: inline-block;
-    outline: 0;
-
-}
-/***********************************************/
-.button{
-    width: 100%;
-    text-align: center;
-    /* padding: 20px; */
-    position: relative;
-top: -1.5em;
-}
-
-/*END OF PROFILE*/
-/************************************************************************************************/
-
-/* Photo Edit style */
-/* (الصورة الشخصية)*/
-.edit-photo{
-    width: 100%;
-    height: 100%;
-    display: none;
-
-}
-.edit-photo-header{
-    width: 100%;
-    text-align: center;
-    padding: 20px;
-    border-bottom: 1px solid #ccc;
-}
-.edit-photo-header h2{
-    color: #555;
-    margin-bottom: 5px;
-}
-/************************************/
-.image-preview{
-    padding: 20px 50px;
-    /* margin-top: 50px; */
-}
-.image-preview span,
-.chose-image span{
-    margin-bottom: 10px;
-    display: block;
-    letter-spacing: 1.7;
-    font-size: 18px;
-    color: #333;
-    width: 45%;
-    text-align: right;
-}
-.preview{
-    border: 1px solid #ccc;
-    width: 95%;
-    height: 300px;
-    position: relative;
-    margin-top: 20px;
-    box-shadow: 0 0 0 1.5px #eee inset;
-}
-.img-upload,
-.img-anonymous{
-    position: absolute;
-    width: 90%;
-    height: 90%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-}
-.img-upload img
-{
-    width: 100%;
-    height: 100%;
-    /* object-fit: cover; */
-}
-.img-anonymous img{
-    width: 50%;
-    height: 100%;
-   display: block;
-   margin: auto;
-}
-.img-anonymous{
-    border: #8a92a3;
-    background-color: #eee;
-}
-
-/**********************/
-.chose-image{
-    padding: 20px 50px;
-}
-
-.chose-image-btn{
-    width: 95%;
-    height: 50px;
-    border: 1px solid #ccc;
-    background-color: #f2f3f5;
-}
-.chose-image-btn input,
-.chose-image-btn button{
-    outline: 0;
-    height: 100%;
-    font-size: 18px;
-    cursor: pointer;
-}
-.chose-image-btn input{
-    width: 70%;
-    padding-right: 10px;
-    background-color: #f2f3f5;
-    border: 0;
-}
-.chose-image-btn button{
-    width: 29.2%;
-    border:1px solid #51c4d3;
-    color: #51c4d3;
-    font-weight: bold;
-    background-color: #fff;
-}
-
-#save-photo{
-    margin-top: 30px;
-}
-
-/* END OF PHOTO EDIT*/
-/******************************************************************************/
-/***************************************************************************/
-/*Account*/
-/* الحساب */
-.account{
-    width: 100%;
-    height: 100%;
-    display: none;
-}
-
-.account-header{
-    width: 100%;
-    text-align: center;
-    padding: 20px;
-    border-bottom: 1px solid #ccc;
-}
-.account-header h2{
-    color: #555;
-    margin-bottom: 5px;
-}
-/*****************************/
-.email{
-    border-bottom: 1px solid #ccc;
-}
-.email,
-.password-edit{
-    width: 100%;
-    padding: 40px;
-}
-.email-edit{
-    width: 90%;
-    height: 50px;
-}
-.email >span,
-.password-edit>span{
-    margin-bottom: 20px;
-    color: #29303b;
-    display: block;
-    /* padding-right: 10px; */
-    text-align: right;
-}
-.email-edit input{
-    height: 100%;
-    width: 90%;
-    border: 1px solid #ccc;
-    outline: 0;
-    padding: 5px;
-    font-size: 18px;
-}
-.email-edit i{
-    width: 9.222%;
-    background-color: #f2f3f5;
-    padding: 15.9px;
-    border: 1px solid #ccc;
-    color: #555;
-    cursor: pointer;
-}
-.password-edit{
-    margin-bottom: 10px;
-}
-.password-edit input{
-    height: 50px;
-    width: 90%;
-    border: 1px solid #ccc;
-    font-size: 16px;
-    padding:5px ;
-    margin-bottom: 30px;
-    outline: 0;
-    display: block;
-}
-.password-edit input:focus{
-    border-color: #51c4d3;
-}
-
-
-/* END OF ACCOUNT */
-/**************************************************************************************/
-
-.close-account{
-    width: 100%;
-    height: 100%;
-    display: none;
-}
-.close-account-header{
-    width: 100%;
-    text-align: center;
-    padding: 20px;
-    border-bottom: 1px solid #ccc;
-}
-.close-account-header h2{
-    color: #555;
-    margin-bottom: 5px;
-}
-/***************************/
-.close-account-body{
-    padding: 50px ;
-    width: 100%;
-    /* border-bottom: 1px solid #ccc; */
-}
-.close-account-body > span{
-    margin-bottom: 10px;
-    display: block;
-    font-size: 18px;
-    text-align: right;
-}
-.close-account-body p{
-    margin-bottom: 20px;
-    text-align: right;
-}
-.close-account-body p span{
-    color:#992337 ;
-    font-weight: bold;
-}
-#closeAcount{
-    border: 2px solid #992337;
-    outline: 0;
-    padding: 10px 25px;
-    color: #992337;
-    background-color: #fff;
-    font-size: 16px;
-    font-weight: bold;
-    margin-top: 5px;
-}
-#closeAcount:hover{
-    color: #521822;
-    border-color: #521822;
-    cursor: pointer;
-}
-/*******************************************/
-@keyframes spinner{
-    0%{
-        transform: rotate(0deg);
-    }
-    100%{
-        transform: rotate(360deg);
-    }
-}
 
 @media screen and (max-width: 769px) {
-    .profile-bar, .profile {
-      border: none;
-    }
-    .profile-info-edit{
-        top: -20em;
-    }
-    .email-edit input{
-        width: 83%;
-    }
-    .email-edit i{
-        width: 15.222%;
-    }
-    .image-preview, .chose-image{
-        padding: 0;
-    }
-    .chose-image-btn input{
-        width: 60%;
-    }
-    .chose-image-btn button{
-        width: 35.2%;
-    }
-    .profile > div{
-        margin: 0;
-    }
-
-
     #navbarNavDropdown>ul{
         text-align: right;
     }

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/icon" href="favicon.ico" sizes="96x96">
      <!-- Css Font links -->
      <link rel="preconnect" href="https://fonts.gstatic.com">
      <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500&display=swap" rel="stylesheet">
@@ -31,7 +32,7 @@
               <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse mr-4" id="navbarNavDropdown">
-              <ul class="navbar-nav ml-4 ml-auto">
+              <ul class="navbar-nav ml-4 ml-auto" style="padding-right: 0;">
                 <li class="nav-item active ml-4"> <a class="nav-link" href="./index.html">الصفحة الرئيسية <span class="sr-only">(current)</span></a></li>
                 <li class="nav-item ml-4"> <a class="nav-link" href="./index.html#lessonsData"> تصفح دروسنا</a></li>
                 <li class="nav-item ml-4"> <a class="nav-link" href="./index.html#courseData">دوراتنا</a></li>
@@ -60,148 +61,232 @@
     </div> -->
     
     <!-- FIXED PART -->
-
-    <!-- basic profile inf  -->
-        <div class="profile container">
-            <div  class="row w-100">
-                <div class="profile-bar col-lg-4 col-md-4 col-12">
-    
-                    <div id="img"> <img id="profile-img" src=""> </div>
-                    <div id="profile-name"><h3>  </h3></div>
-                    <ul style="padding: 0;" class="profile-bar-list">
-                        <!-- <li id="publicProfile" >الحساب العام</li> -->
-                        <li id="profile" class="activeLI">الملف الشخصي</li>
-                        <li id="photo">الصورة الشخصية</li>
-                        <li id="account" >اعدادات الحساب</li>
-                        <li style="color: #9b2727;" id="delete">حذف الحساب</a></li>
-                    </ul><!--./profile-bar-list-->
-                </div><!-- ./profile-bar -->
-                
-        <!-- ----------------------------------------------------------------------------------- -->
-    
-            <!-- DYNAMIC (Changed) PART -->
-            <div class=" profile-info-edit col-lg-8 col-md-8 col-12">
-    
-                <!-- Profile Part ( الملف الشخصي ) -->
-                <div class="profile-basic">
-                    <div class="profile-basic-header">
-                        <h2>الحساب الشخصى</h2>
-                        <p>أضف معلومات عن نفسك</p>
-                    </div><!-- ./profile-basic-header -->
-                    <div class="profile-basic-info">
-                        <span>الأساسيات:</span>
-                        <div class="first-name"><input type="text" name="first-name" value="" placeholder="الاسم الأول"></div>
-                        <div class="last-name"><input type="text" name="last-name" value="" placeholder="الاسم الأخير"></div>
-                        <div class="phone-number"><input type="tel" name="phone-number" value="" placeholder="رقم الهاتف"></div>
-                        <div class="self-descripe">
-                            <textarea id="descripe" name="descripe" rows="5" cols="50" placeholder="صف نفسك"></textarea>
-                        </div><!-- ./self-descripe -->
-                    </div><!-- ./profile-basic-info-->
-        
-                    <div class="profile-basic-links">
-                        <span>الروابط:</span>
-                        <div class="twitter-link">
-                            <!-- <span>http://twitter.com/</span> -->
-                            <input type="text" placeholder="حساب تويتر" name="twitter-link">
-                        </div><!-- ./twitter-link -->
-        
-                        <div class="facebook-link">
-                            <!-- <span>http://facebook.com/</span> -->
-                            <input type="text" placeholder="حساب فيس بوك" name="facebook-link">
-                        </div><!-- ./facebook-link -->
-                        
-                    </div><!--./profile-basic-links-->
-                    <div class="button"><button id="save-profile" class="save">حفظ </button></div>
-                    
-                </div><!-- ./profile-basic -->
-        
-        
-                <!-- ---------------------------------------------------------------- -->
-                <!-- Edit Profile Picture (الصورة الشخصية ) -->
-                <div class="edit-photo">
-                    <div class="edit-photo-header">
-                        <h2>الصورة الشخصية</h2>
-                        <p>أضف صورة جميلة لنفسك لملفك الشخصي.</p>
-                    </div><!-- ./edit-photo-header --> 
-        
-                    <div class="image-preview">
-                        <span>معاينة الصورة</span>
-                        <div class="preview">
-                            <div class="img-anonymous"> <img src="images/public/anonymous.png"> </div>
-                            <div class="img-upload"> <img id="choseImg" > </div>
-                        </div><!-- ./preview -->
-                    </div><!-- ./image-preview -->
-        
-                    <div class="chose-image">
-                        <span>أضف/عدل صورة:</span>
-                        <div class="chose-image-btn">
-                            <input readonly id="customBtn" type="text" placeholder="لا يوجد ملف محدد">
-                            <button id="uploadImg">تحميل صورة</button>
-                        </div><!-- ./chose-image-btn -->
-                        <input type="file" id="file-upload"  hidden>
-                    </div><!-- ./chose-image -->
-        
-                    <div class="button"><button id="save-photo" class="save">حفظ </button></div>
-                </div><!-- ./edit-photo -->
-        
-                <!-- ---------------------------------------------------------------- -->
-                <!-- Account (الحسـاب) -->
-        
-                <div class="account">
-                    <div class="account-header">
-                        <h2>الحساب</h2>
-                        <p>قم بتغيير إعدادات حسابك وكلمة المرور الخاصة بك هنا.</p>
-                    </div><!-- ./account-header --> 
-                    
-                    <div class="email">
-                    <span>البريد الإلكتروني:</span>
-                    <div class="email-edit">
-                        <input type="text" id="email" readonly value="">
-                        <i class="fas fa-edit" id="changeEmail"></i>
-                    </div><!-- ./email-edit -->
-                </div><!-- ./email -->
-        
-                    <div class="password-edit">
-                    <span>كلمة المرور:</span>
-                    <input type="password" id="currnt-password" placeholder="إدخل كلمة السر الحالية" name="currntPassword">
-                    <input type="password" id="new-password" placeholder="أدخل كلمة السر الجديدة" name="newPassword">
-                    <input type="password" id="r-new-password" placeholder="أعد كتابة كلمة السر الجديدة" name="rNewPassword">
-                </div><!-- ./password-edit -->
-                <div style="top: -4.5em;" class="button"><button id="changePassword" class="save">حفظ التغييرات </button></div>
-        
-            </div><!-- ./account -->
-        
-        
-            <!-- ------------------------------------------------------------------------------------ -->
-            <!-- close account (حذف الحساب ) -->
-                <div class="close-account">
-        
-                    <div class="close-account-header">
-                        <h2>غلق الحساب</h2>
-                        <p>أغلق حسابك بشكل دائم.</p>
-                    </div><!-- ./close-account-header -->
-        
-                    <div class="close-account-body">
-                    <span>أغلق حسابك</span>
-                    <p><span class="warn">تحذير:</span> إذا أغلقت حسابك ، فسيتم إلغاء اشتراكك في جميع الدورات ، وستفقد إمكانية الوصول إلى الأبد.</p>
-                    <button style="display: block;" id="closeAcount">أغلق الحساب</button>
-                </div><!-- ./close-account-body -->
-        
-                </div><!-- ./close-account -->
-        
-            </div> <!-- ./profile-info-edit -->
+    <div class="header pb-8 d-flex align-items-center position-relative"
+        style="background-image: url(images/public/slider-3.png); background-size: cover; background-position: center ; margin-top: 5em;">
+        <!-- Mask -->
+        <span class="mask bg-gradient-default opacity-8"></span>
+        <!-- Header container -->
+        <div class="container-fluid ">
+            <div class="row w-100 justify-content-end">
+                <div class="col-lg-7 col-md-10">
+                    <h1 class="text-right text-white mt-5">مرحبا بك</h1>
+                    <p class="text-right text-white mt-0 mb-5">هذه هي صفحة ملفك الشخصي. يمكنك رؤية التقدم الذي
+                        أحرزته في عملك وإدارة مشاريعك أو المهام المعينة</p>
+                </div>
             </div>
-    
-    
-    </div><!-- ./profile -->
+        </div>
+    </div>
 
+
+    <div class="container-fluid mt-3 d-flex justify-content-around index body_position">
+        <div class="row w-100">
+            <div class="col-lg-4 col-sm-12 order-lg-2 mb-5 mb-lg-0 px-0">
+                <div class="col-12  d-flex justify-content-center ">
+                    <div class="card border-none shadow ">
+                        <div class="d-flex justify-content-center" style="margin-top: 2em;">
+                            <img id="profile-img" class="rounded-circle mx-auto position-relative" src="images/public/testi-avtar-4.jpg" width="200px"
+                            height="200px" class="card-img-top" alt="profile_pic">
+                            <input onchange="uploadPhoto(this)" type="file" id="file-upload"  hidden>
+                            <button id="save-photo" type="button" onclick="document.getElementById('file-upload').click();" class="btnn ">تعديل</button>
+                        </div>
+                        
+
+                        <div class="card-body">
+                            <div class="d-flex justify-content-around mb-5">
+                                <div>
+                                    <span class="ml-3">35</span>
+                                    <p class="m-0 text-black-50">الأسئله</p>
+                                </div>
+                                <div>
+                                    <span class="ml-3">10</span>
+                                    <p class="m-0 text-black-50 ">الدورات</p>
+                                </div>
+                                <div>
+                                    <span class="ml-3">15</span>
+                                    <p class="m-0 text-black-50">الأصدقاء</p>
+                                </div>
+                            </div>
+                            <div id="profile-name" class="mb-4">
+                                <h3  class="text-center mb-0"></h3>
+                                <!-- <p class="m-0 text-black-50 h6 font-weight-lighter text-center">مصر,القاهرة</p> -->
+                            </div>
+                            <div class="d-flex justify-content-center mb-0">
+                                <p class="mb-0">مهندس كهرباء- شركة وادينا للطاقة</p>
+                            </div>
+                            <div class="d-flex justify-content-center mt-0">
+                                <p class="text-black-50 mt-0 font-weight-light">جامعة القاهرة-كلية الهندسه</p>
+                            </div>
+                            <hr>
+                            <p class="card-text text-center text-muted font-weight-light">
+                                علم النحو من علوم اللغة العربية ويعد العلم الأهم بينها، معرفته ضرورية على أهل الشريعة إذ مأخذ
+                                الأحكام الشرعية كلها من الكتاب والسنة، وتعلم لمن أراد علم الشريعة.</p>
+                            <div class="d-flex justify-content-center mt-5">
+                                <button id="closeAcount" type="button" class="btn btn-danger">حذف الحساب</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-lg-8 col-sm-12 order-lg-1 ">
+                <div>
+                    <div class="card shadow" style="direction: rtl;">
+                        <div class="card-header text-right bg-white">
+                            حسابي
+                        </div>
+                        <div class="card-body bg-cusGray px-4">
+                            <div class="needs-validation" novalidate>
+                                <div class="form-row">
+                                    <div class="col-md-6 mb-3 text-right first-name">
+                                        <label for="validationCustom01">الاسم الأول</label>
+                                        <input type="text" class="form-control text-right" id="validationCustom01"
+                                            placeholder="الاسم الاول" required>
+                                        <div class="valid-feedback">
+                                            Looks good!
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-3 text-right last-name">
+                                        <label for="validationCustom02">الاسم الأخير</label>
+                                        <input type="text" class="form-control text-right " id="validationCustom02"
+                                            placeholder="الاسم الأخير" required>
+                                        <div class="valid-feedback">
+                                            Looks good!
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                
+                                
+                                <div class="form-row">
+                                    <div class="col-md-6 mb-3 text-right phone-number">
+                                        <label for="validationCustom03">رقم الهاتف</label>
+                                        <input type="text" class="form-control" id="validationCustom03">
+                                        <div class="invalid-feedback">
+                                            Please provide a valid city.
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 mb-3 text-right">
+                                        <label for="validationCustom04">المدينة</label>
+                                        <select class="custom-select text-right" id="validationCustom04" required>
+                                            <option class="text-right" selected disabled value="">اختر</option>
+                                            <option>المنيا</option>
+                                            <option>القاهرة</option>
+                                            <option>الجيزة</option>
+                                            <option>البحيرة</option>
+                                            <option>اسوان</option>
+                                            <option>المنوفية</option>
+                                            <option>البحر الاحمر</option>
+                                            <option>الغردقه</option>
+                                            <option>الاسكندريه</option>
+                                            <option>اسيوط</option>
+                                        </select>
+                                        <div class="invalid-feedback">
+                                            Please select a valid state.
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 mb-3 text-right">
+                                        <label for="validationCustom05">تاريخ الميلاد</label>
+                                        <input type="date" class="form-control" id="validationCustom05" required>
+                                        <div class="invalid-feedback">
+                                            Please provide a valid zip.
+                                        </div>
+                                    </div>
+
+                                    <!-- <div class="col-md-6 mb-3 text-right">
+                                        <label for="validationCustom01"> حساب جوجل</label>
+                                        <input type="text" class="form-control text-right" id="validationCustom01"
+                                            placeholder=" " required>
+                                        <div class="valid-feedback">
+                                            Looks good!
+                                        </div>
+                                    </div> -->
+                                    <div class="col-md-6 mb-3 text-right">
+                                        <label for="validationCustom01">حساب الفيس بوك</label>
+                                        <input type="text" class="form-control text-right" id="validationCustom01"
+                                            required>
+                                        <div class="valid-feedback">
+                                            Looks good!
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-3 text-right">
+                                        <label for="validationCustom02">حساب تويتر</label>
+                                        <input type="text" class="form-control text-right " id="validationCustom02"
+                                             required>
+                                        <div class="valid-feedback">
+                                            Looks good!
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <button id="save-profile" class="btn btn-primary mb-2" type="submit">حفظ التعديلات</button>
+
+                                <hr class="my-4 ">
+
+                                <div class="form-row">
+
+                                    <div class="col-md-6 mb-3 text-right">
+                                        <label for="email">البريد الالكتروني</label>
+                                        <input type="text" class="form-control text-right " id="email"
+                                            placeholder=" " required>
+                                        <div class="valid-feedback">
+                                            Looks good!
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="col-md-6 mb-3 text-right">
+                                        <label for="new-password">كلمة السر </label>
+                                        <input type="password" class="form-control text-right " id="new-password"
+                                            placeholder=" " required>
+                                        <div class="valid-feedback">
+                                            Looks good!
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-3 text-right">
+                                        <label for="r-new-password">تأكيد كلمة السر</label>
+                                        <input type="password" class="form-control text-right" id="r-new-password"
+                                            placeholder=" " required>
+                                        <div class="valid-feedback">
+                                            Looks good!
+                                        </div>
+                                    </div>
+                                </div>
+<!-- 
+                                <div class="form-group text-right">
+                                    <label for="exampleFormControlTextarea1 ">صف نفسك</label>
+                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                  </div> -->
+
+                                <button id="changePassword" class="btn btn-primary mb-2" type="submit">حفظ التعديلات</button>
+
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+ 
+    <footer class="text-center text-white" style="background:url('https://images.unsplash.com/photo-1592278423578-4b83c89859ac?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80'),
+    linear-gradient(to right bottom,#eeefff,black);background-size: cover; background-position-y: center;background-blend-mode: overlay; margin-top: 2em;">
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: #eeefff;">
+            <p class="text-dark">جميع الحقوق محفوظة &copy; رحيق النحو
+            </p>
+        </div>
+    </footer>
     </div>
 <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-auth.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-firestore.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-storage.js"></script>
 <script src="./scripts/back/init.js"></script>
-<script src="scripts/back/profiledata.js"></script>
-<script src="scripts/back/profile.js"></script>
+<script src="./scripts/back/profiledata.js"></script>
+<script src="./scripts/back/profile.js"></script>
 </body>
 </html>

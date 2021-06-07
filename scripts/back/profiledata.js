@@ -25,12 +25,13 @@ var profileImg = document.getElementById("profile-img");
 
 // getting and setting data
 function setData (doc){
-    // console.log(doc.data())
+    console.log(doc.data())
     fname.value = doc.data().name.split(" ")[0];
     lname.value = doc.data().name.split(" ")[1];
     phone.value = doc.data().phone;
     email.value = doc.data().user_email;
-    fullName.innerHTML = doc.data().name; 
+    fullName.innerHTML = doc.data().name+`<span
+    class="font-weight-lighter text-black-50 h6">, 28</span>`; 
     // img.src = doc.data().photo;
 }
 
@@ -65,19 +66,19 @@ function updateData(){
 }
 
 // update the account section (Email , password)
-var writeEmailButton = document.getElementById("changeEmail");
+// var writeEmailButton = document.getElementById("changeEmail");
 var changeEmail = document.getElementById("email");
 var changeEmailPasswordBtn = document.getElementById("changePassword");
 var currntPassword = document.getElementById("currnt-password");
 var newPassword = document.getElementById("new-password");
 var rNewPassword = document.getElementById("r-new-password");
 
-writeEmailButton.onclick = function(){
-    changeEmail.removeAttribute('readonly');
-    changeEmail.style.borderColor = "#51c4d3";
-    changeEmail.focus();
-    changeEmail.value = "";
-}
+// writeEmailButton.onclick = function(){
+//     changeEmail.removeAttribute('readonly');
+//     changeEmail.style.borderColor = "#51c4d3";
+//     changeEmail.focus();
+//     changeEmail.value = "";
+// }
 
 changeEmailPasswordBtn.addEventListener("click",updateEmail)
 
@@ -153,11 +154,11 @@ function deleteAccount(){
 // Upload Image 
 
 // const ref = firebase.storage().ref();
-var save_Photo = document.getElementById("save-photo");
+// var save_Photo = document.getElementById("save-photo");
 
-save_Photo.addEventListener("click",uploadPhoto);
+// save_Photo.addEventListener("click",uploadPhoto);
 
-function uploadPhoto(){
+function uploadPhoto(e){
     auth.onAuthStateChanged((user) => {
         if(user){
 debugger

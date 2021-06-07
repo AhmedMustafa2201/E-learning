@@ -150,6 +150,8 @@ window.onload = function myFunction() {
 function showPage() {
   document.getElementById("loader").style.display = "none";
   document.querySelector(".afterloader").style.display = "block";
+  AOS.init();
+
   clearTimeout(myVar);
 }
 

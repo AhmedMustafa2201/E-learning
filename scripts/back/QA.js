@@ -12,7 +12,7 @@ questionCollection.orderBy('createdAt', 'desc').get().then(resp => {
         }).then(() => {
             questionsContainer.innerHTML += `
             <div class="col-lg-12">
-            <div class="card text-center mb-3">
+            <div class="card text-center mb-3" data-aos="fade-in" data-aos-offset="200" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out">
                 <div class="card-header bgColor1">
                     <div class="d-flex bd-highlight">
                         <div class="mr-auto bd-highlight iconColor">
@@ -110,7 +110,7 @@ searchBtn.addEventListener("click", (event) => {
                     }).then(() => {
                         questionsContainer.innerHTML += `
                         <div class="col-lg-12">
-                        <div class="card text-center mb-3"data-aos="fade-in"data-aos-offset="200" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out">
+                        <div class="card text-center mb-3" data-aos="fade-in" data-aos-offset="200" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out">
                             <div class="card-header bgColor1">
                                 <div class="d-flex bd-highlight">
                                     <div class="mr-auto bd-highlight iconColor">

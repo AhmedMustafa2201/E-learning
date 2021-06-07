@@ -98,13 +98,17 @@
 //     window.scrollTo(0, 0)
 //     resultContent.classList.remove("hide")
 // })
-var username
+
 (function(){
+    // commentCollection.get().then(val => {
+    //     val.docs.map((val) => {
+    //         commentCollection.doc(val.id).delete()
+    //     })
+    // })
     var courseName = ''
     var quizCourse
     var tmp=``
     var userRes=[]
-
     auth.onAuthStateChanged(function (user) {
     userCollection
       .where("user_email", "==", user.email)
@@ -197,11 +201,11 @@ var username
                     tmp+=`<div style="display: flex; margin: .5em;" class="comment">
                     <img src="${data.data().user_image}" style="width: 30px; height: 30px; border-radius: 53% 50%;" alt="">
                     <h4 style="margin: 0 0.5em;">${data.data().user_name}</h4>
-                    <p style="margin: 4px 0.5em;">${data.data().content}</p>`
+                    <p style="margin: 4px 0.5em;">${data.data().content}</p><span style="margin-top: .2em;color: #538bbb;">${moment(data.data().createdAt.toDate()).lang('ar').fromNow()}`
                     if (username.data().name!=data.data().user_name) {
-                        tmp+=`<i onclick="location.assign('./chat.html?chatId=${username.id}')" title="اجراء محادثة" style="cursor: pointer; margin: 0.2em;" class="fab fa-facebook-messenger"></i>`
+                        tmp+=`<i onclick="get_chat('${username.id}')" title="اجراء محادثة" style="cursor: pointer; margin: 0.2em;" class="fab fa-facebook-messenger"></i>`
                     }
-                    tmp+=`</div>`
+                    tmp+=`</span></div>`
                 })
                 document.getElementById("comments").innerHTML=tmp
             })
@@ -224,6 +228,7 @@ function sendData(data){
             lessonID: location.search.split('&')[0].split('=')[1],
             user_image: auth.currentUser.photoURL,
             user_name: res.docs[0].data().name,
+            user_id: res.docs[0].id,
             // createdAt: `${d.getFullYear()}${d.getMonth()}${d.getDate()}${d.getHours()}${d.getMinutes()}${d.getSeconds()}`,
             createdAt: serverTimestamp(),
         }).then(res=>{
@@ -236,12 +241,11 @@ function sendData(data){
                         tmp+=`<div style="display: flex; margin: .5em;" class="comment">
                         <img src="${data.data().user_image}" style="width: 30px; height: 30px; border-radius: 53% 50%;" alt="">
                         <h4 style="margin: 0 0.5em;">${data.data().user_name}</h4>
-                        <p style="margin: 4px 0.5em;">${data.data().content}</p>
-                        `
+                        <p style="margin: 4px 0.5em;">${data.data().content}</p><span style="margin-top: .2em;color: #538bbb;">${moment(data.data().createdAt.toDate()).lang('ar').fromNow()}`
                         if (username.data().name!=data.data().user_name) {
-                            tmp+=`<i title="اجراء محادثة" style="cursor: pointer; margin: 0.2em;" class="fab fa-facebook-messenger"></i>`
+                            tmp+=`<i onclick="get_chat('${username.id}')" title="اجراء محادثة" style="cursor: pointer; margin: 0.2em;" class="fab fa-facebook-messenger"></i>`
                         }
-                        tmp+= `</div>`
+                        tmp+=`</span></div>`
                     })
                     document.getElementById("comments").innerHTML=tmp
                 })
@@ -249,4 +253,37 @@ function sendData(data){
 
 
     }).catch(err=>console.log(err))
+}
+
+// location.assign('./chat.html?chatId=${username.id}')
+async function get_chat(id){
+    auth.onAuthStateChanged(async function (user) {
+        var data1 = await userCollection
+            .where("user_email", "==", user.email)
+            .get()
+            
+            var host={
+                id: `${data1.docs[0].id}`,
+                name: data1.docs[0].data().name,
+                email: data1.docs[0].data().user_email,
+                photoUrl: data1.docs[0].data().photo,
+                locale: "ar"
+            }
+            
+            localStorage.setItem("host", JSON.stringify(host))
+    })
+
+    var data2 = await userCollection
+                .doc(id)
+                .get()
+    
+        var guest={
+            id: `${data2.id}`,
+            name: data2.data().name,
+            email: data2.data().user_email,
+            photoUrl: data2.data().photo,
+       }
+       localStorage.setItem("guest", JSON.stringify(guest))
+    
+    location.assign(`./chat.html?chatId=${id}`)
 }

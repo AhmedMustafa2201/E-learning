@@ -19,7 +19,7 @@
     <!-- <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-functions.js"></script> -->
     <script src="./scripts/back/init.js"></script>
     <link rel="stylesheet" href="./css/chat.css">
-    <title>Chatting...</title>
+    <title>رحيق النحو | كل ما تريد تعلمه عن النحو</title>
 </head>
 
 <body>
@@ -65,34 +65,17 @@
             </script>
 
             <!-- container element in which TalkJS will display a chat UI -->
-            <div id="talkjs-container" style="width: 90%; margin: 30px; height: 500px">
+            <div id="talkjs-container" style="width: 90%; margin: 100px 30px; height: 500px">
                 <i>Loading chat...</i>
             </div>
             <script>
-                
-                
-                    var host, guest={}
-                Talk.ready.then(async function () {
-                    auth.onAuthStateChanged(async function (user) {
-                        var data = await userCollection
-                            .where("user_email", "==", user.email)
-                            .get()
-                            
-                                host={
-                                    id: `${data.docs[0].id}`,
-                                    name: data.docs[0].data().name,
-                                    email: data.docs[0].data().user_email,
-                                    photoUrl: data.docs[0].data().photo,
-                                    locale: "ar"
-                                }
-                            
-                    })
-                    var me = new Talk.User({
+                Talk.ready.then(function () {
+                    var host = JSON.parse(localStorage.getItem('host'))
+                    const me = new Talk.User({
                         id: host.id,
                         name: host.name,
                         email: host.user_email,
                         photoUrl: host.photo,
-                        welcomeMessage: "Hey there! How are you? :-)",
                         locale: host.locale
                     });
 
@@ -102,24 +85,14 @@
                     });
 
                     
-                    var guest_data = await userCollection
-                        .doc(location.search.split('=')[1])
-                        .get()
-                        
-                           guest={
-                                id: `${guest_data.id}`,
-                                name: guest_data.data().name,
-                                email: guest_data.data().user_email,
-                                photoUrl: guest_data.data().photo,
-                           }
-                        
 
-                    var other = new Talk.User({
+                    var guest = JSON.parse(localStorage.getItem('guest'));
+
+                    const other = new Talk.User({
                         id: guest.id,
                         name: guest.name,
                         email: guest.user_email,
                         photoUrl: guest.photo,
-                        welcomeMessage: "Hey, how can I help?",
                     });
                     var conversation = talkSession.getOrCreateConversation(
                         Talk.oneOnOneId(me, other)
@@ -129,38 +102,9 @@
 
                     var inbox = talkSession.createInbox({ selected: conversation });
                     inbox.mount(document.getElementById("talkjs-container"));
+                    // document.getElementsByClassName("NoticeBar")[0].style.display = "none"
                 });
-
-
-
-                        // Talk.ready.then(function () {
-                        //     const me = new Talk.User({
-                        //         id: "123456",
-                        //         name: "Alice",
-                        //         email: "alice@example.com",
-                        //         photoUrl: "https://demo.talkjs.com/img/alice.jpg",
-                        //         welcomeMessage: "Hey there! How are you? :-)"
-                        //     });
-                        //     const session = new Talk.Session({
-                        //         appId: "tAVmni4W",
-                        //         me: me
-                        //     });
-                        //     const other = new Talk.User({
-                        //         id: "654321",
-                        //         name: "Sebastian",
-                        //         email: "Sebastian@example.com",
-                        //         photoUrl: "https://demo.talkjs.com/img/sebastian.jpg",
-                        //         welcomeMessage: "Hey, how can I help?"
-                        //     });
-
-                        //     const conversation = session.getOrCreateConversation(Talk.oneOnOneId(me, other));
-                        //     conversation.setParticipant(me);
-                        //     conversation.setParticipant(other);
-
-                        //     const inbox = session.createInbox({ selected: conversation });
-                        //     inbox.mount(document.getElementById("talkjs-container"));
-                        // });
-
+                
             </script>
         </div>
     </div>
