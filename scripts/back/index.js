@@ -5,7 +5,7 @@
             res.docs.forEach((d) => {
                 document.getElementsByClassName("trending-courses")[0].innerHTML+=
                 `
-                <div data-aos="zoom-out" data-aos-offset="200" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out" class="col-lg-4 col-sm-12 mb-5">
+                <div data-aos="fade-in" data-aos-offset="200" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out" class="col-lg-4 col-sm-12 mb-5">
                 <div class="card p-3 m-auto" style="width: 18rem;">
                     <img  src="images/server_content/lessons/${d.data().img}" class="card-img-top shadow bg-white rounded" alt="..." >
                     <div class="card-body">
